@@ -1,0 +1,181 @@
+\documentclass[UTF-8]{beamer}
+\usepackage{ctex}
+\usetheme{CambridgeUS}
+\setCJKsansfont{SimSun}
+\setsansfont{Times New Roman}
+
+\begin{document}
+\author{Garen-Wang}
+\date{\today}
+\title{考核讲评+递归初步}
+\subtitle{第二堂课}
+
+\titlepage
+
+\begin{frame}{目录}
+\tableofcontents
+\end{frame}
+
+\begin{section}{课前废话}
+\begin{frame}{课前废话}
+    \pause
+    这个学期的\textcolor[rgb]{0.00,1.00,0.00}{第一次}考核在06.05举行。\pause
+
+    我题目的难度难道打反了吗？T2难道比T1难吗？\pause
+
+    目前最多100分（除了我啊）。实力还有待提高哦！\pause
+
+    赛后精简了许多\texttt{划水}的成员，期末考后是真正的优胜劣汰了。（可怕）\pause
+
+    课件好像有点多，我慢下来的时候记得提醒我开1.5倍速哦！
+\end{frame}
+\end{section}
+
+\begin{section}{T1讲评}
+\begin{frame}{P1079 Vigenère 密码}
+    \pause
+    这道题最大的问题应该在于这张表。\pause
+
+    可以发现这张表有一种规律：\pause
+
+    设第一个字母（密钥）为$\alpha$，第二个字母（明文）为$\beta$，则密文为：$$\alpha + \beta - 'A'$$ \pause
+
+    所以明文的计算公式只需要移项就知道了。\pause
+
+    但是可能会超出范围诶！\pause
+
+    如果从下超出范围，就加26。如果从上超出范围，就减26。\pause
+
+    所以密码表就这么解决了！
+\end{frame}
+\begin{frame}{P1079 Vigenère 密码}
+    \pause
+    题目要求运算忽略大小写，保持原来的大小写形式。\pause
+
+    那就记录下原来是大写还是小写，运算时全部转为大写或者小写，输出就按原样输出。\pause
+
+    我挑这道题的时候是一遍过的，所以把他放T1了。\pause
+
+    我事后还写了一波解题报告，搜我luogu的blog就有了。
+\end{frame}
+\end{section}
+
+\begin{section}{T2讲评}
+\begin{frame}{P1098 字符串的展开}
+    \pause
+    这道题好像会的人挺多，就随便讲讲了。\pause
+
+    暴力模拟，题目的意思已经很清楚了。\pause
+
+    想要展开必须同时满足三个条件：\pause
+
+    \begin{itemize}
+      \item 出现了减号
+      \item 减号两侧同为小写字母或同为数字
+      \item 减号右边的字符严格大于左边的字符
+    \end{itemize}
+    \pause
+    对$p_1$来说，当1时保证展开的字母是小写的，所以当原来字母是大写的时候\textcolor[rgb]{1.00,0.00,0.00}{加上32}。\pause
+
+    当2时也同理，\textcolor[rgb]{1.00,0.00,0.00}{减掉32}，当3时就无脑输出$p_2$个星号即可。\pause
+
+    对$p_3$，正序就正向for循环，逆序就逆向for循环。\pause
+
+    减号两边字母一定不受展开的影响，所以照输即可。\pause
+
+    我同样也写了解题报告。
+\end{frame}
+\end{section}
+
+\begin{frame}
+\pause
+\begin{center}
+\huge{这里是分割线！}
+\end{center}
+\end{frame}
+
+\begin{section}{递归初步}
+\begin{frame}{跳出main函数！}
+    \pause
+    在我们初步的理解中，我们知道main函数就是程序的开始，从main的前面开始，慢慢地走到最后的return 0结束。\pause
+
+    但是只局限于main函数之中是有坏处的。For example: \pause
+
+    \begin{itemize}
+      \item 数组不能开太大（例如1000005），不然爆栈。
+      \item 每次定义变量总少不了memset或者初始化。
+      \item 有时候有重复性语言，通过复制粘贴很冗余，还容易错。
+    \end{itemize}
+    \pause
+    所以跟着本人的脚步，在main函数的前面打上一个空格，这是新的开始！
+\end{frame}
+\begin{frame}{全局变量与函数}
+    \pause
+    在（main）函数外定义的变量、数组等叫做全局变量，在函数内定义的就是局部变量。\pause
+
+    定义全局变量有个优点：变量值自动置为0！同时空间可开大很多！\pause
+
+    函数的一个优点就是面向对象语言中所谓的“封装”。\pause
+
+    将一个功能写进一个函数里面，使这个函数实现相应的功能，而可以在其他函数（甚至自己）中可以调用它。\pause
+
+    让我小小地举一个例子。比如老掉牙的判断质数。\pause
+
+    而在一个函数中调用自己，就叫做递归(recursion)。
+\end{frame}
+\begin{frame}{认识递归}
+    \pause
+    首先让大家感性地认识递归。\pause
+
+    大家看网络直播的时候有没有见过主播的直播软件屏幕中出现了主播自己的直播软件屏幕？\pause
+
+    这可以看作是一种递归！随着时间的增长，从屏幕中看到的主播人头会越来越多！\pause
+
+    如果主播不最小化他的直播软件屏幕，那么这种递归会无休止地进行！\pause
+
+    如果一个递归程序没有尽头，那么他就会卡掉！\pause
+
+    递归的一层一层是调用系统栈，栈是一种后进先出的线性数据结构。
+\end{frame}
+\begin{frame}{递归初步}
+    \pause
+    首先一定必定提到经典的Fibonacci数列。\pause
+
+    设$F_{1} = 1，F_{2} = 1$，当$n \geq 3$时，有$F_{n} = F_{n - 1} + F_{n - 2}$。\pause
+
+    那么如何求出任意的$F_n$呢？（不考虑时间复杂度和爆精度问题>\_<）\pause%日你妈！！！这个>_<含有下划线！需要用\_表示！
+
+    除了循环迭代以外，也可以通过一个简单的递归函数实现。\pause
+    
+    让我们手膜出$x=6$时，这个函数经历的变化。\pause
+
+    现在对递归有一定的理解了吧！
+\end{frame}
+\begin{frame}{递归的应用}
+    \pause
+    递归的本质就是用来解决问题。\pause
+
+    许多递归程序实现的是上一个状态到下一个状态的转换或者大状态到小状态的转换。\pause
+
+    递归的应用及其多：以后暴力的基础dfs，许多$O(nlogn)$数据结构的构建维护，快速排序，归并排序等等。\pause
+
+    递归是初学者的一大障碍，也是以后许多高级算法的坚实基础，一定要掌握！！！
+\end{frame}
+\end{section}
+
+\begin{section}{作业}
+\begin{frame}{作业}
+    \pause
+    作业就是\textbf{试炼场新手村中的“过程递归”题目}。大家尽力去完成。
+
+    （我也正在做诶！）
+\end{frame}
+\end{section}
+
+\begin{frame}
+\begin{center}
+\huge{谢谢！}
+\end{center}
+\flushright{All Made By \LaTeX}
+\end{frame}
+\end{document} 

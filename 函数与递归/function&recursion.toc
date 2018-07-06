@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{函数}{3}{0}{1}
+\beamer@sectionintoc {2}{函数例题：P1149 火柴棒等式}{12}{0}{2}
+\beamer@sectionintoc {3}{递归}{19}{0}{3}
+\beamer@sectionintoc {4}{递归例题：P1036 选数}{30}{0}{4}
+\beamer@sectionintoc {5}{后面的话}{35}{0}{5}

@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{作者简介}{3}{0}{1}
+\beamer@sectionintoc {2}{不要误解}{5}{0}{2}
+\beamer@sectionintoc {3}{故事简介}{10}{0}{3}
+\beamer@sectionintoc {4}{其他内容}{14}{0}{4}
+\beamer@sectionintoc {5}{结尾}{53}{0}{5}
