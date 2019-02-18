@@ -1,1 +1,1 @@
-# LaTex-Repo
+# LaTeX
