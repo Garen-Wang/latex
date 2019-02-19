@@ -1,5 +1,0 @@
-\beamer@sectionintoc {1}{课前废话}{3}{0}{1}
-\beamer@sectionintoc {2}{T1讲评}{9}{0}{2}
-\beamer@sectionintoc {3}{T2讲评}{22}{0}{3}
-\beamer@sectionintoc {4}{递归初步}{34}{0}{4}
-\beamer@sectionintoc {5}{作业}{65}{0}{5}
