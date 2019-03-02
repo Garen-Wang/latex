@@ -1,0 +1,19 @@
+\frametitle{bfs框架}
+\begin{lstlisting}[language = C++,
+numberstyle=\tiny,keywordstyle=\color{blue!70},
+commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox,
+rulesepcolor=\color{red!20!green!20!blue!20},basicstyle=\ttfamily]
+void bfs(起点) {
+    std::queue<类型> q;
+    q.push(起点); vis[起点] = true;
+    while(!q.empty()) {
+        类型 x = q.front(); q.pop();
+        for(扩展新节点) {
+            if(!vis[新节点]) {
+                q.push(新节点);
+                vis[新节点] = true;
+           }
+        }
+    }
+}
+\end{lstlisting}

@@ -1,0 +1,14 @@
+\frametitle{模板2}
+\pause
+   模板2只适用于整数类型。浮点数显然用不了这个，如果要用要写eps。 \pause
+   \begin{lstlisting}[language = C++,
+   numberstyle=\tiny,keywordstyle=\color{blue!70},
+   commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox,
+   rulesepcolor=\color{red!20!green!20!blue!20},basicstyle=\ttfamily]
+   ll left = 1, right = n, ans = -1;
+   while(left <= right) {
+       ll mid = (left + right) / 2;
+       if(check(mid)) ans = mid, left = mid + 1;// 看单调性
+       else right = mid - 1;// 同上
+   }
+   \end{lstlisting}

@@ -37,7 +37,7 @@
 \end{frame}
 
 \begin{frame}{例题1：luoguP1015}
-\includegraphics{luoguP1015.png}
+\includegraphics[width=\textwidth, height=\textheight]{luoguP1015.png}
 \end{frame}
 
 \begin{frame}{例题1——分析}
@@ -49,12 +49,12 @@
 \end{frame}
 
 \begin{frame}{例题2：某题}
-\includegraphics{temp1.png}
+\includegraphics[width=\textwidth, height=\textheight]{temp1.png}
 \end{frame}
 
 \begin{frame}{例题2：某题}
-\includegraphics{temp2.png}
-\includegraphics{temp3.png}
+\includegraphics[width=\textwidth, height=\textheight]{temp2.png}
+\includegraphics[width=\textwidth, height=\textheight]{temp3.png}
 \end{frame}
 \begin{frame}{例题2——分析}
  \pause
@@ -92,7 +92,7 @@
 \end{frame}
 
 \begin{frame}{例题1：luoguP1024}
-\includegraphics{luoguP1024.png}
+\includegraphics[width=\textwidth, height=\textheight]{luoguP1024.png}
 \end{frame}
 
 \begin{frame}{例题1——分析}
@@ -111,7 +111,7 @@
 \end{frame}
 
 \begin{frame}{例题2：luoguP1149}
-\includegraphics{luoguP1149.png}
+\includegraphics[width=\textwidth, height=\textheight]{luoguP1149.png}
 \end{frame}
 
 \begin{frame}{例题2——分析}
@@ -171,40 +171,40 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{模板1}
- \pause
-模板1适用于浮点数。$left$和$right$就是前面所说的左右端点。 \pause
-\begin{lstlisting}[language = C++, numbers=left,
-numberstyle=\tiny,keywordstyle=\color{blue!70},
-commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox,
-rulesepcolor=\color{red!20!green!20!blue!20},basicstyle=\ttfamily]
-ll left = 1, right = n;
-while(left < right) {
-    ll mid = (left + right) / 2;
-    if(a[mid] <= val) left = mid;
-    else right = mid - 1;
-}
-\end{lstlisting}
-\end{frame}
-
-\begin{frame}{模板2}
- \pause
-模板2只适用于整数类型。浮点数显然用不了这个，如果要用要写eps。 \pause
-\begin{lstlisting}[language = C++, numbers=left,
-numberstyle=\tiny,keywordstyle=\color{blue!70},
-commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox,
-rulesepcolor=\color{red!20!green!20!blue!20},basicstyle=\ttfamily]
-ll left = 1, right = n, ans = -1;
-while(left <= right) {
-    ll mid = (left + right) / 2;
-    if(check(mid)) ans = mid, left = mid + 1;// 看单调性
-    else right = mid - 1;// 同上
-}
-\end{lstlisting}
-\end{frame}
+\begin{frame}[fragile]{模板1}
+    \pause
+   模板1适用于浮点数。$left$和$right$就是前面所说的左右端点。 \pause
+   \begin{lstlisting}[language = C++,
+   numberstyle=\tiny,keywordstyle=\color{blue!70},
+   commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox,
+   rulesepcolor=\color{red!20!green!20!blue!20},basicstyle=\ttfamily]
+   ll left = 1, right = n;
+   while(left < right) {
+       ll mid = (left + right) / 2;
+       if(a[mid] <= val) left = mid;
+       else right = mid - 1;
+   }
+   \end{lstlisting}
+   \end{frame}
+   
+   \begin{frame}[fragile]{模板2}
+    \pause
+   模板2只适用于整数类型。浮点数显然用不了这个，如果要用要写eps。 \pause
+   \begin{lstlisting}[language = C++,
+   numberstyle=\tiny,keywordstyle=\color{blue!70},
+   commentstyle=\color{red!50!green!50!blue!50},frame=shadowbox,
+   rulesepcolor=\color{red!20!green!20!blue!20},basicstyle=\ttfamily]
+   ll left = 1, right = n, ans = -1;
+   while(left <= right) {
+       ll mid = (left + right) / 2;
+       if(check(mid)) ans = mid, left = mid + 1;// 看单调性
+       else right = mid - 1;// 同上
+   }
+   \end{lstlisting}
+   \end{frame}
 
 \begin{frame}{例题2：luoguP2678}
-\includegraphics{luoguP2678.png}
+\includegraphics[width=\textwidth, height=\textheight]{luoguP2678.png}
 \end{frame}
 
 \begin{frame}{例题2——分析}
@@ -274,7 +274,7 @@ while(left <= right) {
 \end{frame}
 
 \begin{frame}{例题1：luoguP1463}
-\includegraphics{luoguP1463.png}
+\includegraphics[width=\textwidth, height=\textheight]{luoguP1463.png}
 \end{frame}
 
 \begin{frame}{例题1——分析}
@@ -350,7 +350,7 @@ while(left <= right) {
 \end{frame}
 
 \begin{frame}{例题1：luoguP4703}
-\includegraphics{luoguP4703.png}
+\includegraphics[width=\textwidth, height=\textheight]{luoguP4703.png}
 \end{frame}
 
 \begin{frame}{例题2：luoguP2503}
