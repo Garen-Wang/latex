@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{模拟}{4}{0}{1}
+\beamer@sectionintoc {2}{暴力}{23}{0}{2}
+\beamer@sectionintoc {3}{二分}{51}{0}{3}
+\beamer@sectionintoc {4}{打表}{92}{0}{4}
+\beamer@sectionintoc {5}{随机}{130}{0}{5}
