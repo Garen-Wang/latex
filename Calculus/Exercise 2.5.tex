@@ -1,0 +1,185 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 2.5}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+
+    \subsection*{37. $\lim_{x \to 1}e^{x^2-x}$}
+
+    Let $f(x) = e^x, g(x) = x^2 - x$, and $f(x)$ and $g(x)$ are continuous.
+
+    By the property of continuous composite function,
+    $$
+    \begin{aligned}
+        \lim_{x \to 1}e^{x^2 - x} &= \lim_{x \to 1}f(g(x)) \\
+        &= f(\lim_{x \to 1}g(x)) \\
+        &= f(g(1)) = f(0) = 1
+    \end{aligned}
+    $$
+
+    \subsection*{38. $\lim_{x \to 2} \arctan(\frac{x^2 - 4}{3x^2 - 6x})$}
+
+    Obviously, $y = \arctan x$ and $y = \frac{x^2 - 4}{3x^2 - 6x}$ are continuous.
+
+    So by the property of continuous composite function,
+
+    $$
+    \begin{aligned}
+        \lim_{x \to 2} \arctan(\frac{x^2 - 4}{3x^2 - 6x}) &= \arctan(\lim_{x \to 2}\frac{(x + 2)(x - 2)}{3x(x - 2)}) \\
+        &= \arctan(\lim_{x \to 2}\frac{x + 2}{3x}) \\
+        &= \arctan(\frac{2}{3})
+    \end{aligned}
+    $$
+
+    \subsection*{46. Find the values of $a$ and $b$ that make $f$ continuous everywhere. }
+
+    To make $f(x)$ continuous everywhere, we must satisfy:
+
+    \begin{equation*}
+        \left\{
+        \begin{aligned}
+            \lim_{x \to 2^-}f(x) = f(2) \\
+            \lim_{x \to 3^-}f(x) = f(3)
+        \end{aligned}
+        \right .
+    \end{equation*}
+    $\because \lim_{x \to 2^-}f(x) = \lim{x \to 2^-}\frac{(x + 2)(x - 2)}{x - 2} = \lim_{x \to 2^-}(x + 2) = 4$
+
+    $\because \lim_{x \to 3^-}f(x) = \lim_{x \to 3^-}(ax^2 - bx + 3) = 9a - 3b + 3$
+
+    $\therefore$ we get the equations:
+
+    \begin{equation*}
+        \left \{
+        \begin{aligned}
+            4a - 2b + 3 = 4 \\
+            6 - a + b = 9a - 3b + 3
+        \end{aligned}
+        \right .
+    \end{equation*}
+
+    The solution is $\left \{ \begin{aligned}
+        a = \frac 1 2 \\ b = \frac 1 2
+    \end{aligned} \right .$
+
+
+    \subsection*{53. $e^x = 3 - 2x, \quad (0, 1)$}
+
+    Let $f(x) = e^x + 2x - 3$
+
+    $\because f(0) = 1 + 0 - 3 = -2 < 0, f(1) = e + 2 - 3 = e - 1 > 0$
+
+    $\because f(x)$ is continuous, $f(0)f(1) < 0$
+
+    $\therefore$ by the Intermediate Value Theorem, $\exists \xi \in (0, 1), s.t.$ $$f(\xi) = 0  \iff e^\xi = 3 - 2\xi$$
+
+    \subsection*{54. $\sin x = x^2 - x, \quad (1, 2)$}
+
+    Let $f(x) = x^2 - x - \sin x$
+
+    $\because f(1) = 1 - 1 - \sin 1 < 0, f(2) = 4 - 2 - \sin 2 > 2 - 1 > 0$
+
+    $\because f(x)$ is continuous and $f(1)f(2) < 0$
+
+    $\therefore$ by the Intermediate Value Theorem, $\exists \xi \in (1, 2), s.t.$ $$f(\xi) = 0 \iff \sin \xi = \xi ^2 - \xi$$
+
+    \subsection*{61. Prove that cosine is a continuous function.}
+
+    \begin{proof}
+        We will prove it by the contradiction.
+
+        Suppose that cosine is a discontinuous function, so $\exists x_0 \in R, s.t.$ $$\lim_{x \to x_0}\cos x \not = \cos x_0$$
+
+        But $\forall \epsilon > 0, \exists \delta = \epsilon$.
+
+        When $\delta > 0$, if $0 < |x - x_0| < \delta$, then 
+        
+        $$
+        \begin{aligned}
+            |\cos x - \cos x_0| &= |\cos (\frac{x + x_0}{2} + \frac{x - x_0}{2}) - \cos(\frac{x + x_0}{2} - \frac{x - x_0}{2}) | \\
+            &= |-2\sin \frac{x + x_0}{2} \frac{x - x_0}{2} | \\
+            &= 2|\sin \frac{x + x_0}{2} \frac{x - x_0}{2} | \\
+            &\leq 2 |\sin \frac{x - x_0}{2} | \\
+            &< 2 |\frac{x - x_0}{2}| = |x - x_0| = \delta = \epsilon
+        \end{aligned}
+        $$
+
+        The calculation above indicates that $\lim_x{x \to x_0}\cos x = \cos x_0$, which contradicts with the hypothesis.
+
+        So we can prove that the cosine function always satisfies $\lim_x{x \to x_0}\cos x = \cos x_0$, and it's continuous.
+
+    \end{proof}
+
+    \subsection*{67. Show that the function $$f(x) = \left\{ \begin{array}{ll} x^2\sin(1/x) & \textrm{if $x \not = 0$} \\ 0 & \textrm{if $x = 0$} \end{array} \right.$$ is continuous on $(-\infty, \infty)$}
+
+    $\because$ Obviously, $y = \frac 1 x, y = \sin x$ are continuous functions,
+
+    $\therefore y = \sin(1/x)$ is continuous function.
+
+    $\because y = x^4$ is also continuous function,
+
+    $\therefore f(x) = x^4\sin(1/x), \quad x \not = 0$ is continuous function on $\{x \in R|x \not = 0\}$
+
+    $\because x^4$ is an infinitesimal as $x \to 0$, and $\sin(1/x)$ is bounded on $[-1,1]$ as $x \to 0$,
+
+    $\therefore$ $$\lim_{x \to 0}x^4\sin(1/x) = 0 = f(0)$$
+
+    $\therefore f(x)$ is continuous on $(-\infty, \infty)$
+
+\subsection*{68.(a)}
+
+\begin{proof}
+    $\because$ Obviously, $$F(x) = \left \{ \begin{array}{ll}
+        x & \textrm{if $x > 0$} \\
+        -x & \textrm{if $x < 0$} \\
+        0 & \textrm{if $x = 0$}
+    \end{array} \right.$$
+
+    $therefore$ When $x \not = 0$, $f(x)$ is continous on $(-\infty, 0)$ and $(0, \infty)$
+
+    $\because \lim_{x \to 0^-}F(x) = \lim_{x \to 0^+}F(x) = 0 = F(0)$
+
+    $\therefore F(x)$ is continuous everywhere.
+\end{proof}
+
+\subsection*{86.(b)}
+
+\begin{proof}
+    If $f(x) \geq 0$, $|f(x)| = f(x)$ is also continuous.
+
+    If $f(x) \leq 0$, $|f(x)| = -f(x)$ is also continuous.
+
+    If $\exists x_0, s.t. f(x_0) = 0$, then we discuss about a common situation: $|f(x)|$ on $(a,b), x_0 \in (a,b)$
+
+    Without loss of generality, let $f(x) > 0$ as $x \in (a,x_0)$, $f(x) < 0$ as $x \in (x_0, b)$, $f(x) = 0$ as $x = x_0$
+
+    If we can prove in such a common situation $|f(x)|$ is continuous, then we can conclude that $|f(x)|$ is continuous in the domain of $f(x)$.
+
+    Obviously, when $x \in (a, x_0), |f(x)| = f(x)$ is continous, so is $x \in (x_0, b)$.
+
+    $\because \lim_{x \to x_0^-}|f(x)| = \lim_{x \to x_0^+}|f(x)| = 0 = f(x_0)$
+    
+    $\therefore |f(x)|$ is continuous on $(a,b)$
+
+    $\therefore$ $|f(x)|$ is continuous.
+\end{proof}
+
+\subsection*{68.(c)}
+
+No. A counterexample is $f(x) = \left \{ \begin{array}{ll}
+    x - 2 & \textrm{if $x < 0$} \\
+    x + 2 & \textrm{if $x \geq 0$}
+\end{array} \right.$
+
+In this case, when $x < 0$, $|f(x)| = |x - 2| = 2 - x$, $|f(x)| = |x| + 2$, which is obviously continuous.
+
+However, the original function $f(x)$ is not continuous at $x = 0$, for $$\lim_{x \to 0^-}f(x) = -2, \lim_{x \to 0^+}f(x) = 2$$
+\end{document}

@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 6.x}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+    \maketitle
+
+    \section*{Exercise 6.1}
+
+    \subsection*{19. $y = \cos \pi x, y = 4x^2 - 1$}
+
+    Solving $4x^2 - 1 = \cos \pi x$, we get $x =\pm \frac 1 2$, and we draw the graph:
+
+    % \includegraphics{}
+
+    The area of the region enclosed by the curves is
+
+    $$\begin{aligned}
+        \int_{-\frac 1 2}^{\frac 1 2} |4x^2 - 1 - \cos \pi x| dx &= \int_{-\frac 1 2}^{\frac 1 2}(\cos \pi x - 4x^2 + 1) dx \\
+        &= (\frac 1 \pi \sin \pi x - \frac{4}{3}x^3 + x)\biggl|_{-\frac 1 2}^{\frac 1 2} \\
+        &= \frac{1}{\pi} - \frac{1}{6} + \frac 1 2 - (-\frac{1}{\pi} + \frac 1 6 - \frac 1 2) \\
+        &= \frac 2 \pi + \frac 2 3
+    \end{aligned}$$
+
+    \subsection*{20. $x = y^4, y = \sqrt{2 - x}, y = 0$}
+
+    We can draw the graph:
+
+    % \includegraphics{}
+
+    Solving $\left\{ \begin{array}{ll}
+        x = y^4 \\
+        y = \sqrt{2 - x}
+    \end{array} \right.$, can we get $\left\{ \begin{array}{ll}
+        x = 1 \\
+        y = 1
+    \end{array} \right.$
+
+    $\because$ When $y > 0$, $x = y^4 \implies y = \sqrt[4] x $
+
+    $\therefore$ The area of the region enclosed by the curves is
+
+    $$\begin{aligned}
+        \int_0^1\sqrt[4]x dx + \int_1^2\sqrt{2 - x} dx &= (\frac{4}{5}x^{\frac 5 4})\biggl|_0^1 - [\frac{2}{3}(2 - x)^{\frac 3 2}]\biggl|_1^2 \\
+        &= \frac 4 5 - (0 - \frac 2 3) \\
+        &= \frac{22}{15}
+    \end{aligned}$$
+
+\end{document}

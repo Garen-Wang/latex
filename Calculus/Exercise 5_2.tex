@@ -1,0 +1,130 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+
+% done 
+\begin{document}
+    \title{MA5\_2 Exercise}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+
+    \section*{Exercise 5.3}
+
+    \subsection*{13. $h(x) = \int_1^{e^x} \ln t dt$}
+
+    $$\begin{aligned}
+        \frac{\mathrm d}{\mathrm dx}\int_1^{e^x} \ln  t dt &= e^x\ln e^x = xe^x
+    \end{aligned}$$
+
+    \subsection*{18. $y = \int_{\sin x}^1\sqrt{1 + t^2} dt$}
+
+    $$\begin{aligned}
+        \frac{\mathrm dy}{\mathrm dx} &= \frac{\mathrm d}{\mathrm dx}(-\int_{1}^{\sin x}\sqrt{1 + t^2} dt) \\
+        &= -\cos x\sqrt{1 + \sin ^2 x}
+    \end{aligned}$$
+
+    \subsection*{72. }
+
+
+    $$\begin{aligned}
+        \frac{\mathrm d}{\mathrm dx}\int_{g(x)}^{h(x)}f(t) dt &= \frac{\mathrm d}{\mathrm dx}(\int_{a}^{h(x)} f(t) dt - \int_{a}^{g(x)}f(t) dt) \\
+        &= \frac{\mathrm d}{\mathrm dx}\int_{a}^{h(x)} f(t)dt - \frac{\mathrm d}{\mathrm dx}\int_{a}^{g(x)} f(t)dt \\
+        &= f(h(x))h'(x) - f(g(x))g'(x)
+    \end{aligned}$$
+
+    \subsection*{57. $F(x) = \int_x^{x^2}e^{t^2} dt$}
+
+    $$\begin{aligned}
+        \frac{\mathrm d}{\mathrm dx}F(x) &= \frac{\mathrm d}{\mathrm dx}(\int_a^{x^2} e^{t^2} dt - \int_a^x e^{t^2} dt) \\
+        &= 2xe^{x^4} - e^{x^2}
+    \end{aligned}$$
+
+    \subsection*{58. $F(x) = \int_{\sqrt x}^{2x} \arctan t dt$}
+    
+    $$\begin{aligned}
+        \frac{\mathrm dF(x)}{\mathrm dx} &= \frac{\mathrm d}{\mathrm dx}(\int_{a}^{2x} \arctan t dt - \int_{a}^{\sqrt x} \arctan t dt) \\
+        &= 2\arctan 2x - \frac{\arctan \sqrt x}{2\sqrt x}
+    \end{aligned}$$
+
+    \subsection*{59. $y = \int_{\cos x}^{\sin x} \ln(1 + 2v) dv$}
+
+    $$\begin{aligned}
+        \frac{\mathrm d}{\mathrm dx}\int_{\cos x}^{\sin x} \ln (1 + 2v) dv &= \frac{\mathrm d}{\mathrm dx}(\int_a^{\sin x} \ln(1 + 2v) dv - \int_a^{\cos x} \ln (1 + 2v) dv) \\
+        &= \cos x \ln (1 + 2\sin x) + \sin x \ln (1 + 2\cos x)
+    \end{aligned}$$
+
+
+    \subsection*{62. If $f(x) = \int_0^x(1 - t^2) e^{t^2} dt$, on what interval is $f$ increasing?}
+
+    $\because f'(x) = (1 - x^2)e^{x^2}$
+
+    $\therefore$ when $1 - x^2 \geq 0 \iff x \in [-1, 1]$, $f'(x) \geq 0$, and $f$ is increasing
+
+
+    \subsection*{29. $\int_1^9\frac{x - 1}{\sqrt x} dx$}
+
+    $$\because \frac{x - 1}{\sqrt x} = \sqrt x - \frac{1}{\sqrt x}$$
+
+    $$\therefore \int_1^9\frac{x - 1}{\sqrt x}dx = (\frac 2 3 x^{\frac 3 2} - 2\sqrt x) \biggl | _1^9 = (18 - 6) - (\frac 2 3 - 2) = 12 + \frac 4 3 = \frac{40}{3}$$
+
+    \subsection*{32. $\int_{0}^{\pi / 4} \sec \theta \tan \theta d\theta$}
+
+    $$\because (\sec \theta)' = \sec \theta \tan \theta$$
+
+    $$\therefore \int_{0}^{\frac \pi 4} \sec \theta \tan \theta d\theta = \sec \theta \biggl |_0^{\frac \pi 4} = \sqrt 2 - 1$$
+
+    \subsection*{41. $\int_{-1}^1 e^{u + 1}du$}
+
+    $$\int_{-1}^1e^{u + 1}du = e^{u + 1} \biggl |_{-1}^1 = e^2 - e^0 = e^2 - 1$$
+
+    \subsection*{42. $\int_{1 / 2}^{1 / \sqrt 2} \frac{4}{\sqrt{1 - x^2}} dx$}
+
+    $$\because \frac{\mathrm d\arcsin x}{\mathrm dx} = \frac{1}{\sqrt{1 - x^2}}$$
+
+    $$\therefore \int_{\frac 1 2}^{\frac{1}{\sqrt 2}} \frac{4}{\sqrt{1 - x^2}} dx = 4\arcsin x \biggl | _{\frac 1 2}^{\frac{1}{\sqrt 2}} = 4(\frac \pi 4 - \frac \pi 6) = \frac \pi 3$$
+
+    \subsection*{44. $\int_{-2}^2f(x)dx \qquad$ where $f(x) = \left\{ \begin{array}{ll}
+        2 & \textrm{if $-2 \leq x \leq 0$} \\
+        4 - x^2 & \textrm{if $0 < x \leq 2$}
+    \end{array} \right.$}
+
+    $$\begin{aligned}
+        \int_{-2}^2f(x)dx &= \int_{-2}^0f(x)dx + \int_0^2f(x)dx \\
+        &= 2 \times (0 + 2) + (4x - \frac 1 3 x^3) \biggl | _0^2 \\
+        &= 4 + (8 - \frac 8 3 ) - (0) \\
+        &= \frac{28}{3}
+    \end{aligned}$$
+
+    \subsection*{46. }
+
+    The equation is wrong because $x$ cannot be $0$, thus $y = x^{-4}$ is not continuous on $[-1, 2]$.
+
+    In order to calculate the definite integral, we need to divide the intergral interval into $[-1, 0)$ and $(0, 2]$.
+    
+    \subsection*{47. }
+
+    The equation is also wrong because $y = \sec\theta \tan \theta$ is not defined at $\theta = \frac \pi 2$, thus the function is not continuous on $[\frac \pi 3, \pi]$.
+
+    In order to correct the equation, we need to split this interval into $[\frac \pi 3, \frac \pi 2)$ and $(\frac \pi 2, \pi]$.
+
+    \subsection*{70. $\lim_{n \to \infty}\frac 1 n (\sqrt{\frac 1 n} + \sqrt{\frac 2 n} + \dots + \sqrt{\frac n n})$}
+
+    $$\because \lim_{n \to \infty}\frac 1 n (\sqrt{\frac 1 n} + \sqrt{\frac 2 n} + \dots + \sqrt{\frac n n}) = \lim_{n \to \infty}\sum_{i = 1}^n \frac 1 n \sqrt{\frac{i}{n}}$$
+
+    which is the same as the Riemman sum of $f(x) = \sqrt{x}$ from $0$ to $1$, and $\Delta x = \frac{1}{n}$
+
+    $$\therefore \lim_{n \to \infty}\frac 1 n (\sqrt{\frac 1 n} + \sqrt{\frac 2 n} + \dots + \sqrt{\frac n n})  = \int_0^1\sqrt{x}dx = (\frac 2 3 x^{\frac 3 2})|_0^1 = \frac 2 3$$
+
+
+
+
+
+
+
+\end{document}

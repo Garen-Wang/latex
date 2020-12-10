@@ -1,0 +1,110 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+% done
+\begin{document}
+    \title{MA3\_2 Exercise}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+
+    \section*{Exercise 10.2}
+
+    \subsection*{11. $x = t^2 + 1, y = t^2 + t$}
+    
+    $$
+    \begin{aligned}
+        \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}} \\
+        &= \frac{2t + 1}{2t} = 1 + \frac{1}{2t}
+    \end{aligned}
+    $$
+
+    $$
+    \begin{aligned}
+        \frac{\mathrm{d^2}y}{\mathrm{d}x^2} &= \frac{\frac{\mathrm{d}}{\mathrm{d}t} (\frac{\mathrm{d}y}{\mathrm{d}x})}{\frac{\mathrm{d}x}{\mathrm{d}t}} \\
+        &= \frac{-\frac{1}{2t^2}}{2t} = -\frac{1}{4t^3}
+    \end{aligned}
+    $$
+
+    \subsection*{13. $x = e^t, y = te^{-t}$}
+
+    $$
+    \begin{aligned}
+        \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}} \\
+        &= \frac{e^{-t} - te^{-t}}{e^t} = (1 - t)e^{-2t}
+    \end{aligned}
+    $$
+
+    $$
+    \begin{aligned}
+        \frac{\mathrm{d^2}y}{\mathrm{d}x^2} &= \frac{\frac{\mathrm{d}}{\mathrm{d}t} (\frac{\mathrm{d}y}{\mathrm{d}x})}{\frac{\mathrm{d}x}{\mathrm{d}t}} \\
+        &= \frac{-e^{-2t} -2 (1 - t)e^{-2t}}{e^t} = (2t - 3)e^{-3t}
+    \end{aligned}
+    $$
+
+    \subsection*{15. $x = 2\sin t, y = 3\cos t, 0 < t < 2\pi$}
+
+    $$
+    \begin{aligned}
+        \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}} \\
+        &= \frac{-3\sin t }{2\cos t} = -\frac 3 2 \tan t
+    \end{aligned}
+    $$
+
+    $$
+    \begin{aligned}
+        \frac{\mathrm{d^2}y}{\mathrm{d}x^2} &= \frac{\frac{\mathrm{d}}{\mathrm{d}t} (\frac{\mathrm{d}y}{\mathrm{d}x})}{\frac{\mathrm{d}x}{\mathrm{d}t}} \\
+        &= \frac{-\frac 3 2 \sec ^2 t}{2 \cos t} = \frac{-3}{4\cos ^3 t}
+    \end{aligned}
+    $$
+
+    \section*{Exercise 10.3}
+
+    \subsection*{55. $r = 2\sin \theta, \theta = \frac \pi 6$}
+
+    $\because \left\{ \begin{array}{ll}
+        x = r(\theta) \cos \theta \\
+        y = r(\theta) \sin \theta
+    \end{array} \right.$
+
+    $\therefore$ 
+    
+    $$\begin{aligned}
+        \frac{\mathrm{d}y}{\mathrm{d}x} &= \frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}} \\
+        &= \frac{r'(\theta) \sin \theta + r(\theta) \cos \theta}{r'(\theta) \cos \theta - r(\theta) \sin \theta} \\
+        &= \frac{2 \cos \theta \sin \theta + 2 \sin \theta \cos \theta}{2 \cos ^2\theta - 2\sin ^2\theta} \\
+        &= \frac{2\sin 2\theta}{2cos 2\theta} \\
+        &= \tan 2\theta
+    \end{aligned}$$
+
+    When $\theta = \frac \pi 6$, the slope of tangent line is $\tan \frac \pi 3 = \sqrt 3$
+
+    \subsection*{59. $r = \cos 2\theta, \theta = \frac \pi 4$}
+    
+    By the conclusion above, 
+
+    $$\begin{aligned}
+        \frac{\mathrm dy}{\mathrm dx} &= \frac{-2\sin 2\theta \sin \theta + \cos 2\theta \cos \theta}{-2\sin 2\theta \cos \theta - \cos 2\theta \sin \theta} \\
+    \end{aligned}$$
+
+    When $\theta = \frac \pi 4$, $$\frac{\mathrm dy}{\mathrm dx} = \frac{-2 \times \frac{1}{\sqrt 2} + 0}{-2 \times \frac{1}{\sqrt 2} - 0} = 1$$
+
+    \subsection*{60. $r = 1 + 2\cos \theta, \theta = \frac \pi 3$}
+
+    By the conclusion above,
+
+    $$\begin{aligned}
+        \frac{\mathrm dy}{\mathrm dx} &= \frac{-2\sin \theta \sin \theta + (1 + 2\cos \theta) \cos \theta}{-2\sin \theta \cos \theta - (1 + 2\cos \theta) \sin \theta} \\
+        &= \frac{2\cos 2\theta + \cos \theta}{-2\sin 2\theta -\sin \theta}
+    \end{aligned}$$
+
+    When $\theta = \frac \pi 3$, the slope of tangent line is
+
+    $$\frac{2 \times (-\frac 1 2) + \frac 1 2}{-2 \times \frac{\sqrt 3}{2} - \frac{\sqrt 3}{2}} = \frac{\sqrt 3}{9}$$
+    % 10.2: 11 13 15 y' y''
+    % 10.3: 55 59 60
+\end{document}

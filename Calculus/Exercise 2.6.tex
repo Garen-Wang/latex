@@ -1,0 +1,159 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 2.6 Homework}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+
+    \section*{Evaluate the limit and justify each step by indicating the appropriate properties of limits.}
+
+    \subsection*{14. $\lim_{x \to \infty}\sqrt{\frac{12x^3 - 5x + 2}{1 + 4x^2 + 3x^3}}$}
+
+    $$
+    \begin{aligned}
+        \lim_{x \to \infty}\sqrt{\frac{12x^3 - 5x + 2}{1 + 4x^2 + 3x^3}} &= \lim_{x \to \infty}\sqrt{\frac{12 - \frac{5}{x^2} + \frac{2}{x^3}}{3 + \frac{4}{x^2} + \frac{1}{x^3}}} \\
+        &= \frac{12 - 0 + 0}{3 + 0 + 0} \\
+        &= 4
+    \end{aligned}
+    $$
+
+    \section*{Find the limit or show that it does not exist.}
+
+    \subsection*{26. $\lim_{x \to -\infty}(x + \sqrt{x^2 + 2x})$}
+
+    $$
+    \begin{aligned}
+        \lim_{x \to -\infty}(x + \sqrt{x^2 + 2x}) &= \lim_{x \to -\infty}\frac{x^2 - x^2 - 2x}{x - \sqrt{x^2 + 2x}} \\
+        &= \lim_{x \to -\infty}\frac{2x}{\sqrt{x^2 + 2x} - x} \\
+        &= \lim_{x \to -\infty}\frac{-2}{\sqrt{1 - \frac 2 x} + 1} \\
+        &= \frac{-2}{1 + 1} = -1
+    \end{aligned}
+    $$
+
+    \subsection*{27. $\lim_{x \to \infty}(\sqrt{x^2 + ax} - \sqrt{x^2 + bx})$}
+
+    $$
+    \begin{aligned}
+        \lim_{x \to \infty}(\sqrt{x^2 + ax} - \sqrt{x^2 + bx}) &= \lim_{x \to \infty}\frac{x^2 + ax - x^2 - bx}{\sqrt{x^2 + ax} + \sqrt{x^2 + bx}} \\
+        &= \lim_{x \to \infty}\frac{(a-b)x}{\sqrt{x^2 + ax} + \sqrt{x^2 + bx}} \\
+        &= \lim_{x \to \infty}\frac{a - b}{\sqrt{1 + \frac 1 a} + \sqrt{1 + \frac 1 b}} \\
+        &= \frac{a - b}{1 + 1} \\
+        &= \frac{a - b}{2}
+    \end{aligned}
+    $$
+
+    \subsection*{28. $\lim_{x \to \infty}\sqrt{x^2 + 1}$}
+
+    The limit does not exist. Here is the reason:
+
+    $\forall \epsilon > 0, \exists N = \lceil \sqrt{\epsilon ^2 - 1} \rceil$
+
+    if $ x > N$, then $$\sqrt{x^2 + 1} > \sqrt{N^2 + 1} > \epsilon$$
+
+    So $$\lim_{x \to \infty}\sqrt{x ^2 + 1} = \infty$$ which means that the limit does not exist.
+
+    \subsection*{30. $\lim_{x \to \infty}(e^{-x} + 2 \cos 3x)$}
+
+    The limit does not exist, and here is the reason:
+
+    Obviously, $\lim_{x \to \infty}e^{-x} = 0$.
+
+    Let $a_n = \frac{2n\pi}{3}, b_n = {(2n + 3)\pi}{3}$,
+
+    and we know $a_n \to \infty, b_n \to \infty$ as $n \to \infty$
+
+    By the Henie Theorem, $$\lim_{x \to \infty}2\cos 3x = \lim_{x \to \infty}2 \cos 2n \pi = 0$$
+
+    $$lim_{x \to \infty}2\cos 3x = \lim_{x \to \infty}(2n\pi + \pi) = -1$$
+
+    For these two limits are not equal, $\lim_{x \to \infty}2\cos 3x$ does not exist.
+
+    So $\lim_{x \to \infty}{e^{-x} + 2 \cos 3x}$ does not exist.
+
+    \subsection*{33. $\lim_{x \to -\infty}\arctan(e^x)$}
+
+    Let $u = e^x$, $u_0 = \lim_{x \to -\infty}e^x = 0$. So $$\lim_{x \to -\infty}\arctan(e^x) = \lim_{u \to u_0}\arctan(u) = 0$$
+
+    \subsection*{36. $\lim_{x \to \infty}\frac{\sin^2 x}{x^2 + 1}$}
+
+    Obviously, $$\lim_{x \to \infty} \frac{1}{x^2 + 1} = 0$$ which means $\lim_{x \to \infty}\frac{1}{x^2 + 1}$ is infinitesimal.
+
+    And $\because$ $$\lim_{x \to \infty}\sin ^2 x \in [0, 1]$$ which means $\lim_{x \to \infty}\sin^2 x$ is bounded.
+
+    By the properties of infinitesimal, $$\lim_{x \to \infty}\frac{\sin^2 x}{x ^2 + 1} = 0$$
+
+    \subsection*{37. $\lim_{x \to \infty}(e^{-2x} \cos x)$}
+
+    Obviously, $$\lim_{x \to \infty} e^{-2x} = 0$$ which means this value is infinitesimal.
+
+    And $\because$ $$\lim_{x \to \infty}\cos x \in [-1, 1]$$ which means this value is bounded.
+
+    By the properties of infinitesimal, $$\lim_{x \to \infty}e^{-2x}\cos x = 0$$
+
+    \subsection*{51. A function $f$ is a ratio of quadratic functions and has a vertical asymptote $x = 4$ and just one x-intercept, $x=1$. It is known that $f$ has a removable discountinuity at $x = -1$ and $\lim_{x \to -1}f(x) = 2$. Evaluate}
+
+    \begin{enumerate}[(a)]
+        \item $f(0)$
+        
+        Let $f(x) = \frac{g(x)}{h(x)}$.
+
+        $\because f(x)$ has a vertical asymptote $x = 4$
+
+        $\therefore h(x) = 0$ as $ x = 4$, which means $$h(x) = (x - 4)^2$$
+
+        And we can establish a system of equations:
+
+        $$
+        \begin{cases}
+            f(1) = \frac{g(1)}{h(1)} = 0 \\
+            f(-1) = \frac{g(-1)}{h(-1)} = 2
+        \end{cases}
+        $$
+
+        Solving this system, we can get $g(x) = x(x - 1)$
+
+        Therefore, $f(0) = 0$
+
+        \item $\lim_{x \to \infty}f(x)$
+        $$
+        \begin{aligned}
+            \lim_{x \to \infty}f(x) &= \lim_{x \to \infty}\frac{x(x - 1)}{(x - 4)^2} \\
+            &= \lim_{x \to \infty}\frac{1 - \frac 1 x}{(1 - \frac 4 x) ^2} \\
+            &= \frac{1 - 0}{(1 - 0)^2} \\
+            &= 1
+        \end{aligned}
+        $$
+    \end{enumerate}
+
+    \subsection*{71. Use Definition 8 to prove that $\lim_{x \to -\infty}\frac 1 x = 0$.}
+
+    \begin{proof}
+        $\forall \epsilon > 0, \exists N = -\frac{1}{\epsilon}$
+
+        If $x < N$, then $$|f(x) - 0| = -\frac 1 x  < -\frac 1 N = \epsilon$$
+
+
+    \end{proof}
+
+
+    \subsection*{75. Prove that $$\lim_{x \to \infty}f(x) = \lim_{t \to 0^+}f(1/t)$$ and $$\lim_{x \to -\infty}f(x) = \lim_{t  \to 0^-}f(1/t)$$ if these limits exist.}
+     
+    \begin{proof}
+        $\because \lim_{x \to \infty}x = \infty =  \lim_{t \to 0^+}\frac 1 t = \infty$
+        
+        $\therefore \lim_{x \to \infty}f(x) = \lim_{t \to 0^+}f(1/t)$
+
+        $\because \lim_{x \to -\infty}x = -\infty = \lim_{x \to 0^-}\frac 1 t = -\infty$
+        
+        $\therefore \lim_{x \to -\infty}f(x) = \lim_{t\to 0^-}f(1/t)$
+        
+    \end{proof}
+
+\end{document}

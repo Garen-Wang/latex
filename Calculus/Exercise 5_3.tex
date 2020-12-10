@@ -1,0 +1,101 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+% done
+\begin{document}
+    \title{MA 5\_3 Exercise}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+    \maketitle
+    
+    \section*{Exercise 5.4}
+    \subsection*{11. $\int \frac{x^3 - 2 \sqrt x}{x} dx$}
+
+    $$\begin{aligned}
+        \int \frac{x^3 - 2 \sqrt x}{x}dx &= \int x^2 - \frac{2}{\sqrt x} dx \\
+        &= \frac{1}{3} x^3 - 4\sqrt x + C
+    \end{aligned}$$
+
+    \subsection*{12. $\int (x^2 + 1 + \frac{1}{x^2 + 1}) dx$}
+
+    $$\begin{aligned}
+        \int (x^2 + 1 + \frac{1}{x^2 + 1}) dx &= \frac{1}{3}x^3 + x + \arctan x + C
+    \end{aligned}$$
+
+    \subsection*{14. $\int (\csc ^2 t - 2 e^t)dt$}
+
+    $$\begin{aligned}
+        \int (\csc^2 t - 2e^t) dt &= \int (\frac{1}{\sin ^2} - 2 e^t) dt \\
+        &= -\cot t - 2 e^t + C
+    \end{aligned}$$
+
+    \subsection*{16. $\int \sec t(\sec t + \tan t) dt$}
+
+    $$\begin{aligned}
+        \int \sec t(\sec t + \tan t) dt &= \int (\sec^2 t + \sec t \tan t)dt \\
+        &= \tan t + \sec t + C
+    \end{aligned}$$
+
+    \subsection*{18. $\int \frac{\sin 2x}{\sin x} dx$}
+
+    $$\begin{aligned}
+        \int \frac{\sin 2x}{\sin x}dx &= \int 2\cos x dx \\
+        &= 2\sin x + C
+    \end{aligned}$$
+
+    \subsection*{27. $\int_0^\pi(5e^x + 3\sin x) dx$}
+
+    $$\begin{aligned}
+        \int_0^\pi (5e^x + 3\sin x) dx &= (5e^x - 3\cos x)\biggl|_{0}^{\pi} \\
+        &= (5e^\pi + 3) - (5 - 3) \\
+        &= 5e^\pi + 1
+    \end{aligned}$$
+
+    \subsection*{33. $\int_1^2(\frac x 2 - \frac 2 x)dx$}
+
+    $$\begin{aligned}
+        \int_1^2(\frac x 2 - \frac 2 x) dx &= (\frac{x^2}{4} - 2 \ln x)\biggl|_1^2 \\
+        &= (1 - 2\ln 2) - (\frac 1 4 - 0) \\
+        &= -2\ln 2 - \frac 1 4
+    \end{aligned}$$
+
+    \subsection*{34. $\int_0^1(5x - 5^x) dx$}
+
+    $$\begin{aligned}
+        \int_0^1(5x - 5^x) dx &= (\frac 5 2 x^2 - \frac{5^x}{\ln 5})\biggl| _0^1 \\
+        &= (\frac 5 2 - \frac{5}{\ln 5}) - (0 - \frac{1}{\ln 5}) \\
+        &= \frac{5}{2} - \frac{4}{\ln 5}
+    \end{aligned}$$
+
+    \subsection*{37. $\int_0^{\frac \pi 4}\frac{1 + \cos ^2 \theta}{\cos ^2 \theta} d\theta$}
+
+    $$\begin{aligned}
+        \int_0^{\frac \pi 4}\frac{1 + \cos ^2 \theta}{\cos ^2 \theta} d\theta &= \int_0^{\frac \pi 4}(1 + \frac{1}{\cos ^2\theta }) d\theta \\
+        &= (\tan \theta + \theta) \biggl|_{0}^{\frac{\pi}{4}} \\
+        &= 1 + \frac \pi 4
+    \end{aligned}$$
+
+    \subsection*{38. $\int_{0}^{\frac{\pi}{3}} \frac{\sin \theta + \sin \theta \tan ^2 \theta}{\sec^2 \theta} d\theta$}
+
+    $$\begin{aligned}
+        \int_{0}^{\frac{\pi}{3}} \frac{\sin \theta + \sin \theta \tan ^2 \theta}{\sec^2 \theta} d\theta &= \int_{0}^{\frac \pi 3}(\sin \theta \cos^2 \theta + \sin \theta \tan ^2 \theta \cos ^2 \theta) d\theta \\
+        &= \int_{0}^{\frac \pi 3}(\sin \theta \cos ^2 \theta + \sin \theta \sin ^2\theta) d \theta \\
+        &= \int_{0}^{\frac \pi 3}\sin \theta d \theta \\
+        &= (-\cos \theta) \biggl|_{0}^{\frac \pi 3} \\
+        &= (- \frac 1 2) - (-1) \\
+        &= \frac 1 2
+    \end{aligned}$$
+
+    \subsection*{44. $\int_0^2|2x - 1|dx$}
+
+    $$\begin{aligned}
+        \int_0^2|2x - 1|dx &= \int_0^{1/2}(1 - 2x) dx + \int_{1/2}^2(2x - 1)dx \\
+        &= (x - x^2)\biggl|_{0}^{\frac 1 2} + (x^2 - x)\biggl | _{\frac 1 2}^2 \\
+        &= (\frac 1 2 - \frac 1 4) + (4 - 2 - \frac 1 4 + \frac 1 2) \\
+        &= \frac 5 2
+    \end{aligned}$$
+\end{document}

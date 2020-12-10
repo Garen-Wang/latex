@@ -1,0 +1,136 @@
+\documentclass[UTF-8]{beamer}
+\usepackage{ctex}
+\usetheme{CambridgeUS}
+\setCJKsansfont{SimSun}
+\setsansfont{Times New Roman}
+
+\begin{document}
+\title{函数与递归}
+\subtitle{可能是最后一课}
+\author{Garen-Wang}
+\date{\today}
+
+\titlepage
+\begin{frame}{目录}
+\tableofcontents
+\end{frame}
+
+\begin{section}{函数}
+\begin{frame}{函数介绍}
+\pause
+函数(function)，又名子程序。在C语言中，子程序的作用是由一个主函数和若干个函数构成。由主函数调用其他函数，其他函数也可以互相调用。同一个函数可以被一个或多个函数调用任意多次。\pause
+
+函数的基本语法构成由：\textbf{返回类型+函数名+参数+大括号}\pause
+
+函数的实现意义是用来进行专一化处理问题，而不是一个main函数写满了所有基础操作。\pause
+
+使用函数可以更简单明了地解决问题，有时还能办到一些神奇的事情。
+\end{frame}
+\begin{frame}{常见函数应用}
+\pause
+函数的应用太广泛了，所以下面的只是一些题目的操作。\pause
+
+\begin{itemize}
+  \item 维护进制转换操作
+  \item 判断一个字符串是不是回文串
+  \item 求出一个函数（数学的）的值
+  \item 交换两个数
+  \item 求两个数的最大公约数
+\end{itemize}
+\pause
+等等等等。。。
+\end{frame}
+\end{section}
+
+\begin{section}{函数例题：P1149 火柴棒等式}
+\begin{frame}{P1149 火柴棒等式}
+\pause
+题目要求用$n$根火柴摆出类似$A+B=C$的等式，询问等式种类。注意数字可以是多位数。$n \leq 24$。\pause
+
+加号和等号都需要2根火柴，所以先减掉4，剩下的就是枚举三个数了。\pause
+
+而我们也不用枚举三个数，因为加法的性质，只要确定两个，第三个就出来了。\pause
+
+所以最重要的是判断一个数由几根火柴构成。而实现这个功能，可以使用函数封装起来。\pause
+
+最高不超过1111，使用火柴数最少并且数字最大的数就是它了。\pause
+
+所以一个$O(1111^2)$的双重for循环就能够解决问题。
+\end{frame}
+\end{section}
+
+\begin{section}{递归}
+\begin{frame}{递归}
+\pause
+递归(recursion)是函数的更深层应用，因为函数允许嵌套使用，甚至可以使用自己！\pause
+
+常见的递归应用方法有：\pause
+\begin{itemize}
+  \item dfs（深度优先搜索或遍历）
+  \item bfs（宽度优先搜过或遍历）
+  \item 回溯法
+  \item 减小问题范围（递推的反过程）
+\end{itemize}
+\pause
+时间不够，只能够挑一个讲，我们讲回溯法。
+\end{frame}
+\begin{frame}{回溯法}
+\pause
+回溯法是一种搜索，相比于传统dfs的不同之处是回溯了。\pause
+
+虽然回溯之后会适当减缓速度，但是也并不慢。\pause
+
+适用于全方位搜索答案的问题。\pause
+
+让我去网上找回溯法的框架。\pause
+
+回溯法的经典例题是\textbf{八皇后问题}，时间关系我不讲。
+\end{frame}
+\end{section}
+
+\begin{section}{递归例题：P1036 选数}
+\begin{frame}{P1036 选数}
+\pause
+题目要求你求出$n$个数取$k$个的排列情况中\textbf{和为素数}的种类数。\pause
+
+显然情况种类数共有$C_n^k$种。但是求出这个东西并没什么卵用。\pause
+
+而我们需要做的是模拟所有选择，然后得到和，再判断是否为质数。\pause
+
+这道题我来亲手写一写。。。
+\end{frame}
+\end{section}
+
+\begin{section}{后面的话}
+\begin{frame}{后面的话}
+\pause
+How time flies!高一就快结束了！\pause
+
+这个团队在下学期起头应该不会再进行维护了，在复赛后会重新招入新高一的团队成员。\pause
+
+希望大家在这一年能够学到东西，也希望大家多多包涵我的不足之处。\pause
+
+进入高二后，仅存的团队成员可能只会有3到4位。\pause
+
+最希望大家的事情是能够在10月的初赛好好发挥，一个月后公款去广州！（更好的是拿奖了啊！）\pause
+
+我也要去好好准备去招待高一了。。。
+\end{frame}
+\begin{frame}{吐槽}
+\pause
+我肝这个课件的时候，CE了一个小时。。。\pause
+
+想写句话来吐槽又CE了。。。\pause
+
+啊！伟大的\LaTeX！
+\end{frame}
+\end{section}
+
+\begin{frame}
+\pause
+\begin{center}
+  \huge{谢谢！}
+\end{center}
+\flushright{all made by \LaTeX}
+\end{frame}
+\end{document}

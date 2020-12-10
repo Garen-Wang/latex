@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Pages from Infinitesimal Assignment}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+
+    \section{Calculate the following limits.}
+
+    \subsection{$\lim_{n \to \infty}(\cos \frac x n)^{n^2}$}
+
+    $\because $ cosine function is continuous function,
+
+    $\therefore \lim_{n \to \infty} \cos(\frac x n) = \cos \lim_{n \to \infty}\frac x n = \cos 0 = 1$
+
+    $\therefore \lim_{n \to \infty}(\cos \frac x n)^{n^2} = \lim_{n \to \infty}1^{n^2} = 1$
+
+
+    \subsection{$\lim_{x \to 2}\frac{2^x - x^2}{x - 2}$}
+
+    Let $f(x) = 2^x$, and obviously $f'(x) = 2^x \ln 2$
+
+    $$
+    \begin{aligned}
+        \lim_{x \to 2}\frac{2^x - x^2}{x - 2} &= \lim_{x \to 2}\frac{2^x - 4 - (x^2 - 4)}{x - 2} \\
+        &= \lim_{x \to 2}\frac{2^x - 4}{x - 2} + \lim_{x \to 2}(x + 2) \\
+        &= f'(2) + 4 \\
+        &= 4(1 + \ln 2)
+    \end{aligned}
+    $$
+
+\end{document}

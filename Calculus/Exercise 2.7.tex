@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 2.7}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+    
+    \subsection*{28. $f(t) = 2t^3 + t$, find $f'(a)$.}
+
+    $$
+    \begin{aligned}
+        f'(a) &= \lim_{t \to a}\frac{f(t) - f(a)}{t - a} \\
+        &= \lim_{t \to a}(\frac{2(t^3 - a^3)}{t - a} + 1) \\
+        &= \lim_{t \to a}[2(t^2 + at + a^2) + 1] \\
+        &=  6a^2 + 1
+    \end{aligned}
+    $$
+
+    \subsection*{30. $f(x) = x^{-2}$, find $f'(a)$.}
+
+    $$
+    \begin{aligned}
+        f'(a) &= \lim_{x \to a}\frac{(\frac 1 x)^2 - (\frac 1 a)^2}{x - a} \\
+        &= \lim_{x \to a}\frac{(\frac 1 x - \frac 1 a)(\frac 1 x + \frac 1 a)}{x - a} \\
+        &= \lim_{x \to a}\frac{(\frac{a - x}{ax} \frac{a+x}{ax})}{x - a} \\
+        &= \lim_{x \to a}\frac{a+x}{(ax)^2} \\
+        &= \frac{2a}{a^4} \\
+        &= 2a^{-3}
+    \end{aligned}
+    $$
+
+    \subsection*{31. $f(x) = \sqrt{1 - 2x}$, find $f'(a)$.}
+
+    $$
+    \begin{aligned}
+        f'(a) &= \lim_{x \to a}\frac{\sqrt{1 - 2x} - \sqrt{1 - 2a}}{x - a} \\
+        &= \lim_{x \to a}\frac{(1 - 2x) - (1 - 2a)}{(x - a)(\sqrt{1 - 2x} + \sqrt{1 - 2a})} \\
+        &= \lim_{x \to a}\frac{-2}{\sqrt{1 - 2x} + \sqrt{1 - 2a}} \\
+        &= \frac{-2}{2\sqrt{1 - 2a}} \\
+        &= \frac{-1}{\sqrt{1 - 2a}}
+    \end{aligned}
+    $$
+
+    \subsection*{34. $\lim_{h \to 0}\frac{\sqrt[4]{16 + h} - 2}{h}$}
+
+    Compared to $\lim_{h \to 0}\frac{f(x_0 + h) - f(x_0)}{h}$, we can know $$f(x_0) = \sqrt[4]{16} = 2, \quad f(x_0 + h) = \sqrt[4]{16 + h}$$
+
+    So $f = \sqrt[4]x, a = 2$
+    
+    \subsection*{35. $\lim_{x \to 5}\frac{2^x - 32}{x - 5}$}
+
+    Compared to $\lim_{x \to a}\frac{f(x) - f(a)}{x - a}$, we can know $$f(5) = 2^5 = 32, \quad f(x) = 2^x$$
+
+    So $f = 2^x, a = 5$
+
+    \subsection*{37. $\lim_{h \to 0}\frac{\cos(\pi + h) + 1}{h}$}
+
+    Compared to $\lim_{h \to 0}\frac{f(x_0 + h) - f(x_0)}{h}$, we can know $$f(\pi) = \cos \pi = -1, \quad f(\pi + h) = \cos(\pi + h)$$
+
+    So $f = \cos x, a = \pi$
+
+    \section*{53~54. Determine whether $f'(0)$ exists.}
+
+    \subsection*{53. $$f(x) = \left\{ \begin{array}{ll}
+        x\sin\frac 1 x & \textrm{if $x \not = 0$} \\
+        0 & \textrm{if $x = 0$}
+    \end{array} \right.$$}
+
+    $$
+    \begin{aligned}
+        f'(0) &= lim_{x \to 0}\frac{f(x) - f(0)}{x} \\
+        &= \lim_{x \to 0}\sin \frac 1 x \\
+        &= \sin \lim_{x \to 0}\frac 1 x
+    \end{aligned}
+    $$
+
+    Since $\lim_{x \to 0}\frac 1 x = \infty$, $f'(0) = \sin \infty$ does not exists.
+
+    \subsection*{54. $$f(x) = \left\{ \begin{array}{ll}
+        x^2\sin\frac 1 x & \textrm{if $x \not = 0$} \\
+        0 & \textrm{if $x = 0$}
+    \end{array} \right.$$}
+
+    $$
+    \begin{aligned}
+        f'(0) &= \lim_{x \to 0}(x^2\sin \frac 1 x) \\
+        &= \lim_{x \to 0}x^2 \times \lim_{x \to 0}\sin \frac 1 x \\
+    \end{aligned}
+    $$
+
+    $\because x^2$ is infinitesimal as $x \to 0$, and $\sin \frac 1 x$ is bounded on $[-1,1]$ as $x \to 0$,
+
+    $\therefore \lim_{x \to 0}f(x) = \lim_{x \to 0}x^2\sin \frac 1 x = 0 = f(0)$
+
+    $\therefore f(x)$ is continuous everywhere.
+
+\end{document}
+
+% 28 30 31 34 35 37 53 54

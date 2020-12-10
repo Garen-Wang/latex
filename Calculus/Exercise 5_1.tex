@@ -1,0 +1,98 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+% done 
+\begin{document}
+    \title{MA5\_1 Exercise}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+
+    \section*{Exercise 5.2}
+
+    \subsection*{66. Prove $\int_{0}^{\pi / 2} x \sin x dx \leq \frac{\pi ^2}{8}$}
+
+    \begin{proof}
+        $$\because \int_a^b xdx = (\frac{x^2}{2}) \biggl |_a^b = \frac{b^2 - a^2}{2}$$
+
+        $\because \sin x \leq 1 $ when $x \in [0, \frac \pi 2]$
+
+        $\therefore$ $$\int_{0}^{\frac \pi 2} x \sin x dx \leq \int_{0}^{\frac \pi 2} xdx = \frac{\pi^2}{8}$$
+    \end{proof}
+
+    \subsection*{68.}
+
+    \begin{enumerate}[(a)]
+        \item If $f$ is continuous on $[a, b]$, show that $$|\int_{a}^{b}f(x)dx| \leq \int_{a}^{b}|f(x)|dx$$
+
+        \begin{proof}
+            $\because -|f(x)| \leq f(x) \leq |f(x)|$
+
+            $\therefore -\int_{a}^{b}|f(x)|dx \leq \int_{a}^{b}f(x)dx \leq \int_{a}^{b}|f(x)|dx$, which means that
+
+            $$|\int_{a}^{b}f(x)dx| \leq \int_{a}^{b}|f(x)|dx$$
+        \end{proof}
+
+        \item Use the result of part (a) to show that $$|\int_{0}^{2\pi} f(x) \sin 2x dx| \leq \int_{0}^{2\pi}|f(x)|dx$$
+
+        \begin{proof}
+            By the conclusion of part (a), we can get: $$|\int_{0}^{\frac \pi 2}f(x)\sin 2x dx| \leq \int_{0}^{\frac \pi 2}|f(x) \sin 2x| dx$$
+
+            $\because $ when $x \in [0, \frac \pi 2]$, $| f(x)\sin 2x | = |f(x)| \sin 2x \leq |f(x)|$
+
+            $\therefore$ $$|\int_{0}^{\frac \pi 2}f(x)\sin 2x dx| \leq \int_{0}^{\frac \pi 2}|f(x) \sin 2x| dx \leq \int_{0}^{\frac \pi 2}|f(x)| dx$$
+        \end{proof}
+    \end{enumerate}
+
+    \subsection*{70. Let $f(x) = \left\{ \begin{array}{ll}
+        0 & \textrm{if $x = 0$} \\
+        \frac 1 x & \textrm{if $0 < x \leq 1$}
+    \end{array} \right.$. Show that $f$ is not integrable on $[0, 1]$.}
+
+    \begin{proof}
+        Suppose that $f$ is integrable on $[0, 1]$, then 
+
+        $$\int_{0}^{1}f(x)dx = \lim_{n \to \infty}\sum_{i = 1}^{n}f(x_i^*)\Delta x$$
+
+        where $\Delta x = \frac{1}{n}$
+
+        The first term of summation is $$f(x_1^*)\Delta x = \frac 1 nf(x_1^*)$$
+
+        Then $$$$
+    \end{proof}
+
+    \subsection*{71. $\lim_{n \to \infty} \sum_{i = 1}^n \frac{i^4}{n^5}$}
+
+    $$\because \lim_{n \to \infty}\sum_{i = 1}^n \frac{i^4}{n^5} = \lim_{n \to \infty}\sum_{i = 1}^n (\frac i n)^4 \frac{1}{n} $$
+
+    which is the same as the Riemann sum of $f(x) = x^4$ from $0$ to $1$ when $x_i^* = \frac 1 n$
+
+    $$\therefore \lim_{n \to \infty}\sum_{i = 1}^n \frac{i^4}{n^5} = \int_0^1x^4dx = \frac{x^5}{5} \biggl |_0^1 = \frac 1 5$$
+
+    \subsection*{72. $\lim_{n \to \infty}\frac 1 n \sum_{i = 1}^n\frac{1}{1 + (i / n)^2}$}
+
+    $$\because \lim_{n \to \infty}\frac 1 n \sum_{i = 1}^n\frac{1}{1 + (i / n)^2} = \lim_{n \to \infty}\sum_{i = 1}^n \frac{1}{1 + (\frac i n)^2} \frac 1 n$$
+
+    which is the same as the Riemann sum of $g(x) = \frac{1}{1 + x^2}$ from $0$ to $1$ when $x_i^* = \frac 1 n$
+
+    $$\therefore \lim_{n \to \infty}\frac 1 n \sum_{i = 1}^n\frac{1}{1 + (i / n)^2} = \int_0^1g(x)dx = \arctan x \biggl | _0^1 = \frac \pi 4$$
+
+    \subsection*{73. Find $\int_1^2 x^{-2}dx$}
+
+    Let $x_0 = 1, x_n = 2, \Delta x = \frac{x_n - x_0}{n} = \frac 1 n$, $x_i = x_{i - 1} + \Delta x$, $x_i^* = \sqrt{x_{i - 1}x_i}$, then 
+
+    $$\begin{aligned}
+        \int_1^2\frac{1}{x^2} dx &= \lim_{n \to \infty} \sum_{i = 1}^n \Delta x \frac{1}{(x_i^*)^2}  \\
+        &= \lim_{n \to \infty} \sum_{i = 1}^n \frac 1 n \frac{1}{x_{i - 1}{x_i}}  \\
+        &= \lim_{n \to \infty} \sum_{i = 1}^n \frac 1 n \sum_{i = 1}^n (\frac{1}{x_{i - 1}} - \frac{1}{x_i}) \\
+        &= \lim_{n \to \infty} n \times \frac 1 n (\frac 1 1 - \frac 1 2) \\
+        &= \frac 1 2
+    \end{aligned}$$
+
+    % 68 70 71 72 73
+\end{document}

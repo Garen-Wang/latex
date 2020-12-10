@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\newenvironment{solution}{
+    \par \textbf{Solution: } \quad \par
+}{\par}
+
+
+\begin{document}
+    \title{Chapter 3 First Exercise}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+
+    \section*{Exercise 3.1}
+
+    \subsection*{35. $y = x^4 + 2e^x, \quad (0,2)$}
+
+    \begin{solution}
+        $\because y' = 4x^3 + 2e^x$
+
+        $\therefore y'|_{x = 0} = 4 \times 0 + 2 \times 1 = 2$
+
+        $\therefore$ the slope of the tangent line to the curve at $(0, 2)$ is $2$ 
+
+        $\therefore$ the equation of the tangent line is $$y - 2 = 2(x - 0) \iff y = 2x + 2$$
+        
+        $\therefore$ the slope of the normal line to the curve at $(0,0)$ is $-\frac 1 2$
+
+        $\therefore$ the equation of the normal line is $$y - 2 = -\frac 1 2 (x - 0) \iff x + 2y - 4 = 0$$
+    \end{solution}
+
+    \subsection*{53. Show that the curve $y = 2e^x + 3x + 5x^3$ has no tangent line with slope $2$.}
+
+    \begin{proof}
+        $\because y' = 2e^x + 3 + 15x^2$
+
+        $\because e^x > 0, x^2 \geq 0$
+
+        $\therefore y' = 2e^x + 15x^2 + 3 > 3 > 2$
+
+        $\therefore y = 2e^x + 3x + 5x^3$ has no tangent line with slope $2$.
+    \end{proof}
+
+    \subsection*{54. Find an equation of the tangent line ot the curve $y = x \sqrt x $ that is parallel to the line $y = 1 + 3x$.}
+
+    \begin{solution}
+        Obviously, $(1 + 3x)' = 3$
+        
+        And we will find a tangent line to $y = x\sqrt x$ whose slope is $3$.
+
+        Let $f(x) = x\sqrt x$, and $$f'(x) = 1 \times \sqrt x + x \times \frac{1}{2\sqrt x} = \frac 3 2 \sqrt x $$
+
+        Solving the equation $\frac 3 2 \sqrt x = 3$, we can get $x = 4$
+
+        $\because$ When $x = 4$, $x\sqrt x = 4 \times 2 = 8$
+
+        $\therefore$ an tangent line to the curve at $x = 4$ is $$y - 8 = 3(x - 4) \iff y = 3x - 4$$
+
+    \end{solution}
+
+    \subsection*{75. Let $$f(x) = \left\{ \begin{array}{ll}
+        x^2 & \textrm{if $x \leq 2$} \\
+        mx + b & \textrm{if $x > 2$}
+    \end{array} \right.$$ Find the values of $m$ and $b$ that make $f$ differentiable everywhere.}
+
+    \begin{solution}
+        $\because f$ is differentiable everywhere
+        
+        $\therefore f $ is continuous everywhere
+
+        $\therefore$ $$f(2) = \lim_{x \to 2^+}f(x), f'(2) = \lim_{x \to 2^+}f'(x)$$
+
+        $\therefore \left \{ \begin{array}{ll}
+            \lim_{x \to 2^+}f(x) = 2m + b = f(2) = 4
+            \lim_{x \to 2^+}f'(x) = m = f'(2) = 4
+        \end{array} \right.$
+
+        Solving this equation set, we can get $\left \{ \begin{array}{ll}
+            m = 4 \\ b = -4
+        \end{array} \right.$
+
+    \end{solution}
+
+    \section*{Exercise 3.2}
+
+    \subsection*{52. (c) $y = \frac{x^2}{f(x)}$}
+
+    $$y' = \frac{2xf(x) - x^2f'(x)}{f^2(x)}$$
+
+    \subsection*{52. (d) $y = \frac{1 + xf(x)}{\sqrt x}$}
+
+    $$y' = \frac{(f(x) + xf'(x)) \sqrt x - (1 + xf(x)) \frac{1}{2\sqrt x}}{x}$$
+
+    \subsection*{46. If $h(2) = 4$ and $h'(2) = -3$, find $$\frac{d}{dx}(\frac{h(x)}{x})|_{x = 2}$$}
+
+    Let $h(x) = -3x + 10$, which satisfies $h(2) = 4$ and $h'(2) = -3$
+
+    $\frac{h(x)}{x} = -3 + \frac{10}{x}$
+
+    $(\frac{h(x)}{x})' = (\frac{10}{x})' = \frac{-10}{x^2}$
+
+    $\therefore \frac{d}{dx}(\frac{h(x)}{x})|_{x = 2} = \frac{-10}{4} = -\frac 5 2$
+
+    \subsection*{24. $f(x) = \frac{1 - xe^x}{x + e^x}$}
+
+    $$
+    \begin{aligned}
+        f'(x) &= \frac{-[(x + 1)e^x](x + e^x) - (1 - xe^x)(1 + e^x)}{(x + e^x)^2} \\
+    \end{aligned}
+    $$
+
+\end{document}
+% 52(c,d) 46 24

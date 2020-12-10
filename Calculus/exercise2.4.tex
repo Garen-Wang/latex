@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{ctex}
+\usepackage{graphicx}
+\newenvironment{solution}{
+    \par \textbf{Solution: } \quad \par
+}{\par}
+\begin{document}
+    \title{Calculus Exercise 2.4 Homework}
+    \author{计创 \space 王樾}
+    \date{\today}
+    \maketitle
+
+    \begin{itemize}
+        \item 15 \and 18. Prove the statement using the $\epsilon , \delta$ definition of a limit and illustrate with a diagram.
+        
+        \begin{solution}
+            (15) Proof:
+
+            $\forall \epsilon \ge 0, \exists \delta = \frac{\epsilon}{2}$
+            
+            if $ 0 < |x - 1| < \delta$
+
+            then $|2x + 3 - 5| = 2|x - 1| < 2\delta = \epsilon$
+
+            illustration is below.
+
+            \includegraphics[width=11cm, height=7cm]{0925T15.jpg}
+
+            (18) Proof:
+
+            $\forall \epsilon \ge 0, \exists \delta = \frac{\epsilon}{3}$
+
+            if $0 < |x - (-2)| = |x + 2| < \delta$
+
+            then $|3x + 5 - (-1)| = |3x + 6| = 3|x + 2| < 3\delta = \epsilon$
+
+            illustration is below.
+
+            \includegraphics[width=11cm, height=7cm]{0925T18.jpg}
+
+        \end{solution}
+
+        \item 21 \and 29 \and 32. Prove the statement using the $\epsilon , \delta$ definition of a limit.
+        
+        21. $\lim_{x\to 2} \frac{x^2+x-6}{x-2} = 5$
+
+        29. $\lim_{x\to 2} (x^2 - 4x + 5) = 1$
+
+        32. $lim_{x\to 2} x^3 = 8$
+        \begin{solution}
+            (21) Proof:
+            
+            $\forall \epsilon \ge 0, \exists \delta = \epsilon$
+            
+            if $0 < |x - 2| < \delta$
+            
+            then $|\frac{x^2 + x - 6}{x - 2} - 5| = |\frac{x^2 - 4x - 4}{x - 2}| = |x - 2| < \delta = \epsilon$
+
+            (29) Proof:
+
+            $\forall \epsilon \ge 0, \exists \delta = \sqrt{\epsilon}$
+
+            if $0 < |x - 2| < \delta$
+
+            then $|x^2 - 4x + 5 - 1| = |(x - 2) ^ 2| = |x - 2| ^ 2 < \delta ^2 = \epsilon$
+
+            (32) Proof:
+
+            $\forall \epsilon \ge 0, \exists \delta = \min(\frac{\epsilon}{19}, 1)$
+            
+            if $0 < |x - 2| < \delta$
+
+            then $|x^3 - 8| = |x - 2||x^2 + 2x + 4| < |x^2 + 2x + 4|\delta$
+
+            restrict $x$ to lie in a neighborhood of 2, such that $|x - 2| < 1$
+
+            so $1 < x < 3$
+
+            then $|x^3 - 8| < |(x + 1)^2 + 3| \delta < 19\delta = \epsilon$
+        \end{solution}
+        \item 36. Prove that $\lim_{x\to 2} \frac{1}{x} = \frac{1}{2}$.
+        \begin{solution}
+            (36) Proof:
+
+            $\forall \epsilon \ge 0, \exists \delta = \min(2\epsilon, 1)$
+
+            if $0 < |x - 2| < \delta$
+
+            then $|\frac{1}{x} - \frac{1}{2}| = \frac{|x - 2|}{2|x|}$
+
+            restrict $x$ to lie in a neighborhood of 2, such that $|x - 2| < 1$
+
+            so $1 < x < 3$
+
+            then $\frac{|x-2|}{2|x|} < \frac{|x - 2|}{2} < \frac{\delta}{2} = \epsilon$
+
+
+        \end{solution}
+        \item 39. If the function $f$ is defined by $$f(x) = \left\{ \begin{array}{ll} 0 & \textrm{if x is rational} \\ 1 & \textrm{if x is irrational} \end{array} \right.$$ prove that $\lim_{x\to 0} f(x)$ does not exist.
+        \begin{solution}
+            (39) Proof:
+
+            $\exists \epsilon = \frac{1}{2}, \forall \delta > 0$
+
+            if $ 0 < |x| < \delta$, because of the denseness of real number, $\exists x_1 \in Q, x_2 \notin Q$
+
+            but $|f(x_1) - f(x_2)| = 1 > \epsilon$
+
+            so $f(x)$ doesn't have a limit when $x$ approach $0$.
+
+        \end{solution}
+        
+        \item 42. Prove, using Definition 6, that $\lim_{x\to -3} \frac{1}{(x + 3) ^ 4} = \infty$
+        \begin{solution}
+            (42) Proof:
+
+            $\forall M > 0, \exists \delta = \lfloor \sqrt[4]{\frac{1}{M}} \rfloor$
+
+            if $0 < |x - (-3)| = |x + 3| < \delta$
+
+            then $\frac{1}{(x + 3) ^ 4} > \frac{1}{\delta ^ 4} > \frac{1}{\frac{1}{M}} = M$
+
+            
+
+        \end{solution}
+    \end{itemize}
+
+
+\end{document}
