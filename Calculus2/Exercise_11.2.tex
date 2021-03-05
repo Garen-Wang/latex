@@ -1,0 +1,182 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 11.2}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+
+    \subsection*{35. $\sum_{n=1}^\infty \ln(\frac{n^2+1}{2n^2+1})$}
+
+    $$\begin{aligned}
+        & \because \lim_{n \to \infty}\ln(\frac{n^2+1}{2n^2+1}) = \lim_{n \to \infty}\ln (1 - \frac{1}{2 + \frac{1}{n^2}}) = \ln \frac 1 2 \not = 0\\
+        & \therefore \textrm{This series is divergent}
+    \end{aligned}$$
+
+    \subsection*{39. $\sum_{n=1}^\infty \arctan n$}
+
+    $$\begin{aligned}
+        & \because \lim_{n \to \infty}\arctan n = \frac \pi 2 \not = 0 \\ 
+        & \therefore \textrm{This series is divergent}
+    \end{aligned}$$
+
+    \subsection*{40. $\sum_{n=1}^\infty (\frac{3}{5^n} + \frac{2}{n})$}
+
+    $$\begin{aligned}
+        & \because \sum_{n=1}^\infty \frac{3}{5^n} = \sum_{n=1}^\infty \frac 3 5 (\frac 1 5)^{n-1}, |\frac 1 5| < 1 \\ 
+        & \therefore \sum_{n=1}^\infty \frac{3}{5^n} \textrm{ is convergent and its sum is } \frac{\frac 3 5}{1 - \frac 1 5} = \frac 3 4 \\
+        & \because \sum_{n=1}^\infty \frac 2 n \textrm{ is divergent } \\
+        & \therefore \sum_{n=1}^\infty (\frac{3}{5^n} + \frac{2}{n}) \textrm{ is divergent}
+    \end{aligned}$$
+
+    \subsection*{41. $\sum_{n=1}^\infty (\frac{1}{e^n} + \frac{1}{n(n+1)})$}
+
+    $$\begin{aligned}
+        & \because \sum_{n=1}^\infty \frac{1}{e^n} = \sum_{n=1}^\infty \frac 1 e (\frac 1 e)^{n-1}, |\frac 1 e| < 1 \\
+        & \therefore \sum_{n=1}^\infty \frac{1}{e^n} = \frac{\frac 1 e}{1 - \frac 1 e} = \frac{1}{e - 1} \\
+        & \because \sum_{n=1}^\infty \frac{1}{n(n+1)} = \sum_{n=1}^\infty (\frac 1 n - \frac{1}{n+1}) = \lim_{n\to\infty} (\frac 1 1 - \frac{1}{n+1}) = 1 \\
+        & \therefore \sum_{n=1}^\infty (\frac{1}{e^n} + \frac{1}{n(n+1)}) \textrm{ is convergent and its sum is } \frac{e}{e-1}.
+    \end{aligned}$$
+
+    \subsection*{42. $\sum_{n=1}^\infty\frac{e^n}{n^2}$}
+
+    $$\begin{aligned}
+        & \because \lim_{n\to\infty}\frac{e^n}{n^2} = \lim_{n\to\infty}\frac{e^n}{2n} = \lim_{n\to\infty}\frac{e^n}{2} \not = 0 \\
+        & \therefore \sum_{n=1}^\infty\frac{e^n}{n^2} \textrm{ is divergent}
+    \end{aligned}$$
+
+    \subsection*{48. $\sum_{n=2}^\infty \frac{1}{n^3 - n}$}
+
+    $$\begin{aligned}
+        \because \sum_{n=2}^\infty \frac{1}{n^3 - n} &= \sum_{n=2}^\infty \frac 1 2(\frac{1}{n(n-1)} - \frac{1}{n(n+1)}) \\
+        &= \frac 1 2(\frac{1}{2} - \frac{1}{6} + \frac{1}{6} - \frac{1}{12} + \cdots + \frac{1}{n(n-1)} - \frac{1}{n(n+1)}) \\
+        &= \lim_{n\to\infty} \frac 1 2(\frac 1 2 - \frac{1}{n(n+1)}) \\
+        &= \frac 1 4
+    \end{aligned}$$
+
+    $\therefore\sum_{n=2}^\infty \frac{1}{n^3 - n}$ is convergent and its sum is $\frac 1 4$.
+
+    \subsection*{49. Let $x=0.99999 \cdots$}
+
+    \begin{enumerate}[(a)]
+        \item I think $x=1$.
+        \item Solution:
+
+        $$\begin{aligned}
+            x &= 0.99999 \cdots \\
+            &= \frac{9}{10} + \frac{9}{100} + \frac{9}{1000} + \cdots \\
+            &= \sum_{n=1}^\infty \frac{9}{10} (\frac{1}{10})^{n-1} \\
+            &= \frac{\frac{9}{10}}{1 - \frac{1}{10}} \\
+            &= 1
+        \end{aligned}$$
+        \item Two decimal representations, $1$ and $0.\dot 9$, respectively.
+        \item Finite repeating decimals.
+    \end{enumerate}
+
+    \subsection*{50. A sequence of terms is defined by $$a_1=1 \qquad a_n = (5-n)a_{n-1}$$Calculate $\sum_{n=1}^\infty a_n$.}
+
+    $\because$ Obviously, we can get $$a_2 = 3 \times 1 = 3, a_3 = 2 \times 3 = 6, a_4 = 1 \times 6 = 6, a_5 = 0 \times 6 = 0, a_6 = 0, \cdots$$
+
+    $$\therefore \sum_{n=1}^\infty a_n = 1 + 3 + 6 + 6 = 16$$
+
+    \subsection*{64. We have seen that the harmonic series is a divergent series whose terms approach $0$. Show that $$\sum_{n=1}^\infty \ln(1 + \frac 1 n)$$ is another series with this property.}
+    
+    $$\begin{aligned}
+        & \because \lim_{n\to\infty}\ln(1 + \frac 1 n) = \ln 1 = 0 \\
+        & \because \sum_{n=1}^\infty \ln(1 + \frac 1 n) = \ln(\frac 2 1 \times \frac 3 2 \times \cdots \times \frac{n+1}{n}) = \ln(n+1) = \infty \\
+        & \therefore \sum_{n=1}^\infty \ln(1+\frac 1 n) \textrm{ is another series with this property.}
+    \end{aligned}$$
+
+    \subsection*{67. If the $n$th partial sum of a series $\sum_{n=1}^\infty a_n$ is $$s_n = \frac{n-1}{n+1}$$find $a_n$ and $\sum_{n=1}^\infty a_n$.}
+
+    $$\begin{aligned}
+    &\textrm{If } n \geq 2, a_n = s_n - s_{n-1} = \frac{n-1}{n+1} - \frac{n-2}{n} = \frac{2}{n(n+1)} \\
+    &\textrm{If } n = 1, a_1 = s_1 = 0 \\
+    &\therefore a_n = \left\{ \begin{array}{ll}
+        0 &\textrm{if } n=1 \\
+        \frac{2}{n(n+1)} &\textrm {if } n \geq 2 \\
+    \end{array}\right. \\
+    &\because \lim_{n \to \infty} s_n = \lim_{n \to \infty}(1 - \frac 2 {n+1}) = 1 \\
+    &\therefore \sum_{n=1}^\infty a_n = 1
+    \end{aligned}$$
+
+    \subsection*{68. If the $n$th partial sum of a series $\sum_{n=1}^\infty a_n$ is $s_n = 3 - n2^{-n}$, find $a_n$ and $\sum_{n=1}^\infty a_n$.}
+
+    $$\begin{aligned}
+    &\textrm{If } n \geq 2, a_n = s_n - s_{n-1} = \frac{n-1}{2^{n-1}} - \frac{n}{2^n} = \frac{n-2}{2^n} \\
+    &\textrm{If } n = 1, a_1 = s_1 = 3 - \frac 1 2 = \frac 5 2 \\
+    &\therefore a_n = \left\{ \begin{array}{ll}
+        \frac 5 2 &\textrm{if } n=1 \\
+        \frac{n-2}{2^n} &\textrm {if } n \geq 2 \\
+    \end{array}\right. \\
+    &\because \lim_{n \to \infty} s_n = \lim_{n \to \infty}(3 - \frac{n}{2^n}) = 3 \\
+    &\therefore \sum_{n=1}^\infty a_n = 3
+    \end{aligned}$$
+
+    \subsection*{79. What is wrong with the following calculation?}
+
+    $$\begin{aligned}
+        0 &= 0 + 0 + 0 + \cdots \\
+        &= (1 - 1) + (1 - 1) + (1 - 1) + \cdots \\
+        &= 1 - 1 + 1 - 1 + 1 - 1 + \cdots \\
+        &= 1 + (-1 + 1) + (-1 + 1) + (-1 + 1) + \cdots \\
+        &= 1 + 0 + 0 + 0 + \cdots = 1
+    \end{aligned}$$
+
+    Let $a_n = 1, b_n = -1$, and
+
+    $$\sum_{n=1}^\infty a_n = 1 + 1 + \cdots = \sum_{n=1}^n 1, \quad \sum_{n=1}^\infty b_n = -1 - 1 - \cdots = \sum_{n=1}^n(-1)$$
+
+    Obviously, $\sum_{n=1}^\infty a_n$ and $\sum_{n=1}^\infty b_n$ are divergent.
+
+    $$\begin{aligned}
+        &\because 0 = 1 - 1 = a_n + b_n \\
+        &\therefore \sum_{n=1}^\infty 0 = \sum_{n=1}^\infty (a_n + b_n) = 0 \\
+        &\because \textrm{Though } \sum_{n=1}^\infty(a_n + b_n)\textrm{ is convergent, }\sum_{n=1}^\infty a_n, \sum_{n=1}^\infty b_n\textrm{ are divergent} \\
+        &\therefore \sum_{n=1}^\infty(a_n + b_n) \not = \sum_{n=1}^\infty a_n + \sum_{n=1}^\infty b_n \\
+    \end{aligned}$$
+
+
+    In other words, $$$$
+    $$\begin{aligned}
+        0 &= (1-1)+(1-1)+(1-1)+\cdots \\
+        &\not = 1+1+1+\cdots-1-1-1-\cdots =1-1+1-1+1-1+\cdots \\
+    \end{aligned}$$
+
+
+
+
+    \subsection*{89. Consider the series $\sum_{n=1}^\infty \frac{n}{(n+1)!}$.}
+
+    \begin{enumerate}[(a)]
+        \item Solution:
+        $$s_1 = \frac{1}{2}, s_2 = s_1 + \frac{2}{6} = \frac 5 6, s_3 = s_2 + \frac{3}{24} = \frac{23}{24}, s_4 = s_3 + \frac{4}{120} = \frac{119}{120}$$
+        The denominators are factorial forms.
+
+        And we can guess $$s_n = 1 - \frac{1}{(n+1)!}$$
+        \item Solution:
+
+        If $n=1$, $s_1 = \frac 1 2 = 1 - \frac{1}{(1 + 1)!}$, which satisfies the hypothesis.
+
+        If $n\geq 2$, suppose the hypothesis holds when $n=k(k\in N_+)$. That is to say $$s_k = 1 - \frac{1}{(k + 1)!}$$
+
+        $$s_{k+1} = s_k + \frac{k+1}{(k+2)!} = \frac{(k+2)! - (k+2) + (k+1)}{(k+2)!} = 1 - \frac{1}{(k+2)!}$$
+
+        $\therefore$ the hypothesis also holds when $n=k+1$
+
+        $\therefore$ we can conclude that $$s_n = 1 - \frac{1}{(n+1)!}$$
+
+        \item \begin{proof}
+            $$\lim_{n \to \infty} s_n = \lim_{n\to \infty}(1 - \frac{1}{(n+1)!}) = 1$$
+
+            $\therefore$ the given infinite series is convergent, and its sum is $1$.
+        \end{proof}
+    \end{enumerate}
+
+\end{document}
