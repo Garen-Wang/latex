@@ -1,0 +1,222 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 11.4}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+
+    \subsection*{20. $\sum_{n=1}^\infty \frac{n+4^n}{n+6^n}$}
+
+    Let $a_n = \frac{n+4^n}{n+6^n}, b_n = \frac{4^n}{6^n}$, and we can get
+
+    $$\lim_{n\to\infty} \frac{a_n}{b_n} = \lim_{n\to\infty} \frac{\frac{n+4^n}{n+6^n}}{\frac{4^n}{6^n}} = \lim_{n\to\infty}\frac{\frac{n}{4^n} + 1}{\frac{n}{6^n} + 1} = 1$$
+
+    $\because \sum_{n=1}^\infty b_n = \sum_{n=1}^\infty(\frac 2 3)^n$, which is convergent
+
+    $\therefore \sum_{n=1}^\infty \frac{n+4^n}{n+6^n}$ is also convergent
+
+    \subsection*{21. $\sum_{n=1}^\infty \frac{\sqrt{n+2}}{2n^2 + n + 1}$}
+
+    Let $a_n = \frac{\sqrt{n+2}}{2n^2+n+1}, b_n = \frac{\sqrt n}{n^2}$, then $$\lim_{n\to\infty}\frac{a_n}{b_n} = \lim_{n\to\infty}\frac{\sqrt{n+2}}{\sqrt n}\frac{2n^2+n+1}{n^2} = \lim_{n\to\infty}\sqrt{1+\frac 2 n}(2+\frac{1}{n} + \frac{1}{n^2}) = 2 \in (0, \infty)$$
+
+    $\because b_n = \frac{1}{n^{\frac 3 2}}, \frac 3 2 > 1$
+
+    $\therefore \sum_{n=1}^\infty b_n$ is convergent
+
+    $\therefore \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty \frac{\sqrt{n+2}}{2n^2+n+1}$ is also convergent
+
+    \subsection*{27. $\sum_{n=1}^\infty (1+\frac 1 n)^2 e^{-n}$}
+
+    If we restrict $n \geq 2$, then $$\sum_{n=2}^\infty (1+\frac 1 n)^2e^{-n} \leq \sum_{n=2}^\infty \frac{(1+\frac 1 n)^n}{e^n}$$
+
+    Let $a_n = \frac{(1+\frac 1 n)^n}{e^n}$, then $$\lim_{n\to\infty}\frac{a_{n+1}}{a_n} = \frac{1}{e} < 1$$
+
+    $\therefore \sum_{n=2}^\infty \frac{(1+\frac 1 n)^n}{e^n}$ is convergent
+
+    $\therefore \sum_{n=2}^\infty (1+\frac 1 n)^2e^{-n}$ is convergent
+
+    $\therefore \sum_{n=1}^\infty (1+\frac 1 n)^2e^{-n}$ is convergent
+
+    \subsection*{30. $\sum_{n=1}^\infty \frac{n!}{n^n}$}
+
+    Let $a_n = \frac{n!}{n^n} > 0$
+
+    $$\lim_{n\to\infty} \frac{a_{n+1}}{a_n} = \lim_{n\to\infty} \frac{\frac{(n+1)!}{(n+1)^{n+1}}}{\frac{n!}{n^n}} = \lim_{n\to\infty} (\frac{n}{n+1})^n = \lim_{n\to\infty}\frac{1}{(1 + \frac 1 n)^n} = \frac 1 e < 1$$
+
+    $\therefore \sum_{n=1}^\infty \frac{n!}{n^n}$ converges
+
+    \subsection*{31. $\sum_{n=1}^\infty \sin(\frac 1 n)$}
+
+    Let $a_n = \sin(\frac 1 n), b_n = \frac 1 n$, so
+
+    $$\lim_{n\to\infty} \frac{a_n}{b_n} = \lim_{n\to\infty}\frac{\sin(\frac 1 n)}{\frac 1 n} = 1 \in (0, \infty)$$
+
+    $\because \sum_{n=1}^\infty b_n$ is divergent
+
+    $\therefore \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty \sin(\frac 1 n)$ is also divergent
+
+    \subsection*{32. $\sum_{n=1}^\infty \frac{1}{n^{1+\frac 1 n }}$}
+
+    Let $a_n = \frac{1}{n^{1+\frac 1 n}}, b_n = \frac{1}{n}$, then $$\lim_{n\to\infty} \frac{a_n}{b_n} = \lim_{n\to\infty}\frac{1}{n^{\frac 1 n}} = \lim_{n\to\infty}\frac{1}{\sqrt[n]{n}}$$
+
+    Let $t=\sqrt[n] n - 1$, then $(t+1)^n = n$, which is equivalent to
+
+    $$1 + nt + \frac{n(n-1)}{2}t^2 + \cdots = n$$
+
+    $\therefore \frac{n(n-1)}{2}t^2 < n$
+
+    $\therefore 0 \leq t^2 < \frac{2}{n-1}$
+
+    $$\because \lim_{n\to\infty} \frac{2}{n-1} = \lim_{n\to\infty}0 = 0$$
+
+    $\therefore$ by the squeeze theorem, $\lim_{n\to\infty} t^2 = 0$, which means $$\lim_{n\to\infty} \sqrt[n]n = 1 \not = 0$$
+
+    $\therefore \lim_{n\to\infty} \frac{1}{\sqrt[n]n} = \lim_{n\to\infty}\frac{a_n}{b_n} = 1 \in (0, \infty)$
+    
+    $\because \sum_{n=1}^\infty b_n = \sum_{n=1}^\infty \frac 1 n$ diverges
+
+    $\therefore \sum_{n=1}^\infty \frac{1}{n^{1+\frac 1 n}}$ also diverges
+
+    \subsection*{37. }
+
+    \begin{proof}
+        Let $a_n = \frac{d_n}{10^n}$, where $d_n$ is one of the numbers $0, 1, \cdots, 9$
+        
+        And let $b_n = \frac{1}{10^n}$, obviously we know $\sum_{n=1}^\infty b_n = \sum_{n=1}^\infty \frac{1}{10^n}$ converges. 
+
+        $$\lim_{n\to\infty}\frac{a_n}{b_n} = \lim_{n\to\infty}d_n \in \{0, 1, 2, \cdots, 9\}$$
+
+        If $\lim_{n\to\infty}d_n = 0, \because \sum_{n=1}^\infty b_n$ converges, $\therefore \sum_{n=1}^\infty \frac{d_n}{10^n}$ converges.
+
+        If $\lim_{n\to\infty}d_n \not = 0, \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty \frac{d_n}{10^n}$ converges as $\sum_{n=1}^\infty \frac{1}{10^n}$ converges.
+
+    \end{proof}
+
+    \subsection*{39. Prove that if $a_n \geq 0$ and $\sum a_n$ converges, then $\sum a_n^2$ also converges.}
+
+    \begin{proof}
+        $$\lim_{n\to\infty}\frac{a_n^2}{a_n} = \lim_{n\to\infty}a_n$$
+
+        If $\lim_{n\to\infty}a_n > 0$, either both $\sum a_n^2$ and $\sum a_n$ are convergent or both divergent. Therefore, $\sum a_n^2$ is convergent.
+
+
+        % If $\lim_{n\to\infty}a_n = 0$, $\because \sum a_n$ converges, $\therefore \sum a_n^2$ also converges
+
+        In conclusion, $\sum a_n^2$ is convergent.
+    \end{proof}
+
+    \subsection*{40.TODO}
+
+    \begin{enumerate}[(a)]
+        \item \begin{proof}
+            TODO
+        \end{proof}
+
+        \item 
+        \begin{enumerate}[(i)]
+            \item $\sum_{n=1}^\infty \frac{\ln n}{n^3}$
+            \begin{proof}
+
+            Let $a_n = \frac{\ln n}{n^3}, b_n = \frac{1}{n^2}$, then $$\lim_{n\to\infty}\frac{a_n}{b_n} = \lim_{n\to\infty}\frac{\ln n}{n} = 0$$
+
+            $\because \sum_{n=1}^\infty \frac{1}{n^2}$ is a convergent $p$-series
+
+            $\therefore$ by the conclusion of (a), $\sum_{n=1}^\infty a_n = \sum_{n=1}^\infty \frac{\ln n}{n^3}$ is also convergent
+            \end{proof}
+            \item $\sum_{n=1}^\infty \frac{\ln n}{\sqrt n e^n}$
+            \begin{proof}
+
+            Let $a_n = \frac{\ln n}{\sqrt n e^n}, b_n = \frac{1}{e^n}$
+
+            $\because \frac 1 e < 1$ $\therefore \sum_{n=1}^\infty b_n = \sum_{n=1}^\infty \frac{1}{e^n}$ is convergent
+
+            $$\therefore \lim_{n\to \infty}\frac{a_n}{b_n} = \lim_{n\to\infty}\frac{\ln n}{\sqrt n} = \lim_{n\to\infty}\frac{\frac 1 n}{\frac{1}{2\sqrt n}} = \lim_{n\to\infty}\frac{2}{\sqrt n} = 0$$
+
+            $\therefore \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty \frac{\ln n}{\sqrt n e^n}$ is convergent
+                
+            \end{proof}
+
+        \end{enumerate}
+
+    \end{enumerate}
+
+    \subsection*{41.}
+
+    \begin{enumerate}[(a)]
+        \item \begin{proof}
+            
+        \end{proof}
+
+        \item
+        \begin{enumerate}[(i)]
+            \item $\sum_{n=2}^\infty \frac{1}{\ln n}$
+
+            Let $a_n = \frac{1}{\ln n}, b_n = \frac{1}{n}$, and $$\lim_{n\to\infty}\frac{a_n}{b_n} = \lim_{n\to\infty}\frac{n}{\ln n} = \lim_{n\to\infty}\frac{1}{\frac 1 n } = \infty$$
+
+            $\because \sum_{n=2}^\infty b_n = \sum_{n=2}^\infty \frac 1 n$ is divergent
+
+            $\therefore \sum_{n=2}^\infty a_n = \sum_{n=2}^\infty \frac{1}{\ln n}$ is also divergent
+
+            \item $\sum_{n=1}^\infty \frac{\ln n}{n}$
+
+
+            Let $a_n = \frac{\ln n}{n}, b_n = \frac{1}{n}$, and $$\lim_{n\to\infty}\frac{a_n}{b_n} = \lim_{n\to\infty}\ln n = \infty$$
+
+            $\because \sum_{n=1}^\infty b_n = \sum_{n=1}^\infty \frac 1 n$ is divergent
+
+            $\therefore \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty \frac{\ln n}{n}$ is also divergent
+        \end{enumerate}
+
+    \end{enumerate}
+    
+    \subsection*{43. Show that if $a_n > 0$ and $\lim_{n\to\infty} na_n \not = 0$, then $\sum a_n$ is divergent.} 
+
+    \begin{proof}
+        $$\lim_{n\to\infty} na_n = \lim_{n\to\infty} \frac{a_n}{\frac 1 n} \not = 0$$
+
+        If $\lim_{n\to\infty}\frac{a_n}{\frac 1 n} = \infty$
+        
+        $\because \sum \frac 1 n$ is divergent
+
+        $\therefore$ by the conclusion of 41(a), $\sum a_n$ is also divergent
+
+        If $\lim_{n\to\infty} \frac{a_n}{\frac 1 n} \in (0, \infty)$, they are either both convergent or both divergent
+
+        $\because \sum \frac 1 n$ is divergent
+
+        $\therefore \sum a_n$ is also divergent
+
+    \end{proof}
+
+    \subsection*{44.Show that if $a_n > 0$ and $\sum a_n$ is convergent, then $\sum \ln(1 + a_n )$ is convergent.}
+
+    \begin{proof}
+        $\because x > \ln (x+1)$ when $x > 0 \quad \therefore a_n \geq \ln (1+a_n)$
+
+        $$\therefore \sum a_n \geq \sum \ln(1+a_n)$$
+
+        $\because \sum a_n$ is convergent
+
+        $\therefore \sum \ln (1+a_n)$ is also convergent
+    \end{proof}
+
+    \subsection*{45. If $\sum a_n$ is a convergent series with positive terms, is it true that $\sum \sin (a_n)$ is also convergent?}
+
+    It is true. And the reason is as follows.
+
+    $\because x > \sin x$ when $x > 0 \quad \therefore a_n > \sin (a_n)$
+
+    $$\therefore \sum a_n > \sum \sin (a_n)$$
+
+    $\because \sum a_n$ is convergent
+
+    $\therefore \sum \sin (a_n)$ is also convergent
+    
+    \end{document}
