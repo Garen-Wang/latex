@@ -70,7 +70,15 @@
 
     \subsection*{24. $\sum_{n=3}^\infty \frac{n^2}{e^n}$}
 
-    TODO
+    Let $f(x) = \frac{x^2}{e^x}, x \geq 3$, then $$f'(x) = \frac{2x - x^2}{e^x} = \frac{x(2-x)}{e^x} < 0$$
+
+    $\therefore f(x)$ is decreasing
+
+    $\because f(x) > 0$
+
+    $\therefore$ by the monotonic sequence theorem, $f(x)$ is convergent
+
+    $\sum_{n=3}^\infty \frac{n^2}{e^n}$ is also convergent
 
     \subsection*{26. $\sum_{n=1}^\infty \frac{n}{n^4+1}$}
 
@@ -111,7 +119,7 @@
         $$\begin{aligned}
             \sum_{n=3}^\infty \frac{1}{(n+1)^2} &= \sum_{n=4}^\infty \frac{1}{n^2} \\
             &= (\sum_{n=1}^\infty \frac{1}{n^2}) - \frac{1}{1} - \frac{1}{4} - \frac{1}{9} \\
-            &= \frac{\pi^2}{6} - \frac{41}{36}
+            &= \frac{\pi^2}{6} - \frac{49}{36}
         \end{aligned}$$
 
         \item $\sum_{n=1}^\infty \frac{1}{(2n)^2}$

@@ -112,11 +112,21 @@
         In conclusion, $\sum a_n^2$ is convergent.
     \end{proof}
 
-    \subsection*{40.TODO}
+    \subsection*{40.}
 
     \begin{enumerate}[(a)]
         \item \begin{proof}
-            TODO
+            $\because \lim_{n\to\infty}\frac{a_n}{b_n} = 0$
+
+            $\therefore \forall \epsilon > 0, \exists N > 0,$ if $n > N$, $\frac{a_n}{b_n} < \epsilon$, which is equivalent to $$a_n < \epsilon b_n$$
+
+            $\because \sum b_n$ is convergent when $n>N$
+
+            $\therefore \sum \epsilon b_n$ is convergent when $n>N$
+
+            $\therefore \sum a_n$ is also convergent when $n>N$
+
+            $\therefore \sum a_n$ is also convergent
         \end{proof}
 
         \item 
@@ -151,7 +161,17 @@
 
     \begin{enumerate}[(a)]
         \item \begin{proof}
-            
+            $\because \lim_{n\to\infty}\frac{a_n}{b_n} = 0$
+
+            $\therefore \forall M > 0, \exists N > 0,$ if $n>N$, $\frac{a_n}{b_n} > M$, which is equivalent to $$a_n > Mb_n$$
+
+            $\because \sum b_n$ is divergent when $n>N$
+
+            $\therefore \sum Mb_n$ is divergent when $n>N$
+
+            $\therefore \sum a_n$ is divergent when $n>N$
+
+            $\therefore \sum a_n$ is divergent
         \end{proof}
 
         \item
