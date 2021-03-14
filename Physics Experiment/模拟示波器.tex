@@ -1,0 +1,56 @@
+%!TEX program=xelatex
+\documentclass[UTF-8, a4paper, 12pt]{ctexart}
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{textcomp}
+\usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\pagestyle{fancy}
+\rhead{\center{\small{华南理工大学大学城校区物理实验报告}}}
+
+\begin{document}
+    \begin{center}
+        \zihao{-2}\heiti{模拟示波器的调节与使用 预习报告}
+
+        \zihao{-4}\songti{2020级 \quad 计算机科学与技术（全英创新班）\quad 王樾}
+    \end{center}
+    \zihao{4}\heiti{引言：}\zihao{-4}\songti{示波器是一种用途广泛的电子测量仪器。示波器能通过直接或间接的测量手段，测量出电压、电流、阻抗、压力、磁场等物理量关于时间的变化状况。通过示波器上的图像，我们不仅能够直观地观察被测信号的变化规律，还能测量出其他的各种表征参数。学习了模拟示波器的原理和使用方法，就能为各类示波器的使用打下基础。}
+
+    \textbf{\zihao{4} \heiti{一、实验目的}}
+
+    \zihao{-4}\songti
+
+    \begin{enumerate}[（1）]
+        \item 了解示波器的基本结构和工作原理，掌握示波器的使用方法。
+        \item 学会用示波器观察电信号波形。
+        \item 学会用示波器测量交流电信号电压峰-峰值（$V_{p-p}$）和频率。
+    \end{enumerate}
+
+    \textbf{\zihao{4} \heiti{二、实验仪器}}
+
+    \zihao{-4}\songti
+
+    示波器由示波管、衰减器和放大器、扫描信号发生器、同步触发系统和电源供给系统五个基本部分组成。示波关主要由电子枪、偏转系统和荧光屏三部分组成，是一个全密封的真空玻璃管壳。衰减器和放大器均有x轴和y轴两种类别，适用于处理输入信号电压过大或过小的情况。扫描信号发生器在水平偏转板加上“锯齿波”状的扫描信号。同步触发系统保证锯齿波的周期与待测信号周期一致，使示波器上的波形保持稳定。
+
+    \textbf{\zihao{4} \heiti{三、实验原理}}
+
+    \zihao{-4}\songti
+
+    将待测信号电压加在控制垂直偏转的电路中，同时把水平扫描信号电压加在控制水平的电路。电子枪发射的电子束通过这两个电路时，会因电信号的变化而改变运动轨迹。最后电子轰击荧光屏上的荧光粉发光，就得到了待测电信号的波形图像。
+
+    \textbf{\zihao{4} \heiti{四、内容步骤}}
+
+    \zihao{-4}\songti
+
+    \begin{enumerate}[（1）]
+        \item 学习通用示波器的按钮作用以及使用方法。
+        \item 依次将8个波形信号输入示波器，记录档位示值、波形周期宽度及峰-峰高度。
+        \item 在示波器校准后，用定标法测量交流电桥信号源的频率$f$及电压峰-峰值$V_{p-p}$。
+        \item 利用李萨如图形，绘下某一时刻的图形，记录低频信号发生器显示的输出频率$f_x$。
+    \end{enumerate}
+
+\end{document}

@@ -1,0 +1,59 @@
+%!TEX program=xelatex
+\documentclass[UTF-8, a4paper, 12pt]{ctexart}
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry}
+\pagestyle{fancy}
+\rhead{\center{\small{华南理工大学大学城校区物理实验报告}}}
+
+\begin{document}
+    \begin{center}
+        \zihao{-2}\heiti{磁耦合谐振式无线电能传输 \quad 预习报告}
+
+        \zihao{-4}\songti{2020级 \quad 计算机科学与技术（全英创新班）\quad 王樾}
+    \end{center}
+    \zihao{4}\heiti{引言：}\zihao{-4}\songti{无线电能传输技术是当今科技应用市场的热点之一，其中磁耦合谐振式无线电力传输技术具有效率高、线圈位置影响小等优点，使用于中等距离的电能传输。无线电力传输的传输效率可以通过物理理论与实验进行分析和改进，通过优化参数提升实际工作性能。}
+
+    \textbf{\zihao{4} \heiti{一、实验目的}}
+
+    \zihao{-4}\songti
+
+    \begin{enumerate}
+        \item 学习使用数字示波器调试 LC 谐振电路，及电路参数的基本测量。
+        \item 了解电路阻匹配对输出功率的影响。
+        \item 研究磁耦合谐振式无线电能传输效率与发射线圈和接收线圈的关系。
+        \item 优化磁耦合谐振无线电能传输的参数。
+    \end{enumerate}
+
+    \textbf{\zihao{4} \heiti{二、实验仪器}}
+
+    \zihao{-4}\songti
+
+    函数信号发生器、带输出功率显示的稳压电源、无线电能传输实验仪器等。
+
+    \textbf{\zihao{4} \heiti{三、实验原理}}
+
+    \zihao{-4}\songti
+
+    磁耦合谐振式无线电能传输的大体流程是将高频交流信号经功率放大后输入至LC发射线圈，被LC接收线圈接收后经整流、滤波、稳压电路后传至负载，完成无线输电。
+
+    磁耦合谐振式是当发射线圈和接收线圈的变化磁场频率相同且相位同步时，两线圈由送耦合变为强耦合，能量传输效率达到最大的一种传输方式。
+
+    \textbf{\zihao{4} \heiti{四、内容步骤}}
+
+    \zihao{-4}\songti
+    
+    \begin{enumerate}[（1）]
+        \item 熟悉仪器，按要求连接发射端和接收端仪器的电源线和测量线。
+        \item 装备调试，开启稳压直流电源和正弦波信号源电源，开启示波器。
+        \item 调试系统谐振频率，使示波器测量电压峰峰值最大，稳压电源输出电流最小。
+        \item 记录此时的频率为系统最佳频率，同时记下此时系统的共振频率。
+        \item 调节发射线圈与接收线圈的距离为3cm，测量出此时负载的电压峰峰值。
+        \item 测量该状态下负载的平均功率与积分时间
+        \item 将发射线圈与接收线圈距离增加1cm，再次测量负载电压峰峰值、平均功率和积分时间，直至距离达到15cm。
+    \end{enumerate}
+
+\end{document}
