@@ -1,0 +1,274 @@
+%!TEX program=xelatex
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[UTF-8, a4paper, 12pt]{ctexart}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{textcomp}
+\usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry}
+
+
+\author{}
+\date{}
+
+\begin{document}
+
+  作业：
+
+  1. 改正下列结果表达式的错误：（15分）
+
+  \begin{enumerate}
+    \def\labelenumi{(\arabic{enumi})}
+    \item
+      12.001±0.0006255(cm)
+
+    $12.001 \pm 0.001(cm)$
+    \item
+      0.576361±0.00052(mm)
+
+    $0.576361\pm 0.000520(mm)$
+    \item
+      0.75±0.0626(mA)
+
+    $0.75\pm 0.06(mA)$
+    \item
+      96500±500(g)
+    
+    $96.5\pm 0.5(kg)$
+    \item
+      22±0.5(°C)
+    
+    $22.0\pm 0.5(^\circ C)$
+  \end{enumerate}
+
+  2.
+  用级别为0.5、量程为10mA的电流表对某电路的电流作10次等精度测量，测量数据如下表所示。试计算测量结果及标准差，并以测量结果形式表示之。（要求判别和剔除异常数据）（30分）
+
+  \begin{longtable}[]{@{}lllllllllll@{}}
+    \toprule
+    n & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+    \midrule
+    \endhead
+    I/mA & 9.55 & 9.56 & 9.50 & 9.53 & 9.60 & 9.40 & 9.57 & 9.62 & 9.59 &
+    9.56 \\
+    \bottomrule
+  \end{longtable}
+
+  计算测量列算术平均值$\overline I$： $$\overline I = \frac 1 n \sum_{i=1}^n I_i = 9.548(mA)$$
+
+  计算测量列的标准差$\sigma_I$： $$\sigma_I = \sqrt{\frac{\sum_{i=1}^n \Delta I_i^2}{n-1}} = 0.0623(mA)$$
+
+  根据格拉布斯准则判断异常数据。取显著水平$\alpha=0.05$，测量次数$n=10$，查得临界值$g_0(10, 0.05) = 2.18$。取$|\Delta x|_{max}$计算$g_i$值，有$$g_6 = \frac{|\Delta I_6|}{\sigma_I} = \frac{0.148}{0.623} = 2.37 > 2.18$$
+
+  由此判定$I_6 = 9.40$为异常数据，应剔除。
+  
+  余下的数据重新计算测量结果后如表所示：
+
+  \begin{longtable}[]{@{}lllllllllll@{}}
+    \toprule
+    n & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+    \midrule
+    \endhead
+    I/mA & 9.55 & 9.56 & 9.50 & 9.53 & 9.60 & --- & 9.57 & 9.62 & 9.59 &
+    9.56 \\
+    \bottomrule
+  \end{longtable}
+
+  计算得：$$\overline I = 9.564(mA) \qquad \sigma_I = \sqrt{\frac{\sum_{n=1}^9 \Delta I_i^2}{9 - 1}} = 0.03644(mA)$$
+
+  再经过格拉布斯准则判别，所有测量数据符合要求。
+
+  算术平均值$\overline I$的标准偏差$$\sigma_{\overline I} = \frac{\sigma_I}{\sqrt n} = \frac{0.03644}{3} = 0.012147(cm)$$
+
+  由机器级别，知仪器误差限$$\Delta y = 0.5\% \times 10mA = 0.05mA$$
+
+  按均匀分布计算系统误差分量的标准差$$\sigma_{y} = \frac{\Delta y}{\sqrt 3} = 0.029(mA)$$
+
+  合成标准差$$\sigma = \sqrt{\sigma_{\overline x}^2 + \sigma_y^2} = 0.031(mA)$$
+
+  测量结果表示为$$I = \overline I \pm \sigma = 9.564 \pm 0.031(mA)$$
+
+  3．用公式$\rho = \frac{4m}{\pi d^2h}$测量某圆柱体铝的密度，测得直径$d=2.042 \pm 0.003$（cm），高$h=4.126\pm 0.004$（cm），质量$m =36.488\pm 0.006$（g）。计算铝的密度$\rho$和测量的标准差$\sigma_\rho$，并以测量结果表达式表示之。（15分）
+
+  计算该圆柱体铝的密度：$$\rho = \frac{4m}{\pi d^2h} = \frac{4 \times 36.488}{3.14 \times 2.042^2 \times 4.126} = 2.702(g/cm^3)$$
+
+  计算$\rho$标准差相对误差。对函数两边取自然对数得$$\ln \rho = \ln 4 + \ln(m) - \ln \pi - \ln h - 2\ln d$$
+
+  求微分得$$\frac{\mathrm d\rho}{\rho} = \frac{\mathrm dm}{m} - \frac{\mathrm dh}{h} - 2\frac{\textrm dd}{d}$$
+
+  以误差代替微分量，取各项平方和再开平方，即
+  
+  $$\begin{aligned}
+    \frac{\sigma_\rho}{\rho} &= \sqrt{(\frac{\sigma_m}{m})^2 + (\frac{\sigma_h}{h})^2 + (2\frac{\sigma_d}{d})^2} \\
+    &= \sqrt{(\frac{0.006}{36.488})^2 + (\frac{0.004}{4.126})^2 + (2 \times \frac{0.003}{2.042})^2} = 6.0 \times 10^{-3}
+  \end{aligned}$$
+
+  求$\sigma_\rho$：$$\sigma_\rho = \rho \cdot (\frac{\sigma_\rho}{\rho}) = 2.702* 6.0 * 10^{-3} = 1.6 \times 10^{-2}(g/cm^3)$$
+
+  最终测量结果表达式为$$\rho = 2.702 \pm 0.016(g/cm^3)$$
+
+  4．根据公式$l_r=l_0(1+\alpha T)$测量某金属丝的线胀系数$\alpha$。$l_0$为金属丝在0℃时的长度。实验测得温度$T$与对应的金属丝的长度$l_r$的数据如下表所示。试用图解法求$\alpha$和$l_0$值。（20分）
+
+  \begin{longtable}[]{@{}lllllllll@{}}
+    \toprule
+    $T$/℃ & 23.3 & 32.0 & 41.0 & 53.0 & 62.0 & 71.0 & 87.0 & 99.0 \\
+    \midrule
+    \endhead
+    $l_r$/mm& 71.0 & 73.0 & 75.0 & 78.0 & 80.0 & 82.0 & 86.0 & 89.1 \\
+    \bottomrule
+  \end{longtable}
+
+  用直角坐标纸作$T-l_r$图线。
+
+  \begin{center}
+    \begin{tikzpicture}
+      \pgfplotsset{
+        scale only axis,
+      }
+      \begin{axis}[
+        xlabel=$T$/℃,
+        ylabel=$l_r$/mm,
+        xmin=0,
+        xmax=100,
+        ymin=50,
+        ymax=90,
+        ytick={50, 60, 62, 64, 66, 68, 70, 80, 90}
+      ]
+        \addplot[only marks, mark=x]
+        coordinates{
+          (23.3, 71.0)
+          (32.0, 73.0)
+          (41.0, 75.0)
+          (53.0, 78.0)
+          (62.0, 80.0)
+          (71.0, 82.0)
+          (87.0, 86.0)
+          (99.0, 89.1)
+        };
+        % \label{test}
+        \addplot[mark=none, blue, domain=0:100]{0.236236236 * x + 65.43636363636364};
+      \end{axis}
+
+    \end{tikzpicture}
+  \end{center}
+
+  求出直线的斜率与截距。取$A(32.0, 73.0),B(87.0, 86.0)$，根据两点式求得直线斜率为$$\alpha = \frac{l_{rB} - l_{rA}}{t_B - t_A} = \frac{86.0 - 73.0}{87.0 - 32.0} = 2.36 \times 10^{-1}(mm \cdot ^{\circ}C^{-1})$$
+
+  从图上读取直线的截距为$b=65.5(mm)$，从测量公式可知$l_0 = b = 65.5(mm)$。
+
+  5．试根据下面6组测量数据，用最小二乘法求出热敏电阻值$R_T$随温度$T$变化的经验公式，并求出$R_T$与$T$的相关系数。（20分）
+
+  \begin{longtable}[]{@{}lllllll@{}}
+    \toprule
+    $T/^\circ C$ & 17.8 & 26.9 & 37.7 & 48.2 & 58.8 & 69.3 \\
+    \midrule
+    \endhead
+    $R_T/\Omega$& 3.554 & 3.687 & 3.827 & 3.969 & 4.105 & 4.246 \\
+    \bottomrule
+  \end{longtable}
+
+  依题意得：$$\begin{array}{ll}
+    &\overline T = 43.12 \\
+    &\overline{T^2} = 2174.15 \\
+    &\overline{R_T} = 3.8980 \\
+    &\overline{R_T^2} = 15.25 \\
+    &\overline{TR_T} = 172.2745 \\
+  \end{array}$$
+
+  求相关系数$R$：$$\begin{array}{ll}
+    &L_{TR_T} = \overline{TR_T} - \overline T \cdot \overline R_T = 4.19274 \\
+    &L_{TT} = \overline{T^2} - (\overline T)^2 = 314.8156 \\
+    &L_{R_TR_T} = \overline{R_T^2} - (\overline R_T)^2 = 0.0556 \\ 
+    &R = \frac{L_{TR_T}}{\sqrt{L_{TT}\cdot L_{R_TR_T}}} = 0.99987 \\
+  \end{array}$$
+
+  设$T$与$R_T$的函数关系为$R_T = aT + b$，用最小二乘法求斜率$a$和截距$b$：
+  $$\begin{aligned}
+    &a = \frac{\overline{TR_T} - \overline T \cdot \overline R_T}{\overline{T^2} - (\overline T)^2} = 0.0133\\
+    &b = \overline{R_T} - a \overline T = 3.3245
+  \end{aligned}$$
+
+  根据所求得的回归直线的斜率与截距，得回归方程为$R_T = 0.0133 T + 3.3245$
+
+  % \begin{center}
+  %   \begin{tikzpicture}
+  %     \pgfplotsset{
+  %       scale only axis,
+  %     }
+  %     \begin{axis}[
+  %       xlabel=$T$/℃,
+  %       ylabel=$R_T/\Omega$,
+  %       xmin=15,
+  %       xmax=70,
+  %       ymin=3.5,
+  %       ymax=4.5,
+  %     ]
+  %       \addplot[only marks, mark=x]
+  %       coordinates{
+  %         (17.8, 3.554)
+  %         (26.9, 3.687)
+  %         (37.7, 3.827)
+  %         (48.2, 3.969)
+  %         (58.8, 4.105)
+  %         (69.3, 4.246)
+  %       };
+  %       % \label{test}
+  %       \addplot[mark=none, blue, domain=16:70]{0.0133 * x + 3.3245};
+  %     \end{axis}
+
+  %   \end{tikzpicture}
+  % \end{center}
+
+\end{document}
