@@ -13,10 +13,115 @@
     \maketitle
 
     \subsection*{8. $\sum_{n=1}^\infty (-1)^n \frac{n}{\sqrt{n^3+2}}$}
-    
+ 
+    Let $a_n = (-1)^n \frac{n}{\sqrt{n^3 + 2}}, b_n = \frac{n}{\sqrt{n^3 + 2}} = \frac{1}{\sqrt{n + \frac{2}{n^2}}}, c_n = n + \frac{2}{n^2}$
+
+    Let $f(x) = x + \frac{2}{x^2}, x \geq 1$
+
+    $\because$ when $x < 2, f(1) = 1 + 2 = 3 > f(2) = 2 + \frac 1 2 = \frac 5 2$
+
+    $\because$ when $x \geq 2, f'(x) = 1 - \frac{4}{x^3} > \frac{1}{2} > 0, f(x)$ is increasing
+
+    $\therefore \forall n \in N_+, c_n$ is increasing
+
+    $\therefore \forall n \in N_+, b_n$ is decreasing, $b_{n+1} < b_n$
+
+    $\because \lim_{n\to\infty} c_n = \lim_{n\to\infty}\frac{n^3+2}{n^2} = \lim_{n\to\infty}\frac{3n^2}{2n} = \infty$
+
+    $\therefore \lim_{n\to\infty} b_n = 0$
+
+    $\therefore \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty (-1)^n \frac{n}{\sqrt{n^3 + 2}}$ is convergent
 
     \subsection*{9. $\sum_{n=1}^\infty (-1)^n e^{-n}$}
 
-    Let $a_n = e^{-n}$
+    Let $b_n = e^{-n} = \frac{1}{e^n}, a_n = (-1)^nb_n$
+
+    $\because e^{n+1} > e^{n}$ and $\lim_{n\to\infty}e^n = \infty$
+
+    $\therefore b_{n+1} < b_n$ and $\lim_{n\to\infty} b_n = 0$
+
+    $\therefore \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty (-1)^n e^{-n}$ is convergent
+
+    \subsection*{12. $\sum_{n=1}^\infty (-1)^{n+1} ne^{-n}$}
+    
+    Let $b_n = ne^{-n}, a_n = (-1)^{n+1}b_n$
+
+    Let $f(x) = xe^{-x}, x \geq 1$ , then $ f'(x) = (1-x)e^{-x} \leq 0$, $f(x)$ is decreasing
+
+    Also, $$\lim_{x\to\infty}f(x) = \lim_{x\to\infty}\frac{x}{e^x} = \lim_{x\to\infty}\frac{1}{e^x} = 0$$
+
+    $\therefore b_{n+1} < b_n$ and $\lim_{n\to\infty}b_n = 0$
+
+    $\therefore \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty (-1)^{n+1} ne^{-n}$ is convergent
+
+    \subsection*{13. $\sum_{n=1}^\infty (-1)^{n-1} e^{\frac 2 n}$}
+
+    Let $b_n = e^{\frac 2 n}, a_n = (-1)^{n-1}b_n$
+
+    Let $f(x) = e^{\frac 2 x}$, obviously $f(x)$ is decreasing, and $$\lim_{x\to\infty}f(x) = e^{\lim_{x\to\infty}\frac 2 x} = 1$$
+
+    $\therefore b_{n+1} < b_n$ and $\lim_{n\to\infty}b_n = 0$
+
+    $\therefore \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty (-1)^{n-1}e^{\frac 2 n}$ is convergent
+
+    \subsection*{14. $\sum_{n=1}^\infty (-1)^{n-1} \arctan n$}
+
+    Let $b_n = \arctan n, a_n = (-1)^{n-1} b_n$
+
+    $\because y = \arctan x$ is increasing and $$\lim_{n\to\infty}\arctan n = \frac \pi 2 \not = 0$$
+
+    $\therefore b_{n+1} > b_n$ and $\lim_{n\to\infty}b_n \not = 0$
+
+    $\therefore \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty (-1)^{n-1}b_n$ is divergent
+
+    \subsection*{17. $\sum_{n=1}^\infty (-1)^n\sin(\frac \pi n)$}
+
+    Let $b_n = \sin (\frac \pi n), a_n = (-1)^{n} b_n$
+
+    $\because f(x) = \sin (\frac \pi x)$ is decreasing when $x \geq 1$ and $$\lim_{x\to\infty}f(x) = \sin(\lim_{x\to\infty} \frac{\pi}{x}) = \sin 0 = 0$$
+
+    $\therefore b_{n+1} < b_n$ and $\lim_{n\to\infty}b_n = 0$
+
+    $\therefore \sum_{n=1}^\infty a_n = (-1)^n b_n$ is convergent
+
+    \subsection*{18. $\sum_{n=1}^\infty (-1)^n\cos(\frac \pi n)$}
+
+    Let $b_n = \cos(\frac \pi n), a_n = (-1)^nb_n$, and let $f(x) = \cos (\frac \pi x), x \geq 1$
+
+    $\because x \geq 1 \quad \therefore 0 < \frac \pi x \leq \pi$
+    
+    $\because y=\cos x$ is decreasing when $0 < x \leq \pi$, and $y=\frac \pi x$ is also decreasing
+
+    $\therefore f(x) = \cos(\frac \pi x)$ is increasing
+
+    $\therefore b_{n+1} > b_n$
+
+    $$\because \lim_{n\to\infty} b_n = \cos (\lim_{n\to\infty}\frac \pi n) = \cos 0 = 1 \not = 0$$
+
+    $\therefore \sum_{n=1}^\infty a_n = \sum_{n=1}^\infty (-1)^n b_n$ is divergent
+
+    \subsection*{33. $\sum_{n=1}^\infty \frac{(-1)^n}{n+p}$}
+
+    Let $a_n = \frac{(-1)^n}{n+p}, b_n = \frac{1}{n + p}$
+
+    $\because $ for all $p \in R$, $b_n$ is decreasing and $\lim_{n\to\infty} b_n = 0$
+
+    $\therefore $ for all $p \in R$, $b_{n+1} < b_n$  and $\lim_{n\to\infty} b_n = 0$
+
+    $\therefore$ for all $p \in R$, $\sum_{n=1}^\infty \frac{(-1)^n}{n+p}$ is convergent.
+
+    \subsection*{34. $\sum_{n=2}^\infty (-1)^{n-1} \frac{(\ln n)^p}{n}$}
+
+    Let $a_n = (-1)^{n-1} \frac{(\ln n)^p}{n}, b_n = \frac{(\ln n)^p}{n}, f(x) = \frac{(\ln x)^p}{x}, x \geq 2$
+
+    $$f'(x) = \frac{p(\ln x)^{p-1} - (\ln x)^p}{x^2} = \frac{(\ln x)^{p-1}(p - \ln x)}{x^2}$$
+
+    $\therefore$ when $x < e^p, p > \ln x, f(x)$ is increasing;
+    
+    $\therefore$ when $x > e^p, p < \ln x, f(x)$ is decreasing
+
+    $$\lim_{n\to\infty} b_n = \lim_{n\to\infty}\frac{p(\ln n)^{p-1}}{n} = \lim_{n\to\infty}\frac{p(p-1)(\ln n)^{p-2}}{n} = \cdots = \lim_{n\to\infty}\frac{p!}{n} = 0$$
+
+    For $p\geq \ln 2$, $\sum_{n=2}^\infty (-1)^{n-1} \frac{(\ln n)^p}{n}$ is convergent.
 
 \end{document}
