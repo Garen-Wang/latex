@@ -1,0 +1,135 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 11.8}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+
+    \subsection*{3. $\sum_{n=1}^\infty (-1)^n nx^n$}
+
+    Let $c_n = (-1)^nn \not = 0$, and $$\rho = \lim_{n\to\infty}|\frac{c_{n+1}}{c_n}| = \lim_{n\to\infty}\frac{n+1}{n} = 1$$
+
+    Therefore, the radius of $\sum_{n=1}^\infty (-1)^n nx^n$ is $R = \frac{1}{\rho} = 1$
+
+    When $x=-1$, $$\sum_{n=1}^\infty (-1)^n nx^n = \sum_{n=1}^\infty (-1)^{n} n (-1)^{n} = \sum_{n=1}^\infty n$$ which is divergent.
+
+    When $x=1$, the series $$\sum_{n=1}^\infty (-1)^n nx^n = \sum_{n=1}^\infty (-1)^n n$$ which is also divergent.
+
+    $\therefore $ the interval of convergence of the series is $(-1, 1)$.
+
+    \subsection*{8. $\sum_{n=1}^\infty n^n x^n$}
+
+    Let $c_n = n^n$, then $$\rho = \lim_{n\to\infty} \sqrt[n]{c_n} = \lim_{n\to\infty} n = \infty$$
+
+    Therefore, the radius of $\sum_{n=1}^\infty n^n x^n$ is $R = 0$.
+
+    Also, the interval of convergence of the series is $\{0\}$.
+
+    \subsection*{9. $\sum_{n=1}^\infty (-1)^n \frac{n^2 x^n}{2^n}$}
+
+    Let $c_n = (-1)^n \frac{n^2}{2^n}$, then $$\rho = \lim_{n\to\infty}| \frac{c_{n+1}}{c_n} | = \lim_{n\to\infty}\frac{(n+1)^2}{2n^2} = \lim_{n\to\infty}\frac{(n+1)}{2n} = \frac 1 2$$
+
+    Therefore, the radius of $\sum_{n=1}^\infty (-1)^n \frac{n^2 x^n}{2^n}$ is $R = \frac{1}{\rho} = 2$
+
+    When $x = 2$, $$\sum_{n=1}^\infty (-1)^n \frac{n^2 x^n}{2^n} = \sum_{n=1}^\infty (-1)^n n^2$$
+
+    $\because \sum_{n=1}^\infty n^2$ is not decreasing and $\lim_{n\to\infty} n^2 = \infty$
+
+    $\therefore \sum_{n=1}^\infty (-1)^n n^2$ is obviously divergent
+
+    When $x = -2$, $$\sum_{n=1}^\infty (-1)^n \frac{n^2 x^n}{2^n} = \sum_{n=1}^\infty n^2$$ which is obviously divergent
+
+    $\therefore$ the interval of convergence of the series is $(-2, 2)$.
+
+    \subsection*{13. $\sum_{n=2}^\infty (-1)^n \frac{x^n}{4^n \ln n}$}
+
+    Let $c_n = (-1)^n \frac{1}{4^n \ln n}$, then $$\lim_{n\to\infty}| \frac{c_{n+1}}{c_n} | = \lim_{n\to\infty} \frac{\ln n}{4\ln(n+1)} = \frac 1 4$$
+
+    Therefore, the radius of $\sum_{n=2}^\infty (-1)^n \frac{x^n}{4^n \ln n}$ is $R = \frac{1}{\rho} = 4$
+
+    When $x = 4$, $$\sum_{n=2}^\infty (-1)^n \frac{x^n}{4^n \ln n} = \sum_{n=2}^\infty (-1)^n \frac{1}{\ln n}$$
+
+    Denote $\frac{1}{\ln n}$ to be $b_n$.
+
+    $\because b_n$ is decreasing, $b_{n+1} < b_n$, and $$\lim_{n\to\infty}b_n = \lim_{n\to\infty} \frac{1}{\ln n} = 0$$
+
+    $\therefore \sum_{n=2}^\infty (-1)^n \frac{1}{\ln n}$ is convergent
+
+    When $x=-4$, $$\sum_{n=2}^\infty (-1)^n \frac{x^n}{4^n \ln n} = \sum_{n=2}^\infty \frac{1}{\ln n}$$
+
+    $\because \ln n < n \quad \therefore \frac{1}{\ln n} > \frac{1}{n}$
+
+    $$\therefore \sum_{n=2}^\infty \frac{1}{\ln n} > \sum_{n=2}^\infty \frac{1}{n}$$
+
+    $\because \sum_{n=2}^\infty \frac 1 n$ is divergent
+
+    $\therefore \sum_{n=2}^\infty \frac{1}{\ln n}$ is also divergent
+
+    $\therefore$ the interval of convergence of the series is $(-4, 4]$
+
+    \subsection*{20. $\sum_{n=1}^\infty \frac{(2x-1)^n}{5^n \sqrt n}$}
+
+    First we convert the series to standard form:
+
+    $$\sum_{n=1}^\infty \frac{(2x-1)^n}{5^n \sqrt n} = \sum_{n=1}^\infty \frac{(x - \frac 1 2)^n}{10^n \sqrt n}$$
+
+    Let $c_n = \frac{1}{10^n \sqrt n}$, then $$\rho = \lim_{n\to\infty}| \frac{c_{n+1}}{c_n} | = \lim_{n\to\infty} \frac{\sqrt{n}}{10\sqrt{n+1}} = \frac{1}{10}$$
+
+    Therefore, the radius of $\sum_{n=1}^\infty \frac{(x - \frac 1 2)^n}{10^n \sqrt n}$ is $R = \frac{1}{\rho} = 10$
+
+    When $x = \frac 1 2 + 10 = \frac{21}{2}$, $$\sum_{n=1}^\infty \frac{(x-\frac 1 2)^n}{10^n \sqrt n} = \sum_{n=1}^\infty \frac{1}{\sqrt n}$$
+
+    $\because \sum_{n=1}^\infty \frac{1}{\sqrt n}$ is a $p$-series, whose $p = \frac 1 2 < 1$
+    
+    $\therefore \sum_{n=1}^\infty \frac{1}{\sqrt n}$ is divergent
+
+    When $x = \frac 1 2 - 10 = -\frac{19}{2}$, $$\sum_{n=1}^\infty \frac{(x - \frac 1 2)^n}{10^n \sqrt n} = \sum_{n=1}^\infty (-1)^n \frac{1}{\sqrt n}$$
+
+    $\because \frac{1}{\sqrt{n+1}} < \frac{1}{\sqrt n}$ and $\lim_{n\to\infty}\frac{1}{\sqrt n} = 0$
+
+    $\therefore \sum_{n=1}^\infty (-1)^n \frac{1}{\sqrt n}$ is convergent
+
+    $\therefore$ the interval of convergence of the series is $[-\frac{19}{2}, \frac{21}{2})$
+
+    \subsection*{30.}
+
+    $\because \sum_{n=0}^\infty c_nx^n$ converges when $x = -4$ and diverges when $x = 6$
+
+    $\therefore R \in [4, 6)$, where $R$ is the radius of $\sum_{n=0}^\infty c_n x^n$ 
+
+    $$\therefore \lim_{n\to\infty} | \frac{c_{n+1}}{c_n} | = \frac{1}{R} \in [\frac 1 6, \frac 1 4)$$
+
+    \begin{enumerate}[(a)]
+        \item convergent
+        
+        $\because \lim_{n\to\infty}|\frac{c_{n+1}}{c_n}| < \frac 1 4 < 1$
+
+        $\therefore \sum_{n=0}^\infty c_n$ is absolutely convergent, and therefore convergent
+
+        \item divergent
+
+        $$\because \lim_{n\to\infty}|\frac{8^{n+1}c_{n+1}}{8^nc_n}| = \lim_{n\to\infty}|\frac{8c_{n+1}}{c_n}| \geq 8 \times \frac 1 6 > 1$$
+
+        $\therefore \sum_{n=0}^\infty c_n8^n$ is divergent
+
+        \item convergent
+
+        $$\because \lim_{n\to\infty} | \frac{c_{n+1}(-3)^{n+1}}{c_n(-3)^n} | = \lim_{n\to\infty} 3 | \frac{c_{n+1}}{c_n} | < 3 \times \frac 1 4 < 1$$
+
+        $\therefore \sum_{n=0}^\infty c_n(-3)^n$ is convergent
+
+        \item divergent
+
+        $$\because \lim_{n\to\infty}| \frac{(-1)^{n+1} c_{n+1} 9^{n+1}}{(-1)^{n} c_{n} 9^{n}} | = \lim_{n\to\infty}9 | \frac{c_{n+1}}{c_n} | \geq 9 \times \frac 1 6 > 1$$
+
+        $\therefore \sum_{n=0}^\infty (-1)^n c_n 9^n$ is divergent
+    \end{enumerate}
+
+\end{document}
