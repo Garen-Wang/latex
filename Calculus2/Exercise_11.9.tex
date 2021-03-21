@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 11.9}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+
+    \maketitle
+
+    \subsection*{2.}
+
+    $\because \sum_{n=0}^\infty b_n x^n$ converges for $|x| < 2$
+
+    $\therefore \lim_{n\to\infty} |\frac{b_{n+1}}{b_n}| = \frac{1}{2}$
+
+    $\therefore \lim_{n\to\infty} |\frac{\frac{b_{n+1}}{n+2}}{\frac{b_n}{n+1}}| = \lim_{n\to\infty}\frac{n+1}{n+2}|\frac{b_{n+1}}{b_n}| = \lim_{n\to\infty}|\frac{b_{n+1}}{b_n}| = \frac 1 2$
+
+    $\therefore \sum_{n=0}^\infty \frac{b_n}{n+1}x^{n+1}$ also converges for $|x| < 2$
+
+    In fact, $$\because \int \sum_{n=0}^\infty b_n x^n = \sum_{n=0}^\infty \frac{b_n}{n+1} x^{n+1}$$
+
+    Due to integration to a power series does not change its radius of convergence, $\sum_{n=0}^\infty \frac{b_n}{n+1}x^{n+1}$ also converges for $|x| < 2$.
+
+    \subsection*{13.}
+
+    \begin{enumerate}[(a)]
+        \item 
+        $$\begin{aligned}
+            \because \int_0^x f(t) \textrm dt &= \int_0^x \frac{1}{(1+t)^2} \textrm dt \\
+            &= -\frac{1}{1+x} \\
+            &= -\sum_{n=0}^\infty(-x)^n \\
+            &= \sum_{n=0}^\infty (-1)^{n+1}x^n \\
+        \end{aligned}$$
+
+        $$\therefore \frac{1}{(1+x)^2} = f(x) = \frac{\textrm d}{\textrm dx}\int_0^x f(t)\textrm dt = \sum_{n=1}^\infty (-1)^{n+1}nx^{n-1}$$
+        $$\because \rho = \lim_{n\to\infty}|\frac{(-1)^{n+2}(n+1)}{(-1)^{n+1}n}| = 1$$
+
+        $\therefore$ the radius of convergence is $R = \frac 1 \rho = 1$.
+
+        \item
+        $$\begin{aligned}
+            \because \int_0^x f(t) \textrm dt &= \int_0^x \frac{1}{(1+t)^3} \textrm dt \\
+            &= -\frac 1 2\frac{1}{(1+x)^2} \\
+            &= -\frac 1 2 \sum_{n=1}^\infty (-1)^{n+1}nx^{n-1} \\
+            &= \frac 1 2 \sum_{n=1}^\infty (-1)^n nx^{n-1} \\
+        \end{aligned}$$
+
+        $$\therefore \frac{1}{(1+x)^3} = f(x) = \frac{\textrm d}{\textrm dx}\int_0^x f(t)\textrm dt =\sum_{n=2}^\infty (-1)^n \frac{n(n-1)}{2} x^{n-2}$$
+
+        \item 
+        $$\begin{aligned}
+            f(x) &= \frac{x^2}{(1+x)^3} \\
+            &= x^2 \sum_{n=2}^\infty (-1)^n \frac{n(n-1)}{2} x^{n-2} \\
+            &= \sum_{n=2}^\infty (-1)^n \frac{n(n-1)}{2}x^n
+        \end{aligned}$$
+
+    \end{enumerate}
+
+    \subsection*{17. $f(x) = \frac{x}{(1+4x)^2}$}
+
+    $$\begin{aligned}
+        \frac{1}{(1+x)^2} &= -\frac{\textrm d}{\textrm dx}\frac{1}{1- (-x)} \\
+        &= -\frac{\textrm d}{\textrm dx}\sum_{n=0}^\infty (-x)^n \\
+        &= \sum_{n=1}^\infty (-1)^{n+1}nx^{n-1}
+    \end{aligned}$$
+
+    $$\begin{aligned}
+        f(x) &= x\frac{1}{(1+4x)^2} = x \sum_{n=1}^\infty (-1)^{n+1} n (4x)^{n-1} \\
+        &= \sum_{n=1}^\infty (-4)^{n-1} nx^n
+    \end{aligned}$$
+
+    $$\because \rho = \lim_{n\to\infty}|\frac{(-4)^{n}(n+1)}{(-4)^{n-1} n}| = \lim_{n\to\infty}\frac{4(n+1)}{n} = 4$$
+
+    $\therefore$ the radius of convergence is $R = \frac 1 \rho = \frac 1 4$
+
+    \subsection*{18. $f(x) = (\frac{x}{2-x})^3$}
+
+    $$\begin{aligned}
+        \frac{1}{(1-x)^3} &= \frac 1 2\frac{\textrm d}{\textrm dx}\frac{1}{(1-x)^2} \\
+        &= \frac 1 2 \frac{\textrm d}{\textrm dx^2} \frac{1}{1-x} \\
+        &= \frac 1 2 \frac{\textrm d}{\textrm dx^2} \sum_{n=0}^\infty x^n \\
+        &= \frac 1 2 \frac{\textrm d}{\textrm dx} \sum_{n=1}^\infty nx^{n-1} \\
+        &= \sum_{n=2}^\infty \frac{n(n-1)}{2} x^{n-2}
+    \end{aligned}$$
+
+    $$\begin{aligned}
+        f(x) &= x^3 \frac{1}{(2 - x)^3} = \frac{x^3}{8} \frac{1}{(1 - \frac x 2)^3} \\
+        &= \frac{x^3}{8} \sum_{n=2}^\infty \frac{n(n-1)}{2^{n-1}} x^{n-2} \\
+        &= \sum_{n=2}^\infty \frac{n(n-1)}{2^{n+2}}x^{n+1}
+    \end{aligned}$$
+
+    $$\because \rho = \lim_{n\to\infty}| \frac{\frac{n(n+1)}{2^{n+3}}}{\frac{n(n-1)}{2^{n+2}}} | = \lim_{n\to\infty}\frac{n+1}{2(n-1)} = \frac 1 2$$
+
+    $\therefore$ the radius of convergence is $R = \frac 1 \rho = 2$
+
+    \subsection*{40.}
+
+    \begin{enumerate}[(a)]
+        \item 
+        $$\sum_{n=1}^\infty nx^{n-1} = \sum_{n=0}^\infty \frac{\textrm d}{\textrm dx}x^n = \frac{\textrm d}{\textrm dx}\sum_{n=0}^\infty x^n = \frac{\textrm d}{\textrm dx} \frac{1}{1-x} = \frac{1}{(1-x)^2}$$
+
+        \item 
+        $$\sum_{n=1}^\infty nx^n = x \sum_{n=1}^\infty nx^{n-1} = \frac{x}{(1-x)^2}$$
+
+        $\sum_{n=1}^\infty \frac{n}{2^n}$ is the special case of $\sum_{n=1}^\infty nx^n$ when $x = \frac 1 2$, so $$\sum_{n=1}^\infty \frac{n}{2^n} = \frac{\frac 1 2}{(\frac 1 2)^2} = 2$$
+
+        \item 
+
+        \begin{enumerate}[(i)]
+            \item 
+            $$\sum_{n=2}^\infty n(n-1)x^{n-2} = \frac{\textrm d}{\textrm dx} \sum_{n=1}^\infty nx^{n-1} = \frac{\textrm d}{\textrm dx} \frac{1}{(1-x)^2} = \frac{2}{(1-x)^3}$$
+
+            $$\sum_{n=2}^\infty n(n-1)x^{n} = x^2 \sum_{n=2}^\infty n(n-1)x^{n-2} = \frac{2x^2}{(1-x)^3}$$
+
+            \item 
+
+            This series is the special case of $\sum_{n=2}^\infty n(n-1)x^{n}$ when $x = \frac 1 2$.
+
+            $$\sum_{n=2}^\infty \frac{n^2 - n}{2^n} = \frac{2 \times \frac 1 4}{(\frac 1 2 )^3} = 4 $$
+
+            \item 
+
+            $$\begin{aligned}
+                \sum_{n=1}^\infty \frac{n^2}{2^n} &= \sum_{n=1}^\infty (\frac{n^2 - n}{2^n} + \frac{n}{2^n}) \\
+                &= \sum_{n=2}^\infty \frac{n^2-n)}{2^n} + \sum_{n=1}^\infty \frac{n}{2^n} \\
+                &= 4 - 2 = 2
+            \end{aligned}$$
+        \end{enumerate}
+    \end{enumerate}
+
+\end{document}
