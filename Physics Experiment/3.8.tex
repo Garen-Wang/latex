@@ -1,0 +1,74 @@
+%!TEX program=xelatex
+\documentclass[UTF-8, a4paper, 12pt]{ctexart}
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{textcomp}
+\usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\pagestyle{fancy}
+\rhead{\center{\small{华南理工大学大学城校区物理实验报告}}}
+
+\begin{document}
+    \begin{center}
+        \zihao{-2}\heiti{液体动力黏度的测量 预习报告}
+
+        \zihao{-4}\songti{2020级 \quad 计算机科学与技术（全英创新班）\quad 王樾}
+    \end{center}
+    \zihao{4}\heiti{引言：}\zihao{-4}
+    \songti
+    在稳定流动的液体中，液体质元之间存在的内摩擦力产生了对流动的阻抗，这种性质称为黏滞性。我们可以通过黏滞系数表示液体、气体等流体的黏性。在实际工程和工业生产中，经常需要检测流体的黏度以保证最佳的运行环境和产品质量，从而提高生产效益。本实验探索用奥氏黏度计来测量酒精的动力黏度。
+
+    \textbf{\zihao{4} \heiti{一、实验目的}}
+
+    \zihao{-4}\songti
+
+    \begin{enumerate}[（1）]
+        \item 掌握用奥氏黏度计测定液体动力黏度的方法。
+        \item 掌握秒表、量杯、温度计的基本操作。
+        \item 进一步理解液体黏滞性的意义。
+    \end{enumerate}
+
+    \textbf{\zihao{4} \heiti{二、实验仪器}}
+
+    \zihao{-4}\songti
+
+    奥氏黏度计、温度计、比重计、秒表、酒精、蒸馏水、移液管、吸球、玻璃缸、支架、胶管。
+
+    \textbf{\zihao{4} \heiti{三、实验原理}}
+
+    \zihao{-4}\songti
+
+    根据泊肃叶定律，液体流经毛细管时，体积流量$Q$与管的两端压强$\Delta p$，管的半径$r$，长度$L$以及黏滞系数$\eta$有如下关系：
+
+    $$Q = \frac{V}{t} = \frac{\pi r^4 \Delta p}{8\eta L}$$
+
+    根据上式可得$$\frac{\eta}{t\Delta p} = \frac{\pi r^4}{8VL}$$
+    
+    设已知蒸馏水黏度为$\eta_1$，待测酒精黏度为$\eta_2$，在半径与长度相同的毛细管中，使两种液体上升至同一高度$A$处，分别测出两种液体从$A$降到同一高度$B$所需时间$t_1$和$t_2$。通过控制变量，由上式可得：
+
+    $$\frac{\eta_1}{t_1\Delta p_1} = \frac{\eta_2}{t_2\Delta p_2} \iff \frac{\eta_1}{\eta_2} = \frac{t_1\Delta p_1}{t_2 \Delta p_2}$$
+
+    由于液体压强差可由$\Delta p=\rho g \Delta h$算出，则$$\frac{\Delta p_1}{\Delta p_2} = \frac{\rho_1}{\rho_2}$$
+
+    则待测的酒精黏度可表示为$$\eta_2 = \frac{t_2\Delta p_2}{t_1\Delta p_1}\eta_1 = \frac{\rho_2 t_2}{\rho_1 t_1}\eta_1$$
+
+    用秒表测量$t_1$和$t_2$，用比重计测出$\rho_1$和$\rho_2$，那么酒精的黏度系数即可用已知的$\eta_1$表示。
+
+    \textbf{\zihao{4} \heiti{四、内容步骤}}
+
+    \zihao{-4}\songti
+
+    \begin{enumerate}[（1）]
+        \item 用蒸馏水清理黏度计内部，然后将黏度计装好浸在盛水的玻璃缸中，让水面超过痕线$A$。
+        \item 用移液管将一定量的蒸馏水注入右边的泡中。
+        \item 用吸球将蒸馏水吸入左边的泡中并使其液面略高于痕线$A$，然后让液体自然从毛细管流下，当液面降至A时开始计时，降至B时停止计时，记下时间$t_1$。重复测量三次以上。将数据记录于表中。
+        \item 将蒸馏水替换为相同体积的待测酒精，重复第(2)步和第（3）步，测得时间$t_2$，同样需重复测量三次以上。将数据记录于表中。
+        \item 每次测$t_1$和$t_2$时，记下初次和末次时玻璃缸中的水温，用密度计分别测定蒸馏水和酒精的密度$\rho_1$和$\rho_2$。
+        \item 根据水温查得蒸馏水的动力黏度$\eta_1$，进行数据处理，算出酒精的粘滞系数$\eta_2$。
+    \end{enumerate}
+
+\end{document}
