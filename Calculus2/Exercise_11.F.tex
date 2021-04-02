@@ -1,0 +1,118 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 11. Fourier Series}
+    \author{Wang Yue from CS Elite Class}
+    \date{March 28, 2021}
+    \maketitle
+
+    \subsection*{1. Find the Fourier series of the following function$$f(x) = \left\{ \begin{array}{ll}
+        x + 1, \quad &-\pi \leq x < 0 \\
+        x^2, \quad &0 \leq x \leq \pi
+    \end{array}\right.$$and find the sum of the Fourier series.}
+
+    $$\begin{aligned}
+        a_0 &= \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \textrm dx \\
+        &= \frac 1 \pi (\int_{-\pi}^0 (x + 1) \textrm dx + \int_0^\pi x^2 \textrm dx) \\
+        &= \frac 1 \pi [(\frac{x^2}{2} + x)\biggl|_{-\pi}^0 + (\frac{x^3}{3})\biggl|_0^\pi] \\
+        &= \frac 1 \pi (0 - \frac{\pi^2}{2} + \pi + \frac{\pi^3}{3}) \\
+        &= \frac{\pi^2}{3} - \frac{\pi}{2} + 1
+    \end{aligned}$$
+
+    $$\begin{aligned}
+        a_n &= \frac 1 \pi \int_{-\pi}^{\pi}f(x)\cos nx\textrm dx \\
+        &= \frac 1 \pi (\int_{-\pi}^0 (x+1)\cos nx \textrm dx + \int_0^\pi x^2\cos nx \textrm dx) \\
+        &= \frac 1 \pi (\int_{-\pi}^0 \frac{x+1}{n} \textrm d\sin nx + \int_0^\pi \frac{x^2}{n}\textrm d\sin nx) \\
+        &= \frac 1 \pi [\frac{(x+1) \sin nx}{n}\biggl|_{-\pi}^0 - \int_{-\pi}^0 \frac{\sin nx}{n} \textrm dx + \frac{x^2\sin nx}{n} \biggl|_0^\pi - \int_0^\pi \frac{2x}{n}\sin nx \textrm dx] \\
+        &= \frac 1 \pi [0 + (\frac{\cos nx}{n^2})\biggl|_{-\pi}^0 + 0 + 2\int_0^\pi \frac{x}{n^2}\textrm d\cos nx] \\
+        &= \frac 1 \pi (0 + \frac{1- (-1)^{n}}{n^2} + 2 (\frac{x\cos nx}{n^2})\biggl|_0^\pi - 2\int_0^\pi \frac{\cos nx}{n^2}\textrm dx) \\
+        &= \frac 1 \pi (0 + \frac{1- (-1)^{n}}{n^2} + \frac{2\pi(-1)^n}{n^2} - \frac{2}{n}(\sin nx)\biggl|_0^\pi) \\
+        &= \frac{1 + (-1)^n(2\pi - 1)}{n^2\pi}
+    \end{aligned}$$
+
+    $$\begin{aligned}
+        b_n &= \frac 1 \pi \int_{-\pi}^\pi f(x) \sin nx \textrm dx \\
+        &= \frac 1 \pi (\int_{-\pi}^0 (x+1)\sin nx \textrm dx + \int_0^\pi x^2\sin nx \textrm dx) \\
+        &= -\frac 1 \pi (\int_{-\pi}^0 \frac{x+1}{n}\textrm d\cos nx + \int_0^\pi \frac{x^2}{n} \textrm d\cos nx) \\
+        &= -\frac 1 \pi [\frac{(x+1)\cos nx}{n}\biggl|_{-\pi}^0 - \int_{-\pi}^0 \frac{\cos nx}{n} \textrm dx + \frac{x^2 \cos nx}{n}\biggl|_0^\pi - \frac 1 n \int_0^\pi 2x \cos nx \textrm dx] \\
+        &= -\frac 1 \pi [\frac{1 - (1-\pi)(-1)^n}{n} - \frac{\sin nx}{n^2}\biggl|_{-\pi}^0 + \frac{(-1)^n \pi^2}{n} - \frac{2}{n^2} \int_0^\pi x \textrm d\sin nx] \\
+        &= -\frac 1 \pi [\frac{1 + (-1)^n(\pi - 1)}{n} - 0 + \frac{(-1)^n \pi^2}{n} + \frac{2}{n^2}\int_0^\pi \sin nx \textrm dx] \\
+        &= -\frac 1 \pi [\frac{1 + (-1)^n(\pi - 1)}{n} - 0 + \frac{(-1)^n \pi^2}{n} - \frac{2}{n}(\cos nx)\biggl|_0^\pi] \\
+        &= -\frac 1 \pi [\frac{1 + (-1)^n(\pi - 1)}{n} - 0 + \frac{(-1)^n \pi^2}{n} - 2\frac{(-1)^n - 1}{n}] \\
+        &= \frac{1 + (-1)^n(\pi^2 -\pi - 1)}{n\pi}
+    \end{aligned}$$
+
+    $\therefore$ the Fourier series of $f(x)$ is $$(\frac{\pi^2}{6} - \frac{\pi}{4} + \frac 1 2) + \sum_{n=1}^\infty ( \frac{1 + (-1)^n(2\pi - 1)}{n^2\pi}\cos nx + \frac{1 + (-1)^n(\pi^2 -\pi - 1)}{n\pi}\sin nx)$$
+
+    Denote the sum function to be $s(x)$, then we have
+
+    $$s(x) = \left\{ \begin{array}{ll} 
+        x + 1 &\textrm{ if } -\pi < x < 0 \\
+        \frac 1 2 &\textrm{ if } x = 0 \\
+        x^2 & \textrm{ if } 0 < x < \pi \\
+        \frac{\pi^2 + \pi + 1}{2} &\textrm{ if } x = \pi
+    \end{array}\right.$$
+
+    \subsection*{2. Find the sine series of $f(x) = \frac{x^2}{2}(0 \leq x \leq \pi)$}
+
+    Let $F(x) = \left\{ \begin{array}{ll} \quad f(x), &0 \leq x \leq \pi \\ -f(-x), &-\pi \leq x < 0 \end{array}\right.$
+
+    $$\begin{aligned}
+        a_0 = \frac 1 \pi \int_{-\pi}^\pi F(x) \textrm dx = 0
+    \end{aligned}$$
+
+    $$\begin{aligned}
+        a_n = \frac 1 \pi \int_{-\pi}^\pi F(x) \cos nx \textrm dx = 0
+    \end{aligned}$$
+
+    $$\begin{aligned}
+        b_n &= \frac 1 \pi \int_{-\pi}^\pi F(x) \sin nx \textrm dx \\
+        &= \frac 2 \pi \int_0^\pi f(x)\sin nx \textrm dx \\
+        &= \frac 1 \pi \int_0^\pi x^2 \sin nx \textrm dx \\
+        &= -\frac{1}{n\pi} \int_0^\pi x^2 \textrm d\cos nx \\
+        &= -\frac{1}{n\pi} [(x^2\cos nx)\biggl|_0^\pi - \int_0^\pi 2x\cos nx \textrm dx] \\
+        &= -\frac{1}{n\pi} [(-1)^n \pi^2 - \frac{2}{n} \int_0^\pi x\textrm d\sin nx] \\
+        &= -\frac{1}{n\pi} [(-1)^n \pi^2 - \frac 2 n (0 - \int_0^\pi \sin nx \textrm dx)] \\
+        &= -\frac{1}{n\pi} [(-1)^n \pi^2 - \frac{2}{n^2} (\cos nx)\biggl|_0^\pi] \\
+        &= \frac{1}{n\pi} [2\frac{(-1)^n - 1}{n^2} - (-1)^n \pi^2 ] \\
+        &= \frac{(-1)^n n^2(2 - \pi^2) - 2}{n^3\pi}
+    \end{aligned}$$
+
+    $\therefore$ the sine series of $f(x) = \frac{x^2}{2}(0 \leq x \leq \pi)$ is 
+    
+    $$\sum_{n=1}^\infty \frac{(-1)^n n^2(2 - \pi^2) - 2}{n^3\pi} \sin nt$$
+
+    \subsection*{3. Find the Fourier series of $f(x) = x(1 < x < 3)$, and prove the equality$$\sum_{n=1}^\infty \frac{(-1)^{n-1}}{2n-1} = \frac \pi 4$$}
+
+    Suppose $f(x)$ has the period $T = 2$, then:
+    
+    when $-1 < x < 1, f(x) = x + 2$, when $-3 < x < -1, f(x) = x + 4$
+
+    $a_0 = 0$
+
+    $$\begin{aligned}
+        a_n &= \frac 1 2 \int_{-2}^2 f(x) \cos \frac{n\pi x}{2} \textrm dx \\
+        &= \frac 1 2 \int_{-2}^{-1}(x + 4) \cos \frac{n\pi x}{2} \textrm dx + \frac 1 2 \int_{-1}^1 (x + 2) \cos \frac{n\pi x}{2} \textrm dx + \frac 1 2 \int_1^2 x \cos \frac{n\pi x}{2} \textrm dx \\
+        &= \frac{-2}{n^2\pi^2} \cos n\pi
+    \end{aligned}$$
+
+    $$\begin{aligned}
+        b_n &= \frac 1 2 \int_{-2}^2 f(x) \sin \frac{n\pi x}{2} \textrm dx \\
+        &= \frac 1 2 \int_{-2}^{-1}(x + 4) \sin \frac{n\pi x}{2} \textrm dx + \frac 1 2 \int_{-1}^1 (x + 2) \sin \frac{n\pi x}{2} \textrm dx + \frac 1 2 \int_1^2 x \sin \frac{n\pi x}{2} \textrm dx \\
+        &= \frac{8}{n\pi}\cos n \pi
+    \end{aligned}$$
+
+    $\therefore$ the Fourier series of $f(x)$ in $[-2, 2]$ is 
+    
+    $$\sum_{n=1}^\infty [\frac{-2}{n^2\pi^2} \cos n\pi \cos nx + \frac{8}{n\pi}\cos n \pi \sin nx]$$
+
+    When $x = \frac{3\pi}{2}$, $\frac{3\pi}{2} = 6\sum_{n=1}^\infty \frac{(-1)^{n-1}}{2n-1}$, which is equivalent to 
+
+    $$\sum_{n=1}^\infty \frac{(-1)^{n-1}}{2n-1} = \frac \pi 4$$
+
+\end{document}
