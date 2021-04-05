@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1617241506 "/home/garen/Latex/Calculus2/Exercise_12.5.tex" "/home/garen/Latex/Calculus2/Exercise_12.5.pdf" "Exercise_12.5" 1617241507
-  "/home/garen/Latex/Calculus2/Exercise_12.5.aux" 1617241506 32 c81c40425fbb5e93b90fba65da0b5e61 ""
-  "/home/garen/Latex/Calculus2/Exercise_12.5.tex" 1617241505 6310 106aa0ab51d6e5564714253b74d2f1a6 ""
+["pdflatex"] 1617633684 "/home/garen/Latex/Calculus2/Exercise_12.5.tex" "/home/garen/Latex/Calculus2/Exercise_12.5.pdf" "Exercise_12.5" 1617633685
+  "/home/garen/Latex/Calculus2/Exercise_12.5.aux" 1617633685 32 c81c40425fbb5e93b90fba65da0b5e61 ""
+  "/home/garen/Latex/Calculus2/Exercise_12.5.tex" 1617633683 6369 1e751daa392b1349b433c199f1e5e451 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -63,11 +63,11 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1616081925 5169178 5e26466a4cf032aa8042125d66141e2e ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1616081962 2706595 3fb83e38ba05ce152efadcd8e8ea1449 ""
   "/usr/local/texlive/2020/texmf.cnf" 1616081921 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "Exercise_12.5.aux" 1617241506 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
-  "Exercise_12.5.tex" 1617241505 6310 106aa0ab51d6e5564714253b74d2f1a6 ""
+  "Exercise_12.5.aux" 1617633685 32 c81c40425fbb5e93b90fba65da0b5e61 "pdflatex"
+  "Exercise_12.5.tex" 1617633683 6369 1e751daa392b1349b433c199f1e5e451 ""
   (generated)
   "Exercise_12.5.log"
-  "/home/garen/Latex/Calculus2/Exercise_12.5.log"
-  "Exercise_12.5.aux"
   "/home/garen/Latex/Calculus2/Exercise_12.5.pdf"
+  "/home/garen/Latex/Calculus2/Exercise_12.5.log"
   "Exercise_12.5.pdf"
+  "Exercise_12.5.aux"
