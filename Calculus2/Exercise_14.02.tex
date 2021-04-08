@@ -1,0 +1,126 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 14.2}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+    \maketitle
+
+    \subsection*{6. $\lim_{(x, y) \to (1, -1)} e^{-xy}\cos (x + y)$}
+
+    \subsection*{11. $\lim_{(x, y) \to (0, 0)} \frac{y^2 \sin^2 x}{x^4 + y^4}$}
+
+    Let $y = kx$, then 
+    
+    $$\begin{aligned}
+        \lim_{(x, y) \to (0, 0)} \frac{y^2\sin^2 x}{x^4 + y^4} &= \lim_{(x, y)\to(0, 0)} \frac{k^2x^2\sin^2 x}{(1+k^4)x^4} \\
+        &= \frac{k^2}{1 + k^4} \times \lim_{(x, y) \to (0, 0)} (\frac{\sin x}{x})^2 \\
+        &= \frac{k^2}{1 + k^4}
+    \end{aligned}$$
+
+    If $k = 0$, then $$\lim_{(x, y) \to (0, 0)} \frac{y^2\sin^2 x}{x^4 + y^4} = \frac 0 1 = 0$$
+
+    If $k = 1$, then $$\lim_{(x, y) \to (0, 0)} \frac{y^2\sin^2 x}{x^4 + y^4} = \frac 1 2$$
+
+    $\therefore$ the limit does not exist.
+
+    \subsection*{12. $\lim_{(x, y) \to (1, 0)} \frac{xy-y}{(x-1)^2 + y^2}$}
+
+    Let $x - 1= ky$, then 
+    
+    $$\lim_{(x, y) \to (1, 0)} \frac{xy-y}{(x-1)^2 + y^2} = \lim_{(x, y) \to (1, 0)} \frac{ky^2}{(k^2 + 1)y^2} = \frac{k}{k^2+1}$$
+
+    $\because \lim_{(x, y) \to (1, 0)} \frac{xy-y}{(x-1)^2 + y^2}$ is not a constant
+
+    $\therefore $ the limit does not exist.
+
+    \subsection*{13. $\lim_{(x, y) \to (0, 0)} \frac{xy}{\sqrt{x^2 + y^2}}$}
+
+    $$\lim_{(x, y) \to (0, 0)} \frac{xy}{\sqrt{x^2 + y^2}} = \lim_{(x, y) \to (0, 0)} \frac{x}{\sqrt{x^2 + y^2}} \times \lim_{y \to 0} y$$
+
+    $\because \lim_{(x, y) \to (0, 0)} \frac{x}{\sqrt{x^2 + y^2}}$ is bounded in $(0, 1)$, and $\lim_y y = 0$
+
+    $\therefore \lim_{(x, y) \to (0, 0)} \frac{xy}{\sqrt{x^2 + y^2}} = 0$
+
+    \subsection*{16. $\lim_{(x, y) \to (0, 0)} \frac{x^2\sin^2 y}{x^2 + 2y^2}$}
+
+    $\forall \epsilon > 0, \exists \delta = \sqrt{\epsilon}$, such that if $0 < \sqrt{x^2 + y^2} < \delta$, then
+
+    $$\frac{x^2\sin^2 y}{x^2 + 2y^2} < \frac{x^2y^2}{x^2 + y^2} < \frac{(x^2 + y^2)^2}{(x^2 + y^2)} = \delta^2 = \epsilon$$
+
+    $\therefore \lim_{(x, y) \to (0, 0)} \frac{x^2\sin^2 y}{x^2 + 2y^2}$ exists.
+
+    \subsection*{17. $\lim_{(x, y) \to (0, 0)} \frac{x^2 + y^2}{\sqrt{x^2 + y^2 + 1} - 1}$}
+
+    $$\begin{aligned}
+        \lim_{(x, y) \to (0, 0)} \frac{x^2 + y^2}{\sqrt{x^2 + y^2 + 1} - 1} &= \lim_{(x, y)\to (0, 0)} \frac{(x^2 + y^2)(\sqrt{x^2 + y^2 + 1} + 1)}{(x^2 + y^2 + 1) - 1} \\
+        &= \lim_{(x, y) \to (0, 0)}(\sqrt{x^2 + y^2 + 1} + 1) \\ 
+        &= 1 + 1 = 2
+    \end{aligned}$$
+
+    \subsection*{32. $H(x, y) = \frac{e^x + e^y}{e^{xy} - 1}$}
+
+    When $x \not = 0 \textrm{ and } y \not = 0$, $e^{xy} - 1 \not = 0$, $H(x, y)$ is continuous since it is a rational function.
+
+    When $x = 0 \textrm{ or } y = 0$, let $y = x$, then we get $$\lim_{(x, y) \to (0, 0)}\frac{e^x + e^y}{e^{xy} - 1} = \lim_{x \to 0}\frac{2e^x}{e^{x^2} - 1} = \infty$$
+
+    $\therefore \lim_{(x, y) \to (0, 0)}\frac{e^x + e^y}{e^{xy} - 1}$ does not exist.
+
+    $\therefore$ the function is continuous at $\{ (x, y) | x \not = 0 \textrm{ and } y \not = 0 \}$
+
+    \subsection*{33. $G(x, y) = \ln (x^2 + y^2 - 4)$}
+
+    The domain of $G$ is $\{ (x, y) | x^2 + y^2 > 4\}$
+
+    $\because$ the inner function $z = x^2 + y^2 - 4$ is continuous in $D(G)$
+
+    $\therefore G(x, y)$ is continuous in $\{ (x, y) | x^2 + y^2 > 4\}$
+
+    \subsection*{37. $f(x, y) = \left\{ \begin{array}{ll} \frac{x^2y^3}{2x^2 + y^2} &\textrm{if } (x, y) \not = (0, 0) \\ 1 &\textrm{if } (x, y) = (0, 0) \end{array}\right.$}
+
+    When $(x, y) \not = (0, 0)$, $f(x, y)$ is continuous since it is a rational function.
+
+    When $(x, y) = (0, 0)$, we can prove that $\lim_{(x, y) \to (0, 0)} f(x, y) = 0 \not = 1$.
+
+    $\forall \epsilon > 0, \exists \delta = \sqrt[3]{\epsilon}$, such that if $0 < \sqrt{x^2 + y^2} < \delta$,
+    
+    $$|f(x, y) - 0| = \frac{x^2y^3}{2x^2 + y^2} < \frac{x^2}{x^2 + y^2} y^3 < (\sqrt{x^2 + y^2})^3 = \delta^3 = \epsilon$$
+
+    $\therefore \lim_{(x, y) \to (0, 0)} f(x, y) \not = f(0, 0)$
+    
+    $\therefore f$ is not continuous at $(0, 0)$.
+
+    $\therefore f(x, y)$ is continuous in $\{  (x, y) | x \not = 0 \textrm{ and } y \not = 0 \}$
+
+    \subsection*{38. $f(x, y) = \left\{ \begin{array}{ll} \frac{xy}{x^2 + xy + y^2} &\textrm{ if} (x, y) \not = (0, 0) \\ 0 &\textrm{ if} (x, y) = (0, 0)\end{array}\right.$}
+
+    When $(x, y) \not = (0, 0)$, $f(x, y)$ is continuous since it is a rational function.
+
+    When $(x, y) = (0, 0)$, we can prove that $\lim_{(x, y) \to (0, 0)}f(x, y)$ does not exist.
+
+    Let $y = x$, then $$\lim_{(x, y) \to (0, 0)} f(x, y) = \frac{x^2}{3x^2} = \frac 1 3$$
+
+    Let $y = -x$, then $$\lim_{(x, y) \to (0, 0)} f(x, y) = \frac{-x^2}{2x^2 - x^2} = -1$$
+
+    $\therefore \lim_{(x, y) \to (0, 0)}$ does not exist, thus not continuous at $(0, 0)$.
+
+    $\therefore f(x, y)$ is continuous in $\{  (x, y) | x \not = 0 \textrm{ and } y \not = 0 \}$
+
+    \subsection*{40. $\lim_{(x, y) \to (0, 0)} (x^2 + y^2) \ln (x^2 + y^2)$}
+
+    Taking the substitution $r^2 = x^2 + y^2$, then the limit is equivalent to
+
+    $$\lim_{r \to 0^+} r^2 \ln r^2 = \lim_{r\to 0^+} \frac{2\ln r}{r^{-2}} = \lim_{r\to 0^+}\frac{2}{r(-2r^{-3})} = \lim_{r \to 0^+}-r^2 = 0$$
+
+    \subsection*{41. $\lim_{(x, y) \to (0, 0)} \frac{e^{-x^2-y^2} - 1}{x^2 + y^2}$}
+
+    Taking the substitution $r^2 = x^2 + y^2$, then the limit is equivalent to 
+
+    $$\lim_{r\to 0^+} \frac{e^{-r^2} - 1}{r^2} = \lim_{r\to0^+}\frac{-2re^{-r^2}}{2r} = \lim_{r\to 0^+}-e^{-r^2} = -1$$
+
+\end{document}
