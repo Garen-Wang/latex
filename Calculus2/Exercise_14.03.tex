@@ -1,0 +1,263 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 14.3}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+    \maketitle
+
+    \subsection*{24. $w = \frac{e^v}{u + v^2}$}
+
+    $$\frac{\partial w}{\partial u} = -\frac{e^v}{(u + v^2)^2}$$
+
+    $$\frac{\partial w}{\partial v} = \frac{e^v(u + v^2 - 2v)}{(u + v^2)^2}$$
+
+    \subsection*{26. $u(r, \theta) = \sin (r\cos \theta)$}
+
+    $$\frac{\partial u}{\partial r} = \cos (r\cos \theta) \cos \theta$$
+
+    $$\frac{\partial u}{\partial \theta} = -r\sin \theta \cos (r\cos \theta)$$
+
+    \subsection*{29. $F(x, y) = \int_y^x \cos(e^t) dt$}
+
+    $$\frac{\partial F}{\partial x} = \cos (e^x)$$
+
+    $$\frac{\partial F}{\partial y} = -\cos (e^y)$$
+
+    \subsection*{36. $u = x^{\frac y z}$}
+
+    $$\frac{\partial u}{\partial x} = \frac y z x^{\frac y z - 1}$$
+
+    $$\frac{\partial u}{\partial y} = \frac{x^{\frac y z} \ln x}{z}$$
+
+    $$\frac{\partial u}{\partial z} = -\frac{y x^{\frac y z} \ln x}{z^2}$$
+
+    \subsection*{39. $u = \sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}$}
+
+    $$\frac{\partial u}{\partial x_i} = \frac{2x_i}{2\sqrt{x_1^2 + x_2^2 + \cdots + x_n^2}}$$
+
+    where $i = 1, 2, \cdots, n$.
+
+    \subsection*{41. $f(x, y) = \ln (x + \sqrt{x^2 + y^2}); \quad f_x(3, 4)$}
+
+    $$f_x(x, y) = \frac{1 + \frac{x}{\sqrt{x^2 + y^2}}}{x + \sqrt{x^2 + y^2}}$$
+
+    $$f_x(3, 4) = \frac{1 + \frac 3 5}{3 + 5} = \frac{1}{5}$$
+
+    \subsection*{42. $f(x, y) = \arctan(\frac y x); \quad f_x(2, 3)$}
+
+    $$f_x(x, y) = \frac{1}{1 + (\frac{y}{x})^2} (-\frac{y}{x^2})$$
+
+    $$f_x(2, 3) = \frac{1}{1 + (\frac 3 2)^2}(-\frac{3}{4}) = -\frac 3 4 \times \frac{4}{13} = -\frac{3}{13}$$
+
+    \subsection*{49. $e^z = xyz$}
+
+    % $$x = \frac{e^z}{yz}$$
+
+    % $$\frac{\partial x}{\partial z} = \frac{e^z(z - 1)}{yz^2}$$
+
+    % $$\frac{\partial x}{\partial y} = -\frac{e^z}{zy^2}$$
+
+    % $$\frac{\partial z}{\partial x} = \frac{1}{\frac{\partial x}{\partial z}} = \frac{yz^2}{e^z(z - 1)}$$
+
+    % $$\frac{\partial z}{\partial y} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial y} = \frac{-z}{y(z-1)}$$
+
+    Differentiating implicitly with respect to $x$ and treating $y$ as constant:
+
+    $$e^z \frac{\partial z}{\partial x} = yz + yx\frac{\partial z}{\partial x}$$
+
+    $$\therefore \frac{\partial z}{\partial x} = \frac{yz}{e^z - xy}$$
+
+    Differentiating implicitly with respect to $y$ and treating $x$ as constant:
+
+    $$e^z \frac{\partial z}{\partial y} = xz + xy\frac{\partial z}{\partial y}$$
+
+    $$\therefore \frac{\partial z}{\partial y} = \frac{xz}{e^z - xy}$$
+
+    \subsection*{50. $yz + x\ln y = z^2$}
+    
+    % $$x = \frac{z^2 - yz}{\ln y}$$
+
+    % $$\frac{\partial x}{\partial z} = \frac{2z - y}{\ln y}$$
+
+    % $$\frac{\partial x}{\partial y} = \frac{-z\ln y - (\frac{z^2}{y} - z)}{(\ln y)^2} = \frac{z(1 - \ln y - \frac z y)}{(\ln y)^2}$$
+
+    % $$\frac{\partial z}{\partial x} = \frac{1}{\frac{\partial x}{\partial z}} = \frac{\ln y}{2z - y}$$
+
+    % $$\frac{\partial z}{\partial y} = \frac{\partial z}{\partial x} \frac{\partial x}{\partial y} = \frac{\ln y}{2z - y} \times \frac{z(1 - \ln y - \frac z y)}{(\ln y)^2} = \frac{z(y - y\ln y - z)}{(2z - y)y\ln y}$$
+
+    To compute $\frac{\partial z}{\partial x}$, differentiate implicitly with respect to $x$:
+
+    $$y\frac{\partial z}{\partial x} + \ln y = 2z\frac{\partial z}{\partial x}$$
+
+    $$\therefore \frac{\partial z}{\partial x} = \frac{\ln y}{y - 2z}$$
+
+    To compute $\frac{\partial z}{\partial y}$, differentiate implicitly with respect to $y$:
+
+    $$z + y\frac{\partial z}{\partial y} + \frac{x}{y} = 2z \frac{\partial z}{\partial y}$$
+
+    $$\therefore \frac{\partial z}{\partial y} = \frac{zy + x}{2yz - y^2}$$
+
+
+    \subsection*{52.}
+
+    \begin{enumerate}[(a)]
+        \item 
+        $$\frac{\partial z}{\partial x} = g(y)f'(x)$$
+
+        $$\frac{\partial z}{\partial y} = f(x)g'(y)$$
+
+        \item 
+        $$\frac{\partial z}{\partial x} = \frac{f'(\frac x y)}{y}$$
+
+        $$\frac{\partial z}{\partial y} = -\frac{x f'(\frac x y)}{y^2}$$
+    \end{enumerate}
+
+    \subsection*{55. $w = \sqrt{u^2 + v^2}$}
+
+    $$\frac{\partial w}{\partial u} = \frac{2u}{2\sqrt{u^2 + v^2}} = \frac{u}{\sqrt{u^2 + v^2}}$$
+
+    $$\frac{\partial w}{\partial v} = \frac{2v}{2\sqrt{u^2 + v^2}} = \frac{v}{\sqrt{u^2 + v^2}}$$
+
+    $$\frac{\partial}{\partial u}(\frac{\partial w}{\partial u}) = \frac{\sqrt{u^2 + v^2} - \frac{u^2}{\sqrt{u^2+v^2}}}{u^2 + v^2} = \frac{\frac{v^2}{\sqrt{u^2+v^2}}}{u^2+v^2} = \frac{v^2}{(u^2+v^2)^{\frac 3 2}}$$
+
+    $$\frac{\partial}{\partial v}(\frac{\partial w}{\partial u}) = \frac{-u\frac{v}{\sqrt{u^2+v^2}}}{u^2+v^2} = \frac{-uv}{(u^2+v^2)^{\frac 3 2}}$$
+
+    $$\frac{\partial}{\partial u}(\frac{\partial w}{\partial v}) = \frac{-v\frac{2u}{2\sqrt{u^2+v^2}}}{u^2+v^2} = \frac{-uv}{(u^2+v^2)^{\frac 3 2}}$$
+
+    $$\frac{\partial}{\partial v}(\frac{\partial w}{\partial v}) = \frac{\sqrt{u^2+v^2} - \frac{v^2}{\sqrt{u^2+v^2}}}{u^2+v^2} = \frac{u^2}{(u^2+v^2)^{\frac 3 2}}$$
+
+    \subsection*{56. $v = \frac{xy}{x - y}$}
+
+    $$\frac{\partial v}{\partial x} = \frac{y(x-y) - xy}{(x-y)^2} = \frac{-y^2}{(x-y)^2}$$
+
+    $$\frac{\partial v}{\partial y} = \frac{x(x-y) - xy(-1)}{(x-y)^2} = \frac{x^2}{(x-y)^2}$$
+
+    $$\frac{\partial }{\partial x}(\frac{\partial v}{\partial x}) = \frac{-(-y^2)2(x-y)}{(x-y)^4} = \frac{2y^2}{(x-y)^3}$$
+
+    $$\frac{\partial }{\partial y}(\frac{\partial v}{\partial y}) = \frac{2x^2 (x-y)}{(x-y)^4} = \frac{2x^2}{(x-y)^3}$$
+
+    $$\frac{\partial }{\partial x}(\frac{\partial v}{\partial y}) = \frac{2x(x-y)^2 - 2x^2 (x-y)}{(x-y)^4} = \frac{2x(x-y) - 2x^2}{(x-y)^3} = \frac{-2xy}{(x-y)^3}$$
+
+    $$\frac{\partial }{\partial y}(\frac{\partial v}{\partial x}) = \frac{-2y(x-y)^2 -2y^2 (x-y)}{(x-y)^4} = \frac{-2xy}{(x-y)^3}$$
+
+    \subsection*{67. $u = e^{r\theta} \sin \theta ; \quad \frac{\partial^3 u}{\partial r^2 \partial \theta}$}
+
+    $$\frac{\partial u}{\partial \theta} = e^{r\theta} r \sin \theta + e^{r\theta} \cos \theta$$
+
+    $$\frac{\partial^2 u}{\partial r \partial \theta} = \sin \theta (e^{r\theta} + r\theta e^{r\theta} ) + e^{r\theta} \theta \cos \theta = (1+r\theta) e^{r\theta} \sin \theta + e^{r\theta}\cos \theta$$
+
+    $$\frac{\partial^3 u}{\partial r^2 \partial \theta} = e^{r\theta} \sin \theta (2\theta +r\theta^2) + e^{r\theta}\theta \cos \theta = e^{r\theta}\theta[(2+r\theta)\sin \theta + \cos \theta]$$
+
+    \subsection*{71. If $f(x, y, z) = xy^2z^3 + \arcsin(x\sqrt z)$, find $f_{xzy}$.}
+
+    $$f_x(x, y, z) = y^2z^3 + \frac{\sqrt z}{\sqrt{1-zx^2}}$$
+
+    $$f_{xz}(x, y, z) = 3y^2z^2 + \frac{\frac{\sqrt{1-zx^2}}{2\sqrt z} + \sqrt{z} \frac{zx}{\sqrt{1-zx^2}}}{1 - zx^2} = 3y^2z^2 + \frac{1-zx^2 + 2xz^2}{2\sqrt z (1-zx^2)^{\frac 3 2}}$$
+
+    $$f_{xzy}(x, y, z) = 6z^2y$$
+
+    \subsection*{76.}
+
+    \begin{enumerate}[(d)]
+        \item $u = \ln\sqrt{x^2 + y^2}$
+
+        $$u_x = \frac{1}{\sqrt{x^2 + y^2}} \frac{1}{2\sqrt{x^2 + y^2}} 2x = \frac{x}{x^2 + y^2}$$
+
+        $$u_{xx} = \frac{(x^2 + y^2) - x (2x)}{(x^2 + y^2)^2} = \frac{y^2 - x^2}{(x^2 + y^2)^2}$$
+
+        By the property of symmetry, similarly we have:
+
+        $$u_{yy} = \frac{x^2 - y^2}{(x^2 + y^2)^2}$$
+
+        $$\therefore u_{xx} + u_{yy} = \frac{y^2 - x^2 + x^2 - y^2}{(x^2 + y^2)^2} = 0$$
+
+        which indicates that $u$ is a solution of Laplace's equation $u_{xx} + u_{yy} = 0$.
+    \end{enumerate}
+
+    \subsection*{77. }
+
+    \begin{proof}
+        $u = \frac{1}{\sqrt{x^2+y^2+z^2}}$
+
+        $$u_x = \frac{-\frac{2x}{2\sqrt{x^2 + y^2 + z^2}}}{x^2 + y^2 + z^2} = \frac{-x}{(x^2 + y^2 + z^2)^{\frac 3 2}}$$
+
+        $$u_{xx} = -\frac{(x^2+y^2+z^2)^{\frac 3 2} - x \frac 3 2 \sqrt{x^2 + y^2 + z^2} \cdot 2x}{(x^2 + y^2 + z^2)^3} = -\frac{x^2 + y^2 + z^2 - 3x^2}{(x^2 + y^2 + z^2)^{\frac 5 2}}$$
+
+        Similarly, we can get:
+
+        $$u_{yy} = -\frac{x^2 + y^2 + z^2 - 3y^2}{(x^2+y^2+z^2)^{\frac 5 2}}$$
+
+        $$u_{zz} = -\frac{x^2 + y^2 + z^2 - 3z^2}{(x^2+y^2+z^2)^{\frac 5 2}}$$
+
+        $$\therefore u_{xx} + u_{yy} + u_{zz} = -\frac{3(x^2 + y^2 + z^2) - 3(x^2 + y^2 + z^2)}{(x^2+y^2+z^2)^{\frac 5 2}} = 0$$
+
+        which indicates $u$ is a solution of the three-dimensional Laplace equation.
+    \end{proof}
+
+    \subsection*{79. }
+
+    \begin{proof}
+        $u(x, t) = f(x + at) + g(x-at)$
+
+        $$u_x = f'(x + at) + g'(x-at)$$
+
+        $$u_{xx} = f''(x + at) + g''(x-at)$$
+
+        $$u_t = af'(x + at) - ag'(x-at)$$
+
+        $$u_{tt} = a^2f''(x + at) + a^2g''(x-at)$$
+
+        $$\therefore u_{tt} = a^2[f''(x+at) + g''(x-at)] = a^2u_{xx}$$
+
+        $\therefore u(x, t)$ is a solution of the wave equation in Exercise 78.
+    \end{proof}
+
+    \subsection*{101. }
+
+    \begin{enumerate}[(a)]
+        \item 
+        \item 
+
+        When $(x, y) \not = (0, 0)$,
+
+        $$f_x(x, y) = \frac{(3yx^2 - y^3)(x^2+y^2) - (x^3y-xy^3)(2x)}{(x^2+y^2)^2} = \frac{x^4y + 4x^2y^3 - y^5 }{(x^2+y^2)^2}$$
+
+        $$f_y(x, y) = \frac{(x^3-3xy^2)(x^2+y^2) - (x^3y-xy^3)(2y)}{(x^2+y^2)^2} = \frac{x^5 - 4x^3y^2 - xy^4}{(x^2+y^2)^2}$$
+
+        \item 
+
+        $$f_x(0, 0) = \lim_{h \to 0}\frac{f(h, 0) - f(0, 0)}{h} = \lim_{x\to x_0} \frac{\frac{0}{x^2} - 0}{x - 0} = 0$$
+
+        $$f_y(0, 0) = \lim_{h \to 0}\frac{f(0, h) - f(0, 0)}{h} = \lim_{y \to y_0} \frac{\frac{0}{y^2} - 0}{y - 0} = 0$$
+        
+        \item 
+
+        $$\begin{aligned}
+            f_{xy}(0, 0) &= \lim_{h \to 0}\frac{f_x(0, h) - f_x(0, 0)}{h} \\
+            &= \lim_{h \to 0}\frac{\frac{0 - h^5}{(0+h^2)^2} - 0}{h} = -1
+        \end{aligned}$$
+
+        $$\begin{aligned}
+            f_{yx}(0, 0) &= \lim_{h \to 0}\frac{f_y(h, 0) - f_y(0, 0)}{h} \\
+            &= \lim_{h \to 0}\frac{\frac{h^5}{(h^2+0)^2} - 0}{h} = 1
+        \end{aligned}$$
+        
+        \item 
+
+        No. Because $f$ is not continuous at $(0, 0)$.
+
+        $$f_{xy}(x, y) = \frac{\partial }{\partial y}(\frac{x^4y + 4x^2y^3 - y^5 }{(x^2+y^2)^2}) = \frac{x^6+9x^4y^2 - 9x^2y^4 - y^6}{(x^2+y^2)^3}$$
+
+        $$f_{yx}(x, y) = \frac{\partial}{\partial x}(\frac{x^5 - 4x^3y^2 - xy^4}{(x^2+y^2)^2}) = \frac{x^6 + 9x^4y^2 - 9x^2y^4 - y^6}{(x^2+y^2)^3}$$
+
+        which illustrates that Clairaut's Theorem is still correct.
+
+    \end{enumerate}
+
+\end{document}
