@@ -8,10 +8,14 @@
 \begin{document}
     \title{Exercise 14.2}
     \author{Wang Yue from CS Elite Class}
-    \date{\today}
+    \date{April 9, 2021}
     \maketitle
 
     \subsection*{6. $\lim_{(x, y) \to (1, -1)} e^{-xy}\cos (x + y)$}
+
+    Let $u = 1 \times (-1) = -1, v = 1 - 1 = 0$, then
+
+    $$\lim_{(x, y) \to (1, -1)}e^{-xy}\cos (x + y) = \lim_{(u, v) \to (-1, 1)}e^{-u}\cos v = \lim_{u \to -1}e^{-u} \times \lim_{v \to 1} \cos v = e$$
 
     \subsection*{11. $\lim_{(x, y) \to (0, 0)} \frac{y^2 \sin^2 x}{x^4 + y^4}$}
 
