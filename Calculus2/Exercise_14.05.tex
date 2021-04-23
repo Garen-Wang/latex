@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+    \title{Exercise 14.5}
+    \author{Wang Yue from CS Elite Class}
+    \date{\today}
+    \maketitle
+
+    \subsection*{6. $w = \ln \sqrt{x^2+y^2+z^2}, \quad x = \sin t, \quad y = \cos t, \quad z = \tan t$}
+
+    $$\begin{aligned}
+        \frac{dw}{dt} &= \frac{\partial w}{\partial x}\frac{dx}{dt} + \frac{\partial w}{\partial y}\frac{dy}{dt} + \frac{\partial w}{\partial z}\frac{dz}{dt} \\
+        &= \frac{2x}{2(x^2+y^2+z^2)}\cos t - \frac{2y}{2(x^2+y^2+z^2)}\sin t + \frac{2z}{2(x^2+y^2+z^2)}\frac{1}{\cos^2 t} \\
+        &= \frac{x\cos t - y\sin t + z\sec^2 t}{x^2+y^2+z^2}
+    \end{aligned}$$
+    
+    \subsection*{11. $z = e^r \cos \theta, \quad r = st, \quad \theta = \sqrt{s^2+t^2}$}
+
+    $$\begin{aligned}
+        \frac{\partial z}{\partial s} &= \frac{\partial z}{\partial r}\frac{\partial r}{\partial s} + \frac{\partial z}{\partial \theta}\frac{\partial \theta}{\partial s} \\
+        &= e^r t \cos \theta -e^r \sin \theta \frac{s}{\sqrt{s^2+t^2}} \\
+        &= \frac{te^r \sqrt{s^2+t^2} \cos \theta - se^r \sin \theta}{\sqrt{s^2+t^2}}
+    \end{aligned}$$
+
+    $$\begin{aligned}
+        \frac{\partial z}{\partial t} &= \frac{\partial z}{\partial r}\frac{\partial r}{\partial t} + \frac{\partial z}{\partial \theta}\frac{\partial \theta}{\partial t} \\
+        &= se^r \cos \theta -e^r \sin \theta \frac{t}{\sqrt{s^2+t^2}} \\
+        &= \frac{se^r\sqrt{s^2+t^2} \cos \theta - te^r \sin \theta}{\sqrt{s^2+t^2}}
+    \end{aligned}$$
+
+    \subsection*{29. $\tan^{-1}(x^2y) = x+xy^2$}
+
+    Let $F(x, y) = x + xy^2 - \tan^{-1}(x^2y)$, then $F(x, y) = 0$.
+    
+    $$\frac{\partial F}{\partial x} = 1 + y^2 - \frac{2xy}{1+x^4y^2}$$
+
+    $$\frac{\partial F}{\partial y} = 2xy - \frac{x^2}{1+x^4y^2}$$
+
+    $$\therefore \frac{dy}{dx} = -\frac{F_x}{F_y} = \frac{\frac{(1+y^2)(1+x^4y^2)-2xy}{1+x^4y^2}}{\frac{2xy(1+x^4y^2)-x^2}{1+x^4y^2}} = \frac{1+x^4y^2+y^2+x^4y^4-2xy}{2xy+2x^5y^3-x^2}$$
+
+    \subsection*{34. $yz+x\ln y =z^2$}
+
+    Let $F(x, y, z) = yz+x\ln y-z^2$, then $F(x, y, z) = 0$.
+
+    $$\frac{\partial z}{\partial x} = -\frac{F_x}{F_z} = -\frac{\ln y}{y-2z} = \frac{\ln y}{2z-y}$$
+
+    $$\frac{\partial z}{\partial y} = -\frac{F_y}{F_z} = -\frac{z+\frac x y}{y-2z} = \frac{yz+x}{y(2z-y)}$$
+
+    \subsection*{52. If $z = f(x, y)$, where $x=r\cos \theta$ and $y=r \sin \theta$, find}
+
+    \begin{enumerate}[(a)]
+        \item 
+        $$\begin{aligned}
+            \frac{\partial z}{\partial r} &= \frac{\partial z}{\partial x}\frac{\partial x}{\partial r} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial r} \\
+            &= f_x\cos \theta + f_y\sin \theta
+        \end{aligned}$$
+
+        \item 
+        $$\begin{aligned}
+            \frac{\partial z}{\partial \theta} &= \frac{\partial z}{\partial x}\frac{\partial x}{\partial \theta} + \frac{\partial z}{\partial y}\frac{\partial y}{\partial \theta} \\
+            &= -rf_x\sin \theta + rf_y\cos \theta
+        \end{aligned}$$
+
+        \item 
+        $$\begin{aligned}
+            \frac{\partial^2 z}{\partial r \partial \theta} &= \frac{\partial }{\partial r}(-rf_x\sin \theta + rf_y \cos \theta) \\
+            &= -\sin \theta \frac{\partial }{\partial r}(rf_x) + \cos \theta \frac{\partial }{\partial r}(rf_y) \\
+            &= -\sin \theta (f_x + r\frac{\partial^2 z}{\partial r \partial x}) + \cos \theta (f_y + \frac{\partial^2 z}{\partial r \partial y}) \\
+        \end{aligned}$$
+    \end{enumerate}
+
+    \subsection*{54. Suppose $z = f(x, y)$, where $x = g(s, t)$ and $y = h(s, t)$.}
+
+    \begin{enumerate}[(a)]
+        \item Show that $$\frac{\partial^2 z}{\partial t^2} = \frac{\partial^2 z}{\partial x^2} (\frac{\partial x}{\partial t})^2 + 2 \frac{\partial^2 z}{\partial x \partial y} \frac{\partial x}{\partial t} \frac{\partial y}{\partial t} + \frac{\partial^2 z}{\partial y^2}(\frac{\partial y}{\partial t})^2 + \frac{\partial z}{\partial x}\frac{\partial^2 x}{\partial t^2} + \frac{\partial z}{\partial y}\frac{\partial^2 y}{\partial t^2}$$
+
+        \begin{proof}
+            $$\frac{\partial z}{\partial t} = f_x \frac{\partial x}{\partial t} + f_y \frac{\partial y}{\partial t}$$
+
+            $$\begin{aligned}
+                \frac{\partial^2 z}{\partial t^2} &= (f_{xx} \frac{\partial x}{\partial t} + f_{xy} \frac{\partial y}{\partial t}) \frac{\partial x}{\partial t} + f_x \frac{\partial^2 x}{\partial t^2} + (f_{yx}\frac{\partial x}{\partial t} + f_{yy}\frac{\partial y}{\partial t})\frac{\partial y}{\partial t} + f_y\frac{\partial^2 y}{\partial t^2} \\
+                &= f_{xx}(\frac{\partial x}{\partial t})^2 + f_{xy}\frac{\partial x}{\partial t}\frac{\partial y}{\partial t} + f_x \frac{\partial^2 x}{\partial t^2} + f_{yx}\frac{\partial x}{\partial t}\frac{\partial y}{\partial t} + f_{yy}(\frac{\partial y}{\partial t})^2 + f_y\frac{\partial^2 y}{\partial t^2} \\
+                &= \frac{\partial^2 z}{\partial x^2}(\frac{\partial x}{\partial t})^2 + 2\frac{\partial^2 z}{\partial x \partial y}\frac{\partial x}{\partial t}\frac{\partial y}{\partial t} + \frac{\partial z}{\partial x} \frac{\partial^2 x}{\partial t^2} + \frac{\partial^2 z}{\partial y^2}(\frac{\partial y}{\partial t})^2 + \frac{\partial z}{\partial y}\frac{\partial^2 y}{\partial t^2} \\
+            \end{aligned}$$
+        \end{proof}
+
+        \item Find a similar formula for $\frac{\partial^2 z}{\partial s \partial t}$.
+
+        $$\frac{\partial z}{\partial t} = f_x \frac{\partial x}{\partial t} + f_y \frac{\partial y}{\partial t}$$
+
+        $$\begin{aligned}
+            \frac{\partial^2 z}{\partial s \partial t} &= (f_{xx}\frac{\partial x}{\partial s} + f_{xy}\frac{\partial y}{\partial s})\frac{\partial x}{\partial t} + f_x \frac{\partial^2 x}{\partial s \partial t} + (f_{yx}\frac{\partial x}{\partial s} + f_{yy}\frac{\partial y}{\partial s})\frac{\partial y}{\partial t} + f_y \frac{\partial^2 y}{\partial s \partial t} \\
+            &= \frac{\partial^2 z}{\partial x^2}\frac{\partial x}{\partial s}\frac{\partial x}{\partial t} + \frac{\partial^2 z}{\partial x \partial y}(\frac{\partial x}{\partial t} \frac{\partial y}{\partial s} + \frac{\partial x}{\partial s} \frac{\partial y}{\partial t}) + \frac{\partial^2 z}{\partial y^2}\frac{\partial y}{\partial s}\frac{\partial y}{\partial t} + \frac{\partial z}{\partial x} \frac{\partial^2 x}{\partial s \partial t} + \frac{\partial z}{\partial y}\frac{\partial^2 y}{\partial s \partial t} \\
+        \end{aligned}$$
+    \end{enumerate}
+
+    \subsection*{55. A function $f$ is called \textbf{homogeneous of degree $n$} if it satisfies the equation $f(tx, ty) = t^n f(x, y)$ for all $t$, where $n$ is a positive integer and $f$ has continuous second-order partial derivatives.}
+
+    (b) Show that if $f$ is homogeneous of degree $n$, then $$x \frac{\partial f}{\partial x} + y \frac{\partial f}{\partial y} = n f(x, y)$$
+
+    \begin{proof}
+        Taking differentiation to $f(tx, ty) = t^nf(x, y)$ with respect to $t$, we have
+
+        $$f_x(tx, ty) x + f_y(tx, ty) y = nt^{n-1}f(x, y)$$
+
+        When $t = 1$, we get $$x \frac{\partial f}{\partial x} + y \frac{\partial f}{\partial y} = n f(x, y)$$
+    \end{proof}
+
+    \subsection*{58. }
+
+    \begin{proof}
+        Taking differential to $F(x, y, z) = 0$ on both sides, we have
+
+        $$F_x dx + F_y dy + F_z dz = 0$$
+
+        $$\frac{\partial F}{\partial x}(\frac{\partial h}{\partial y} dy + \frac{\partial h}{\partial z} dz) + \frac{\partial F}{\partial y}(\frac{\partial g}{\partial x} dx + \frac{\partial g}{\partial z} dz) + \frac{\partial F}{\partial z}(\frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y} dy) = 0$$
+
+        $$\left\{ \begin{array}{ll} 
+            \frac{\partial F}{\partial y}\frac{\partial g}{\partial x} + \frac{\partial F}{\partial z}\frac{\partial f}{\partial x} = 0 \\
+            \frac{\partial F}{\partial x}\frac{\partial h}{\partial y} + \frac{\partial F}{\partial z}\frac{\partial f}{\partial y} = 0 \\
+            \frac{\partial F}{\partial x}\frac{\partial h}{\partial z} + \frac{\partial F}{\partial y}\frac{\partial g}{\partial z} = 0 \\
+        \end{array}\right.$$
+
+
+    \end{proof}
+
+\end{document}
