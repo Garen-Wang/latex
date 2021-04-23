@@ -1,0 +1,137 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 14.6}
+  \author{Wang Yue from CS Elite Class}
+  \date{\today}
+  \maketitle
+
+  \subsection*{7. }
+
+  $$f_x(x, y) = 2\cos (2x + 3y), \quad f_y(x, y) = 3 \cos (2x + 3y)$$
+
+  $$\begin{aligned}
+    D_{\overrightarrow{u}} f(x, y) &= \frac{\sqrt{3}}{2} f_x(x, y) - \frac 1 2 f_y(x, y) \\
+    &= \sqrt 3 \cos (2x + 3y) - \frac 3 2 \cos (2x + 3y) \\
+    &= (\sqrt 3 - \frac 3 2)\cos (2x + 3y)
+  \end{aligned}$$
+
+  $\therefore D_{\overleftrightarrow{u}}f(-6, 4) = \sqrt 3 - \frac 3 2$
+
+  \subsection*{8. }
+
+  $$f_x(x, y) = -\frac{y^2}{x^2}, \quad f_y(x, y) = \frac{2y}{x}$$
+
+  $$\begin{aligned}
+    D_{\overrightarrow{u}} f(x, y) &= \frac 2 3 f_x(x, y) + \frac{\sqrt 5}{3} f_y(x, y) \\
+    &= -\frac 2 3 \frac{y^2}{x^2} + \frac{2\sqrt 5}{3} \frac{y}{x} \\
+  \end{aligned}$$
+
+  $\therefore D_{\overrightarrow u}f(1, 2) = -\frac 8 3 + \frac{4\sqrt 5}{3} = \frac{4\sqrt 5 - 8}{3}$
+
+  \subsection*{11. }
+
+  $$f_x(x, y) = e^x \sin y, \quad f_y(x, y) = e^x \cos y$$
+
+  The unit vector of $\overrightarrow v$ is $\overrightarrow u = \langle -\frac 3 5, \frac 4 5 \rangle$.
+
+  $$\begin{aligned}
+    D_{\overrightarrow u}f(x, y) &= -\frac 3 5 e^x \sin y + \frac 4 5 e^x \cos y \\
+    &= e^x(\frac 4 5 \cos y - \frac 3 5 \sin y)
+  \end{aligned}$$
+
+  $\therefore D_{\overrightarrow u}f(0, \frac \pi 3) = e^0 (\frac 4 5 \times \frac 1 2 - \frac 3 5 \times \frac{\sqrt 3}{2}) = \frac{4-3\sqrt 3}{10}$
+
+  \subsection*{14. }
+
+  $$g_r(r, s) = \frac{s}{1+r^2s^2}, \quad g_s(r, s) = \frac{r}{1 + r^2s^2}$$
+
+  The unit vector of $\overrightarrow v$ is $\overrightarrow u = \langle  \frac{1}{\sqrt 5}, \frac{2}{\sqrt 5}  \rangle$
+
+  $$\begin{aligned}
+    D_{\overrightarrow u}g(r, s) = \frac{s + 2r}{(1+r^2s^2) \sqrt 5}
+  \end{aligned}$$
+  
+  $\therefore D_{\overrightarrow u}g(1, 2) = \frac{2 + 2}{(1+4)\sqrt 5} = \frac{4\sqrt 5}{25}$
+
+  \subsection*{25. $f(x, y, z) = \sqrt{x^2+y^2+z^2}, \quad (3, 6, -2)$}
+
+  $$\nabla f = \langle \frac{x}{\sqrt{x^2+y^2+z^2}}, \frac{y}{\sqrt{x^2+y^2+z^2}}, \frac{z}{\sqrt{x^2+y^2+z^2}}  \rangle $$
+
+  $$\therefore \nabla f(3, 6, -2) = \langle \frac{3}{7}, \frac 6 7, -\frac 2 7  \rangle $$
+
+  The maximum rate of change is $|\nabla f| = \sqrt{\frac{9+36+4}{49}} = 1$
+
+  The direction is parallel to the vector $\overrightarrow u = \langle \frac 3 7, \frac 6 7, -\frac 2 7 \rangle$
+
+  \subsection*{39. }
+
+  $$D_{\overrightarrow u}f(x, y) = (3x^2+10xy) \frac 3 5  + (5x^2 + 3y^2)\frac 4 5 = \frac{29}{5}x^2 + 6xy + \frac{12}{5}y^2$$
+
+  $$D^2 _{\overrightarrow u}f(x, y) = (\frac{58}{5}x + 6y)\frac{3}{5} + (6x + \frac{24}{5}y) \frac 4 5 = \frac{294}{25}x + \frac{186}{25}y$$
+
+  $$D^2 _{\overrightarrow u}f(2, 1) = \frac{588}{25} + \frac{186}{25} = \frac{774}{25}$$
+
+  \subsection*{40. }
+
+  \begin{enumerate}[(a)]
+    \item
+
+    \begin{proof}
+
+      $\because D_{\overrightarrow u} f = f_x a + f_y b$
+
+      $$\therefore D_{\overrightarrow u}^2 f = (f_{xx}a + f_{xy}b)a + (f_{yx}a + f_{yy}b)b = f_{xx}a^2 + 2f_{xy}ab + f_{yy}b^2$$
+    \end{proof}
+
+    \item 
+
+    $$f_{xx} = \frac{\partial}{\partial x}(e^{2y}) = 0, \quad f_{xy} = \frac{\partial}{\partial y}(e^{2y}) = 2e^{2y}, \quad f_{yy} = \frac{\partial}{\partial y}(2xe^{2y}) = 4xe^{2y}$$
+
+    Let the unit vector of $\overrightarrow v$ is $\overrightarrow u = \langle \frac{2}{\sqrt{13}}, \frac{3}{\sqrt{13}} \rangle$, and let $a = \frac{2}{\sqrt{13}}, b = \frac{3}{\sqrt{13}}$
+
+    $$\therefore D_{\overrightarrow u}^2 f(x, y) = 0 + 2(2e^{2y})\frac{6}{13} + 4xe^{2y}\frac{9}{13} = (\frac{24}{13} + \frac{36}{13}x)e^{2y}$$
+  \end{enumerate}
+
+  \subsection*{53. }
+
+  \begin{proof}
+
+  $$z = f(x, y) = c(\frac{x^2}{a^2} + \frac{y^2}{b^2})$$
+  
+  $$f_x(x, y) =c\frac{2x}{a^2}, \quad f_y(x, y) = c\frac{2y}{b^2}$$
+
+  $$\therefore \nabla f = \langle c\frac{2x}{a^2}, c\frac{2y}{b^2}, -1 \rangle = \langle \frac{2x}{a^2}, \frac{2y}{b^2}, -\frac{1}{c} \rangle$$
+
+  $\therefore $ the tangent plane of $f$ at the point $(x_0, y_0, z_0)$ can be expressed as
+
+  $$\frac{2x_0}{a^2} (x-x_0) + \frac{2y_0}{b^2}(y-y_0) -\frac{z-z_0}{c} = 0$$
+
+  $$\frac{2xx_0}{a^2} + \frac{2yy_0}{b^2} - (\frac{2x_0^2}{a^2} + \frac{2y_0^2}{b^2}) - \frac{z - z_0}{c} = 0$$
+
+  $$\frac{2xx_0}{a^2} + \frac{2yy_0}{b^2} - \frac{2z_0}{c} - \frac{z - z_0}{c} = 0$$
+
+  $$\therefore \frac{2xx_0}{a^2} + \frac{2yy_0}{b^2} = \frac{z+z_0}{c}$$
+
+  \end{proof}
+
+  \subsection*{54. }
+
+  Let $F(x, y, z) = x^2 - y + z^2$, then
+
+  $$F_x(x, y, z) = 2x, \quad F_y(x, y, z) = -1, \quad F_z(x, y, z) = 2z$$
+
+  $$\therefore \nabla F = \langle 2x, -1, 2z \rangle$$
+
+  Let $\overrightarrow n = (1, 2, 3)$, if $\nabla F(x, y, z) = \lambda \overrightarrow n$, then we can solve that
+
+  $$x=-\frac 1 4, \quad y = -1, \quad z=-\frac 3 4$$
+
+  $\therefore$ the point is $(-\frac 1 4, -1, -\frac 3 4)$.
+
+\end{document}
