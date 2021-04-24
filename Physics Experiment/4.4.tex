@@ -1,0 +1,85 @@
+%!TEX program=xelatex
+\documentclass[UTF-8, a4paper, 12pt]{ctexart}
+\setlength{\parindent}{0pt}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{textcomp}
+\usepackage[left=2.50cm, right=2.50cm, top=2.50cm, bottom=2.50cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\pagestyle{fancy}
+\rhead{\center{\small{华南理工大学大学城校区物理实验报告}}}
+
+\begin{document}
+    \begin{center}
+        \zihao{-2}\heiti{PN结正向电压温度特性 预习报告}
+        
+
+        \zihao{-4}\songti{2020级 \quad 计算机科学与技术（全英创新班）\quad 王樾}
+    \end{center}
+    \zihao{4}\heiti{引言：}\zihao{-4}
+    \songti
+    常见的温度传感器有热电偶、热敏电阻、测温电阻等。热电偶适用温度范围宽，但灵敏度低、线性差，热敏电阻灵敏度高，体积小，但线性差，测温电阻精度高、线性好，但灵敏度低且价格昂贵。而PN结温度传感器具有灵敏度好、热响应快、线性好、体积小、轻便等特点，在许多方面优于其他传感器，所以应用广泛。
+
+    \textbf{\zihao{4} \heiti{一、实验目的}}
+
+    \zihao{-4}\songti
+
+    \begin{enumerate}[（1）]
+        \item 了解PN结正向电压随温度变化的基本规律。
+        \item 在电源恒流条件下，测绘PN结正向电压随温度变化的关系曲线，并确定PN结的测温灵敏度和PN结材料的禁带宽度。
+    \end{enumerate}
+
+    \textbf{\zihao{4} \heiti{二、实验仪器}}
+
+    \zihao{-4}\songti
+
+    PN结正向特性综合实验仪、DH-SJ5温度传感器实验装置。
+
+    \textbf{\zihao{4} \heiti{三、实验原理}}
+
+    \zihao{-4}\songti
+
+    理想PN结的正向电流$I_F$和正向电压$V_F$存在如下近似关系：
+
+    $$I_F = I_n e^{\frac{q V_F}{kT}}$$
+
+    可以证明$$I_n = CT^\gamma e^{\frac{qV_{g_0}}{kT}}$$
+
+    其中，$C$是PN结的一个常数，$k$为玻尔兹曼常数，$\gamma$在一定温度范围内也是常数。
+
+    联立得
+
+    $$V_F = V_{g_0} - (\frac k q \ln \frac{C}{I_F})T - \frac{kT}{q}\ln T^\gamma = V_1 + V_{nr}$$
+
+    其中$$V_1 = V_{g_0} - (\frac k q \ln \frac{C}{I_F})T, V_{nr} = - \frac{kT}{q}\ln T^\gamma$$.
+
+    当恒流供电（即$I_F$不变）条件下，$V_{nr}$不变，此时PN结的正向电压$V_F$变化取决于线性项$V_1$，$V_F$非常近似于随温度升高而线性下降。
+
+    记斜率绝对值$\frac k q \ln \frac{C}{I_F}$为$S$，定义其为PN结温度灵敏度，记$t$为摄氏温度，则有$$\Delta V = S t$$
+
+    PN结材料的禁带宽度$E_{g_0}$定义为电子电量$q$与$0K$时PN结材料的导带底和价带顶的电势差$V_{g_0}$的乘积，即$E_{g_0} = q V_{g_0}$。由上式得
+
+    $$V_{g_0} = V_F + (\frac k q \ln \frac{C}{I_F})T = V_F + S T$$
+
+    代入$0^\circ C$时，$T = 273.2K, V_F = V_{F_0}$，有
+
+    $$E_{g_0} = qV_{g_0} = q(V_{F_0} + 273.2S)$$
+
+    通过该式即可求出PN结的禁带宽度。
+
+    \textbf{\zihao{4} \heiti{四、内容步骤}}
+
+    \zihao{-4}\songti
+
+    \begin{enumerate}[（1）]
+        \item 首先将DH-SJ型温度传感器实验装置的“加热电流”与“风扇电流”置于关状态，接上电源线。插好Pt100温度传感器和PN结温度传感器。打开开关，显示出室温$t_r$，记录起始温度$t_r$。
+        \item 记录同一温度下正向电压随正向电流的变化关系。将电流量程置于"$\times 1$"档，调节电流调节旋钮，观察$V_F$值读数的变化（如果电流表显示值大于1000则可改用大一档量程）。记录一系列电压、电流值于表。
+        \item 记录在同一恒定电流条件下PN正向电压与温度的变化关系。首先选择合适的正向电流$I_F$（如$I_F = 60\mu A$）并保持不变。
+        \item 将温度传感器实验装置的“加热电流”开关打开，根据目标温度，选择合适的加热电流。条件允许时电流可以取得小一点，如$0.3~0.6A$之间。
+        \item 在加热过程中，记录对应的$V_F$和$T$于表。
+    \end{enumerate}
+
+\end{document}
