@@ -4,11 +4,10 @@
 \usepackage{amssymb}
 \usepackage{enumerate}
 \usepackage{graphicx}
-
 \begin{document}
     \title{Exercise 14.5}
     \author{Wang Yue from CS Elite Class}
-    \date{\today}
+    \date{April 23, 2021}
     \maketitle
 
     \subsection*{6. $w = \ln \sqrt{x^2+y^2+z^2}, \quad x = \sin t, \quad y = \cos t, \quad z = \tan t$}
@@ -16,7 +15,8 @@
     $$\begin{aligned}
         \frac{dw}{dt} &= \frac{\partial w}{\partial x}\frac{dx}{dt} + \frac{\partial w}{\partial y}\frac{dy}{dt} + \frac{\partial w}{\partial z}\frac{dz}{dt} \\
         &= \frac{2x}{2(x^2+y^2+z^2)}\cos t - \frac{2y}{2(x^2+y^2+z^2)}\sin t + \frac{2z}{2(x^2+y^2+z^2)}\frac{1}{\cos^2 t} \\
-        &= \frac{x\cos t - y\sin t + z\sec^2 t}{x^2+y^2+z^2}
+        &= \frac{x\cos t - y\sin t + z\sec^2 t}{x^2+y^2+z^2} \\
+        &= \frac{x\cos t - y\sin t + z\sec^2 t}{\sec^2 t}
     \end{aligned}$$
     
     \subsection*{11. $z = e^r \cos \theta, \quad r = st, \quad \theta = \sqrt{s^2+t^2}$}
@@ -41,7 +41,7 @@
 
     $$\frac{\partial F}{\partial y} = 2xy - \frac{x^2}{1+x^4y^2}$$
 
-    $$\therefore \frac{dy}{dx} = -\frac{F_x}{F_y} = \frac{\frac{(1+y^2)(1+x^4y^2)-2xy}{1+x^4y^2}}{\frac{2xy(1+x^4y^2)-x^2}{1+x^4y^2}} = \frac{1+x^4y^2+y^2+x^4y^4-2xy}{2xy+2x^5y^3-x^2}$$
+    $$\therefore \frac{dy}{dx} = -\frac{F_x}{F_y} = -\frac{\frac{(1+y^2)(1+x^4y^2)-2xy}{1+x^4y^2}}{\frac{2xy(1+x^4y^2)-x^2}{1+x^4y^2}} = \frac{1+x^4y^2+y^2+x^4y^4-2xy}{x^2-2xy-2x^5y^3}$$
 
     \subsection*{34. $yz+x\ln y =z^2$}
 
@@ -114,19 +114,39 @@
     \subsection*{58. }
 
     \begin{proof}
-        Taking differential to $F(x, y, z) = 0$ on both sides, we have
 
-        $$F_x dx + F_y dy + F_z dz = 0$$
+        Taking partial derivative to $F(x, y, z) = 0$ with  respect to $x$, then
 
-        $$\frac{\partial F}{\partial x}(\frac{\partial h}{\partial y} dy + \frac{\partial h}{\partial z} dz) + \frac{\partial F}{\partial y}(\frac{\partial g}{\partial x} dx + \frac{\partial g}{\partial z} dz) + \frac{\partial F}{\partial z}(\frac{\partial f}{\partial x} dx + \frac{\partial f}{\partial y} dy) = 0$$
+        $$F_x+F_z\frac{\partial z}{\partial x} = 0 \implies \frac{\partial z}{\partial x} = -\frac{F_x}{F_z}$$
 
-        $$\left\{ \begin{array}{ll} 
-            \frac{\partial F}{\partial y}\frac{\partial g}{\partial x} + \frac{\partial F}{\partial z}\frac{\partial f}{\partial x} = 0 \\
-            \frac{\partial F}{\partial x}\frac{\partial h}{\partial y} + \frac{\partial F}{\partial z}\frac{\partial f}{\partial y} = 0 \\
-            \frac{\partial F}{\partial x}\frac{\partial h}{\partial z} + \frac{\partial F}{\partial y}\frac{\partial g}{\partial z} = 0 \\
-        \end{array}\right.$$
+        Taking partial derivative to $F(x, y, z) = 0$ with  respect to $y$, then
 
+        $$F_x\frac{\partial x}{\partial y} + F_y = 0 \implies \frac{\partial x}{\partial y} = -\frac{F_y}{F_x}$$
 
+        Taking partial derivative to $F(x, y, z) = 0$ with  respect to $z$, then
+
+        $$F_y\frac{\partial y}{\partial z} + F_z = 0 \implies \frac{\partial y}{\partial z} = -\frac{F_z}{F_y}$$
+
+        $$\therefore \frac{\partial z}{\partial x}\frac{\partial x}{\partial y}\frac{\partial y}{\partial z} = -1$$
+
+    \end{proof}
+
+    \subsection*{59. }
+
+    \begin{proof}
+        Taking differential to $F(x, y) = 0$ on both sides, we have
+
+        $$\frac{\partial F}{\partial x} + \frac{\partial F}{\partial y}\frac{dy}{dx} = 0$$
+
+        $$\therefore \frac{dy}{dx} = -\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial y}} = -\frac{F_x}{F_y}$$
+
+        $\therefore$taking differentiation to $\frac{dy}{dx}$, we have
+
+        $$\begin{aligned}
+            \frac{d^2y}{dx^2} &= \frac{\partial}{\partial x}(-\frac{F_x}{F_y}) + \frac{\partial}{\partial y}(-\frac{F_x}{F_y})\frac{dy}{dx} \\
+            &= -\frac{F_{xx}F_y - F_xF_{yx}}{F_y^2} - \frac{F_{xy}F_y - F_{x}F_{yy}}{F_y^2}(-\frac{F_x}{F_y}) \\
+            &= -\frac{F_{xx}F_y^2 - 2F_{xy}F_xF_y + F_{yy}F_x^2}{F_y^3}
+        \end{aligned}$$
     \end{proof}
 
 \end{document}
