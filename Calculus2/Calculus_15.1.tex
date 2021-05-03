@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 15.1}
+  \author{Wang Yue from CS Elite Class}
+  \date{\today}
+  \maketitle
+
+
+  \subsection*{14. }
+
+  $$\begin{aligned}
+    \iint_R \sqrt{9-y^2}dA &= \int_0^4 \int_0^2 \sqrt{9-y^2} dy dx \\
+    &= \int_0^4 \int_0^2 -\frac{\sqrt{9-y^2}}{2} d(9-y^2) dx \\
+    &= \int_0^4 -\frac 1 2 \times \frac 2 3 (9-y^2)^{\frac 3 2}\biggl|_0^2 dx \\
+    &= \int_0^4(9-\frac{\sqrt{125}}{3}) dx \\
+    &= 36 - \frac{20}{3}\sqrt{5}
+  \end{aligned}$$
+
+  \subsection*{17. }
+
+  \begin{proof}
+    $$\begin{aligned}
+      \iint_R f(x, y)dA &= \iint_R k dA \\
+      &= \int_a^b \int_c^d k dy dx \\
+      &= \int_a^b k(d - c) dx \\
+      &= k(b-a)(d-c)
+    \end{aligned}$$
+  \end{proof}
+
+  \subsection*{18. }
+  \begin{proof}
+    $\because x \in [0, \frac 1 4]$, $\therefore \sin \pi x \in [0, \frac{\sqrt 2}{2}]$
+
+    $\because y \in [\frac 1 4, \frac 1 2]$, $\therefore \cos \pi x \in [0, \frac{\sqrt 2}{2}]$
+
+    $$\therefore 0 \leq \sin \pi x \cos \pi y \leq \frac{\sqrt 2}{2} \times \frac{\sqrt 2}{2} = \frac 1 2$$
+
+    $\therefore $ by the conclusion of Exercise 17,
+
+    $$0 \times \frac 1 4 \times \frac 1 4 \leq \int_0^{\frac 1 4}\int_{\frac 1 4}^{\frac 1 2}\sin \pi x \cos \pi y dy dx \leq \frac 1 2 \times \frac 1 4 \times \frac 1 4$$
+
+    which is equivalent to
+
+    $$0 \leq \iint_R \sin \pi x \cos \pi y dA \leq \frac{1}{32}$$
+  \end{proof}
+
+\end{document}
