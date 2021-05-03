@@ -1,0 +1,119 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 15.2}
+  \author{Wang Yue from CS Elite Class}
+  \date{\today}
+  \maketitle
+
+  \subsection*{8. }
+
+  $$\begin{aligned}
+    \int_1^3 \int_1^5 \frac{\ln y}{xy} dy dx &= \int_1^3 \frac 1 x \int_1^5 \ln y d\ln y dx \\
+    &= \int_1^3 \frac 1 x \frac{(\ln y)^2}{2}\biggl|_{y=1}^{y=5} dx \\
+    &= \int_1^3 \frac{(\ln 5)^2}{2x} dx \\
+    &= \frac{(\ln 5)^2}{2}(\ln 3 - \ln 1) \\
+    &= \frac{(\ln 5)^2\ln 3}{2}
+  \end{aligned}$$
+
+  \subsection*{12. }
+
+  $$\begin{aligned}
+    \int_0^1 \int_0^1 xy \sqrt{x^2+y^2} dy dx &= \int_0^1 \frac x 2 \int_0^1 \sqrt{x^2+y^2} d(x^2+y^2) dx\\
+    &= \int_0^1 \frac x 2 \times \frac 2 3 (x^2+y^2)^{\frac 3 2}\biggl|_{y=0}^{y=1} dx \\
+    &= \int_0^1 [\frac x 3 (x^2+1)^{\frac 3 2} - \frac{x^4}{3}] dx \\
+    &= \int_0^1 \frac 1 6 (x^2+1)^{\frac 3 2} d(x^2+1) - \int_0^1 \frac{x^4}{3} dx \\
+    &= \frac 1 6 \times \frac 2 5 (x^2+1)^{\frac 5 2}\biggl|_0^1 - \frac{x^5}{15}\biggl|_0^1 \\
+    &= \frac{1}{15} \times (4\sqrt 2 - 1) - \frac{1}{15} \\
+    &= \frac{4\sqrt 2 - 2}{15}
+  \end{aligned}$$
+
+  \subsection*{13. }
+
+  $$\begin{aligned}
+    \int_0^2 \int_0^\pi r\sin^2 \theta d\theta dr &= \int_0^2 r \int_0^\pi \frac{1 - \cos 2\theta}{2} d\theta dr \\
+    &= \int_0^2 r (\frac \theta 2 - \frac{\sin 2\theta}{4})\biggl|_{\theta=0}^{\theta=\pi}dr \\
+    &= \int_0^2 \frac \pi 2 r dr \\
+    &= \frac{\pi}{2} \frac{r^2}{2} \biggl|_0^2 \\
+    &= \pi
+  \end{aligned}$$
+
+  \subsection*{15. }
+
+  $$\begin{aligned}
+    \iint_R \sin(x-y) dA &= \int_0^{\frac \pi 2} \int_0^{\frac \pi 2} \sin(x - y) dy dx \\
+    &= \int_0^{\frac \pi 2} \int_0^{\frac \pi 2} -\sin(x - y) d(x - y) dx \\
+    &= \int_0^{\frac \pi 2} \cos(x - y)\biggl|_{y = 0}^{y = \frac \pi 2} dx \\
+    &= \int_0^{\frac \pi 2} [\cos(x - \frac \pi 2) - \cos x] dx \\
+    &= \int_0^{\frac \pi 2} (\sin x - \cos x) dx \\
+    &= (-\cos x - \sin x)\biggl|_0^{\frac \pi 2} \\
+    &= (-0-1) - (-1-0) = 0
+  \end{aligned}$$
+
+  \subsection*{17. }
+
+  $$\begin{aligned}
+    \iint_R \frac{xy^2}{x^2+1} dA &= \int_0^1 \int_{-3}^3 \frac{xy^2}{x^2+1} dy dx \\
+    &= \int_0^1 2 \int_0^3 \frac{xy^2}{x^2+1} dy dx \\
+    &= \int_0^1 \frac{2x}{x^2+1} (\frac{y^3}{3})\biggl|_{y=0}^{y=3} dx \\
+    &= \int_0^1 \frac{18x}{x^2+1} dx \\
+    &= \int_0^1 \frac{9}{x^2+1} d(x^2+1) \\
+    &= 9 \ln (x^2 + 1) \biggl|_0^1 \\
+    &= 9\ln 2
+  \end{aligned}$$
+
+  \subsection*{21. }
+
+  $$\begin{aligned}
+    \iint_R ye^{-xy} dA &= \int_0^3 \int_0^2 ye^{-xy} dx dy \\
+    &= \int_0^3 -e^{-xy}\biggl|_{x=0}^{x=2} dy \\
+    &= \int_0^3 (1 - e^{-2y}) dy \\
+    &= (y + \frac 1 2 e^{-2y})\biggl|_0^3 \\
+    &= 3 + \frac 1 2 (e^{-6} - 1) \\
+    &= \frac{e^{-6}}{2} + \frac{5}{2}
+  \end{aligned}$$
+  \subsection*{26. }
+
+  $$\begin{aligned}
+    \int_1^2 \int_{-1}^1 (3y^2 - x^2 + 2) dx dy &= \int_1^2 2 \int_0^1 (3y^2 - x^2 + 2) dx dy \\
+    &= \int_1^2 2 (3y^2x + 2x - \frac{x^3}{3})\biggl|_{x=0}^{x=1} dy \\
+    &= \int_1^2 2(3y^2+2-\frac 1 3) dy \\
+    &= \int_1^2 (6y^2 + \frac{10}{3}) dy \\
+    &= (2y^3 + \frac{10}{3}y)\biggl|_1^2 = \frac{52}{3}
+  \end{aligned}$$
+
+  \subsection*{30. }
+
+  $$\begin{aligned}
+    \int_0^4 \int_0^5 (16 - x^2) dy dx &= \int_0^4 5(16-x^2) dx \\
+    &= (80x - \frac 5 3 x^3)\biggl|_0^4 \\
+    &= 320 - \frac{320}{3} \\
+    &= \frac{640}{3}
+  \end{aligned}$$
+
+  \subsection*{40. }
+
+  \begin{enumerate}[(a)]
+    \item Clairaut's Theorem tells us the order of partial derivative does not matter, while Fubini's Theorem indicates that the order of integration does not matter. Therefore, they are similar to each other.
+
+    \item 
+    \begin{proof}
+      By Fubini's Theorem, we have
+
+      $$g(x, y) = \int_a^x \int_c^y f(s, t) dt ds = \int_c^y \int_a^x f(s, t) ds dt$$
+
+      $$\therefore g_{xy} = \frac{\partial^2}{\partial y \partial x}\int_a^x \int_c^y f(s, t) dt ds = \frac{\partial}{\partial y}\int_c^y f(x, t) dt = f(x, y)$$
+      
+      $$\therefore g_{yx} = \frac{\partial^2}{\partial x \partial y}\int_c^y \int_a^x f(s, t) ds dt = \frac{\partial}{\partial x}\int_a^x f(s, y) ds = f(x, y)$$
+
+      $$\therefore g_{xy} = g_{yx} = f(x, y)$$
+    \end{proof}
+  \end{enumerate}
+
+
+\end{document}
