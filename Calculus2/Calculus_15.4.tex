@@ -1,0 +1,164 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 15.4}
+  \author{Wang Yue from CS Elite Class}
+  \date{\today}
+  \maketitle
+
+  \subsection*{20. }
+
+  Let region $D = \{ (x, y) | 18 - 2x^2-2y^2 \geq 0\} = \{ (x, y) | x^2 + y^2 \leq 9 \}$, then
+
+  $$\begin{aligned}
+    \iint_D (18-2x^2-2y^2) dA &= \int_0^{2\pi} \int_0^3 (18-2r^2) r dr d\theta \\
+    &= \int_0^{2\pi} [-\int_0^3 (9-r^2) d(9-r^2)] d\theta \\
+    &= \int_0^{2\pi} -\frac{(9-r^2)^2}{2}\biggl|_0^3 d\theta \\
+    &= \int_0^{2\pi} (-0 + \frac{81}{2}) d\theta \\
+    &= 81\pi
+  \end{aligned}$$
+  
+  \subsection*{22. }
+
+  Let the volume of the solid inside the hyperpoloid $x^2+y^2+z^2=16$ and inside the cylinder $x^2+y^2=4$ be $V_0$, then
+
+  $$\begin{aligned}
+    V_0 &= \int_0^{2\pi} \int_0^2 \sqrt{16-r^2} r dr d\theta \\
+    &= \int_0^{2\pi} \int_0^2 (-\frac 1 2) \sqrt{16-r^2} d(16-r^2) dr d\theta \\
+    &= \int_0^{2\pi} (-\frac 1 2) \frac 2 3 (16-r^2)^{\frac 3 2}\biggl|_0^2 d\theta \\
+    &= \int_0^{2\pi} (-\frac 1 3)(24\sqrt 3 -64) d\theta \\
+    &= \frac{128\pi}{3} - 16\sqrt 3 \pi
+  \end{aligned}$$
+
+  $\therefore V = \frac 4 3 \pi \times 4^3 - 2V_0 = 32\sqrt 3 \pi$
+
+  \subsection*{25. }
+
+  $$\begin{aligned}
+    V &= \int_0^{2\pi} \int_0^1 (\sqrt{1-r^2} - r) r dr d\theta \\
+    &= TODO
+  \end{aligned}$$
+
+  \subsection*{31. }
+
+  $$\begin{aligned}
+    \int_{-3}^3 \int_0^{\sqrt{9-x^2}} \sin(x^2+y^2) dy dx &= \int_0^\pi \int_0^3 r\sin r^2 dr d\theta \\
+    &= \int_0^{\pi} \frac 1 2 \int_0^3 \sin r^2 dr^2 d\theta \\
+    &= \int_0^{\pi} \frac 1 2 (-\cos r^2)\biggl|_0^3 d\theta \\
+    &= \frac 1 2 \int_0^{\pi} (1 -\cos 9) d\theta \\
+    &= \frac{(1-\cos 9)\pi}{2}
+  \end{aligned}$$
+
+  \subsection*{32. }
+
+  $$\begin{aligned}
+    \int_0^2 \int_0^{\sqrt{2x-x^2}} \sqrt{x^2+y^2} dy dx &= \int_0^{\frac \pi 2} \int_0^{2\cos \theta} r^2 dr d\theta \\
+    &= \int_0^{\frac \pi 2} (\frac{r^3}{3})\biggl|_{0}^{2\cos \theta} d\theta \\
+    &= \int_0^{\frac \pi 2} \frac{8\cos^3 \theta}{3} d\theta \\
+    &= \frac 8 3 \int_0^{\frac \pi 2} (1-\sin^2 \theta) d \sin \theta \\
+    &= \frac 8 3 (\sin \theta - \frac{\sin^3 \theta}{3})\biggl|_0^{\frac \pi 2} \\
+    &= \frac 8 3 \times \frac 2 3 = \frac{16}{9}
+  \end{aligned}$$
+
+  \subsection*{34. }
+
+  $$\begin{aligned}
+    \iint_D xy \sqrt{1 + x^2 + y^2} dA &= \int_0^{\frac \pi 2} \int_0^1 r^2 \sin \theta \cos \theta \sqrt{1 + r^2} r dr d\theta \\ 
+    &= \int_0^1 \int_0^{\frac \pi 2} r^2 \sin \theta \cos \theta \sqrt{1 + r^2} r  d\theta dr \\
+    &= \int_0^1 \int_0^{\frac \pi 2} r^3 \sqrt{1+r^2} \sin \theta d \sin \theta dr \\
+    &= \int_0^1 r^3 \sqrt{1+r^2}(\frac{\sin^2 \theta}{2})\biggl|_{0}^{\frac \pi 2} dr \\
+    &= \int_0^1 \frac{r^3\sqrt{1+r^2}}{2} dr \\
+    &\approx 0.1609
+  \end{aligned}$$
+
+  \subsection*{39. }
+
+  $$\begin{aligned}
+    &\int_{\frac{\sqrt 2}{2}}^1 \int_{\sqrt{1-x^2}}^x xy dy dx + \int_1^{\sqrt 2} \int_0^x xy dy dx + \int_{\sqrt 2}^2 \int_0^{\sqrt{4-x^2}} xy dy dx \\
+    &= \int_0^{\frac \pi 4} \int_1^2 r\cos \theta r \sin \theta r dr d\theta \\
+    &= \int_1^2 \int_0^{\frac \pi 4} r^3 \sin \theta d\sin \theta dr \\
+    &= \int_1^2 r^3 (\frac{\sin^2 \theta}{2})\biggl|_0^{\frac \pi 4} dr \\
+    &= \int_1^2 \frac{r^3}{4} dr \\
+    &= (\frac{r^4}{16})\biggl|_1^2 = \frac{15}{16}
+  \end{aligned}$$
+
+  \subsection*{40. }
+
+  \begin{enumerate}[(a)]
+    \item 
+
+    \begin{proof}
+      $$\begin{aligned}
+        \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} e^{-(x^2+y^2)} dA &= \lim_{a\to \infty}\iint_{D_a} e^{-(x^2+y^2)} dA\\
+        &= \lim_{a \to \infty} \int_0^{2\pi} \int_0^a e^{-r^2} r dr d\theta \\
+        &= \lim_{a \to \infty} \int_0^{2\pi} (-\frac 1 2) e^{-r^2}d(-r^2) d\theta \\
+        &= \lim_{a \to \infty} \int_0^{2\pi} (-\frac 1 2)(e^{-r^2})\biggl|_{0}^{a} d\theta \\
+        &= \lim_{a \to \infty} \int_0^{2\pi} \frac{1 - e^{-a^2}}{2} d\theta \\
+        &= \lim_{a \to \infty} (1-e^{-a^2}) \pi = \pi
+      \end{aligned}$$
+    \end{proof}
+
+    \item
+
+    \begin{proof}
+      $$\begin{aligned}
+        TODO
+      \end{aligned}$$
+    \end{proof}
+
+    \item 
+
+    \begin{proof}
+      Let $I = \int_{-\infty}^\infty e^{-x^2} dx = \int_{-\infty}^\infty e^{-y^2} dy$, then$I^2 = \pi$
+
+      $\because e^{-x^2} > 0 \therefore I > 0$
+
+      $$\therefore I = \int_{-\infty}^\infty e^{-x^2} dx = \sqrt \pi$$
+    \end{proof}
+
+    \item 
+    \begin{proof}
+      Let $t = \sqrt 2 x$, then $x = \frac{t}{\sqrt 2}$, then
+
+      $$\int_{-\infty}^\infty e^{-\frac{t^2}{2}} d\frac{t}{\sqrt 2} = \sqrt \pi$$
+
+      which is equivalent to
+
+      $$\int_{-\infty}^\infty e^{-\frac{t^2}{2}} dt = \int_{-\infty}^\infty e^{-\frac{x^2}{2}} dx = \sqrt{2\pi}$$
+    \end{proof}
+
+  \end{enumerate}
+
+  \subsection*{41. }
+
+  \begin{enumerate}[(a)]
+    \item 
+
+    $$\begin{aligned}
+      \int_0^\infty x^2 e^{-x^2} dx &= \int_0^\infty (-\frac x 2)de^{-x^2} \\
+      &= (-\frac x 2 e^{-x^2})\biggl|_0^\infty - \int_0^\infty e^{-x^2}d(-\frac x 2) \\
+      &= \frac 1 2 \int_0^\infty e^{-x^2} dx \\
+      &= \frac 1 4 \int_{-\infty}^\infty e^{-x^2} dx \\
+      &= \frac{\sqrt \pi}{4} 
+    \end{aligned}$$
+
+    \item 
+
+    $$\begin{aligned}
+      \int_0^\infty \sqrt x e^{-x} dx &= \int_0^\infty (-\sqrt x) de^{-x} \\
+      &= (-\sqrt x e^{-x})\biggl|_0^\infty - \int_0^\infty e^{-x} d(-\sqrt x) \\
+      &= \int_0^\infty e^{-x} d\sqrt x \\
+    \end{aligned}$$
+
+    Let $x = t^2$, then
+
+    $$\int_0^\infty \sqrt x e^{-x} dx = \int_0^\infty e^{-t^2}dt = \int_0^\infty e^{-x^2} dx = \frac{\sqrt \pi}{2}$$
+  \end{enumerate}
+
+\end{document}
