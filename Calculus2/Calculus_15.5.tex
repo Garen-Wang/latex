@@ -1,0 +1,109 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 15.5}
+  \author{Wang Yue from CS Elite Class}
+  \date{\today}
+  \maketitle
+
+  \subsection*{6. }
+
+  The total mass is
+
+  $$\begin{aligned}
+    m &= \int_0^2 \int_{x}^{6-2x} x^2 dy dx \\
+    &= \int_0^2 (6x^2 - 3x^3) dy dx \\
+    &= (2x^3 - \frac{3x^4}{4})\biggl|_0^2 \\
+    &= 16 - 12 = 4
+  \end{aligned}$$
+
+  $$\begin{aligned}
+    \int_0^2 \int_x^{6-2x} x^2y dy dx &= \int_0^2 (\frac{x^2y^2}{2})\biggl|_{x}^{6-2x} dx \\
+    &= \int_0^2 \frac{x^2}{2} (3x^2-24x+36) dx \\
+    &= (\frac{3}{10}x^5 - 3x^4 + 6x^3)\biggl|_0^2 \\
+    &= \frac{48}{5}
+   \end{aligned}$$
+
+   $$\begin{aligned}
+     \int_0^2 \int_x^{6-2x} x^3 dy dx &= \int_0^2 (x^3)(6-3x) dx \\
+     &= (-\frac{3}{5}x^5 + \frac{3}{2} x^4) \biggl|_0^2 \\
+     &= \frac{24}{5}
+   \end{aligned}$$
+
+   $$\overline y = \frac{\iint_D \rho(x, y) y dA}{\iint_D \rho(x, y) dA} = \frac{\frac{48}{5}}{4} = \frac{12}{5}$$
+
+   $$\overline x = \frac{\iint_D \rho(x, y) x dA}{\iint_D \rho(x, y) dA} = \frac{\frac{24}{5}}{4} = \frac{6}{5}$$
+
+   $\therefore$ the coordinate of center of mass is $(\frac 6 5, \frac{12}{5})$
+
+  \subsection*{13. }
+
+  Let $\rho(x, y) = k \sqrt{x^2+y^2}$, then in polar coordinate, 
+
+   $$\begin{aligned}
+     m &= \int_0^\pi \int_1^2 kr r dr d\theta \\
+     &= \int_0^{\pi} k(\frac{r^3}{3})\biggl|_1^2 d\theta \\
+     &= \int_0^{\pi} \frac{7k}{3} d\theta \\
+     &= \frac{7k\pi}{3}
+   \end{aligned}$$
+
+   $$\begin{aligned}
+     \int_0^\pi \int_1^2 kr \times r\cos \theta \times rdr d\theta &= \int_0^\pi \int_1^2 kr^3\cos \theta dr d\theta \\
+     &= \int_0^\pi k\cos \theta(\frac{x^4}{4})\biggl|_1^2 d\theta \\
+     &= \int_0^\pi \frac{15k\cos \theta}{4} d\theta \\
+     &= \frac{15k}{4} (\sin \theta)\biggl|_0^\pi = 0
+   \end{aligned}$$
+
+   Similarly,
+   $$\begin{aligned}
+     \int_0^\pi \int_1^2 kr \times r\sin \theta \times rdrd\theta &= \int_0^\pi \frac{15k\sin \theta}{4}d\theta \\
+     &= \frac{15k}{4} (-\cos \theta)\biggl|_0^\pi \\
+     &= \frac{15k}{2}
+   \end{aligned}$$
+
+   $$\overline y = \frac{\iint_D \rho(x, y) y dA}{\iint_D \rho(x, y) dA} = \frac{\frac{15k}{2}}{\frac{7k\pi}{3}} = \frac{45}{14\pi}$$
+
+   $$\overline x = \frac{\iint_D \rho(x, y) x dA}{\iint_D \rho(x, y) dA} = 0$$
+
+   $\therefore$ the coordinate of center of mass is $(0, \frac{45}{14\pi})$
+
+  \subsection*{17. }
+
+   $$\begin{aligned}
+     I_x &= \iint_D y^2 \rho(x, y) dA \\
+     &= \int_{-1}^1 \int_0^{1-x^2} ky^3 dy dx \\
+     &= \int_{-1}^1 k(\frac{y^4}{4})\biggl|_0^{1-x^2} dy dx \\
+     &= \int_{-1}^1 \frac{k}{4}(1-x^2)^2 dx \\
+     &= \frac k 2 \int_0^1 (1-x^2)^2 dx \\
+     &= \frac k 2 (\frac{x^5}{5} - \frac{2x^3}{3} + x)\biggl|_0^1 \\
+     &= \frac{4k}{15}
+   \end{aligned}$$
+
+   $$\begin{aligned}
+     I_y &= \iint_D x^2 \rho(x, y) dA \\
+     &= \int_{-1}^1 \int_0^{1-x^2} kx^2y dy dx \\
+     &= \int_{-1}^1 kx^2(\frac{y^2}{2})\biggl|_0^{1-x^2}dx \\
+     &= \int_{-1}^1 \frac{kx^2}{2}(x^4-2x^2+1) dx \\
+     &= \frac{k}{2} \int_{-1}^1 (x^6 - 2x^4 + x^2)dx \\
+     &= k (\frac{x^7}{7} - \frac{2}{5}x^5 + \frac{x^3}{3})\biggl|_0^1 \\
+     &= \frac{8k}{105}
+   \end{aligned}$$
+
+   $$\begin{aligned}
+     I_0 &= \iint_D (x^2+y^2) \rho(x, y) dA \\
+     &= \int_{-1}^1 \int_0^{1-x^2} ky(x^2+y^2) dy dx \\
+     &= \int_{-1}^1 \int_0^{1-x^2} \frac k 2 (x^2+y^2)d(x^2+y^2) dx \\
+     &= \int_{-1}^1 \frac k 2 [\frac{(x^2+y^2)^2}{2}]\biggl|_0^{1-x^2} dx \\
+     &= \int_{-1}^1 \frac k 2 (\frac{x^4-x^2+1}{2} - \frac{x^4}{2}) dx \\
+     &= \frac k 2 \int_{-1}^1 \frac{-x^2 + 1}{2} dx \\
+     &= \frac k 2 (-\frac{x^3}{6} + \frac{x}{2})\biggl|_{-1}^1 \\
+     &= \frac k 3
+   \end{aligned}$$
+
+\end{document}
