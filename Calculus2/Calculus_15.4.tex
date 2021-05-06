@@ -40,19 +40,27 @@
 
   \subsection*{25. }
 
+  The boundary $D$ is calculated by
+
+  $$x^2 + y^2 + (\sqrt{x^2+y^2})^2 = 2(x^2+y^2) = 1 \implies x^2 + y^2 = \frac 1 2$$
+
   $$\begin{aligned}
-    V &= \int_0^{2\pi} \int_0^1 (\sqrt{1-r^2} - r) r dr d\theta \\
-    &= TODO
+    V &= \int_0^{2\pi} \int_0^{\frac{\sqrt 2}{2}} (\sqrt{1-r^2} - r) r dr d\theta \\
+    &= \int_0^{2\pi} [\int_0^{\frac{\sqrt 2}{2}} \sqrt{1-r^2}rdr - \int_0^{\frac{\sqrt 2}{2}} r^2dr] d\theta \\
+    &= \int_0^{2\pi} [-\frac 1 2 \int_0^{\frac{\sqrt 2}{2}}\sqrt{1-r^2}d(1-r^2) - (\frac{r^3}{3})\biggl|_0^{\frac{\sqrt 2}{2}}] d\theta \\
+    &= \int_0^{2\pi} [-\frac 1 2 \times \frac 2 3 (1-r^2)^{\frac 3 2}\biggl|_{0}^{\frac{\sqrt{2}}{2}} - \frac{\sqrt 3}{18}]d\theta \\
+    &= \int_0^{2\pi} [-\frac 1 3 (\frac{\sqrt 2}{4}-1) - \frac{\sqrt 3}{18}] d\theta \\
+    &= \int_0^{2\pi} (\frac 1 3 - \frac{\sqrt 2}{12} - \frac{\sqrt 3}{18}) d\theta \\
+    &= \frac{2\pi}{3} - \frac{\sqrt 2 \pi}{6} - \frac{\sqrt 3 \pi}{9}
   \end{aligned}$$
 
   \subsection*{31. }
 
   $$\begin{aligned}
-    \int_{-3}^3 \int_0^{\sqrt{9-x^2}} \sin(x^2+y^2) dy dx &= \int_0^\pi \int_0^3 r\sin r^2 dr d\theta \\
-    &= \int_0^{\pi} \frac 1 2 \int_0^3 \sin r^2 dr^2 d\theta \\
-    &= \int_0^{\pi} \frac 1 2 (-\cos r^2)\biggl|_0^3 d\theta \\
-    &= \frac 1 2 \int_0^{\pi} (1 -\cos 9) d\theta \\
-    &= \frac{(1-\cos 9)\pi}{2}
+    \int_0^1 \int_y^{\sqrt{2-y^2}} (x+y) dx dy &= \int_0^{\frac \pi 4} \int_0^1 r^2(\sin \theta + \cos \theta) dr d\theta \\
+    &= \int_0^{\frac \pi 4} (\sin \theta + \cos \theta) (\frac{r^3}{3})\biggl|_0^1 d\theta \\
+    &= \frac 1 3 (sin \theta -\cos \theta)\biggl|_0^{\frac \pi 4} \\
+    &= \frac{(0) - (0 - 1)}{3} = \frac 1 3
   \end{aligned}$$
 
   \subsection*{32. }
