@@ -16,10 +16,20 @@
 
   $$\begin{aligned}
     \iint_R \sqrt{9-y^2}dA &= \int_0^4 \int_0^2 \sqrt{9-y^2} dy dx \\
-    &= \int_0^4 \int_0^2 -\frac{\sqrt{9-y^2}}{2} d(9-y^2) dx \\
-    &= \int_0^4 -\frac 1 2 \times \frac 2 3 (9-y^2)^{\frac 3 2}\biggl|_0^2 dx \\
-    &= \int_0^4(9-\frac{\sqrt{125}}{3}) dx \\
-    &= 36 - \frac{20}{3}\sqrt{5}
+    &= \int_0^2 \int_0^4 \sqrt{9-y^2} dx dy \\
+    &= 4\int_0^2 \sqrt{9-y^2} dy \\
+  \end{aligned}$$
+
+  Let $y = 3 \sin t$, where $t$, then
+
+  $$\begin{aligned}
+    4\int_0^2 \sqrt{9-y^2} dy &= 4\int_0^{\arcsin \frac 2 3} 3 |\cos t| 3\cos t dt \\
+    &= 36\int_0^{\arcsin \frac 2 3} \cos^2 t dt \\
+    &= 18\int_0^{\arcsin \frac 2 3} (1 + \cos 2t)dt \\
+    &= 18(t + \frac 1 2 \sin 2t)\biggl|_0^{\arcsin \frac 2 3} \\
+    &= 18(\arcsin \frac 2 3 + \frac 2 3 \cos \arcsin \frac 2 3) \\
+    &= 18(\frac{41.810\pi}{180} + 0.4969) \\
+    &= 22.079
   \end{aligned}$$
 
   \subsection*{17. }
