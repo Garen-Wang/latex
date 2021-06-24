@@ -1,0 +1,151 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 16.2}
+  \author{Wang Yue from CS Elite Class}
+  \maketitle
+
+  \subsection*{3. }
+
+  $\left\{ \begin{array}{ll}
+    x = 4\cos \theta \\
+    y = 4\sin \theta
+  \end{array}\right.$
+
+  $$\begin{aligned}
+    \int_C xy^4 ds &= \int_{-\frac \pi 2}^{\frac \pi 2} (4\cos \theta)(4\sin \theta)^4 \sqrt{(\frac{dx}{d\theta})^2 + (\frac{dy}{d\theta})^2} d\theta \\
+    &= \int_{-\frac \pi 2}^{\frac \pi 2} 4^5 \cos \theta \sin^4 \theta \sqrt{16\sin^2 \theta + 16\cos^2 \theta} d\theta  \\
+    &= \int_{-\frac \pi 2}^{\frac \pi 2} 4^6 \sin^4 \theta d\sin \theta \\
+    &= 4^6 (\frac{\sin^5 \theta}{5})\biggl|_{-\frac{\pi}{2}}^{\frac{\pi}{2}} \\
+    &= \frac{2^{13}}{5}
+  \end{aligned}$$
+
+  \subsection*{5. }
+
+  $\left\{ \begin{array}{ll}
+    x = y^2 \\ y = y
+  \end{array}\right.$
+
+  $$\begin{aligned}
+    \int_C (x^2y^3 - \sqrt x) dy &= \int_1^2 (y^7- y)dy \\
+    &= (\frac{y^8}{8} - \frac{y^2}{2})\biggl|_1^2 \\
+    &= \frac{243}{8}
+  \end{aligned}$$
+
+  \subsection*{6. }
+
+  $\left\{ \begin{array}{ll}
+    x = y^3 \\
+    y = y
+  \end{array}\right.$
+
+  $$\begin{aligned}
+    \int_C e^x dx &= \int_{-1}^1 e^{y^3} 3y^2 dy \\
+    &= \int_{-1}^1 e^{y^3} dy^3 \\
+    &= e^{y^3}\biggl|_{y=-1}^{y=1} \\
+    &= e - \frac 1 e
+  \end{aligned}$$
+
+  \subsection*{8. }
+
+  Let $C_1 = \{ (x, y) | x^2 + y^2 = 4\}, C_2 = \{ (x, y) | y = \frac x 4 + 2 \}$
+
+  $\left\{ \begin{array}{ll}
+    x = 2\cos \theta \\ y = 2\sin \theta
+  \end{array}\right.$
+
+  $$\begin{aligned}
+    \int_{C_1} x^2 dx + y^2 dy &= \int_{0}^{\frac \pi 2} 4\cos^2 \theta (-2\sin \theta) + 4\sin^2 \theta (2\cos \theta) d\theta \\
+    &= \int_0^{\frac \pi 2} -8\sin \theta \cos^2 \theta d\theta + \int_0^{\frac \pi 2}8\cos \theta \sin^2 \theta d\theta \\
+    &= 8\int_0^{\frac \pi 2} \cos^2 \theta d\cos \theta + 8 \int_0^{\frac \pi 2} \sin^2 \theta d\sin \theta \\
+    &= 8(\frac{\sin^3 \theta}{3})\biggl|_0^{\frac \pi 2} + 8(\frac{\cos^3 \theta}{3})\biggl|_0^{\frac \pi 2} \\
+    &= \frac 8 3 - \frac 8 3 = 0
+  \end{aligned}$$
+  
+  $\left\{ \begin{array}{ll}
+    x = x \\ y = \frac x 4 + 2
+  \end{array}\right.$
+
+  $$\begin{aligned}
+    \int_{C_2} x^2 dx + y^2 dy &= \int_0^4 x^2 + \frac 1 4(\frac{x^2}{16} + x + 4) dx \\
+    &= \int_0^4 \frac{65}{64} x^2 + \frac x 4 + 1 dx \\
+    &= (\frac{65}{64 \times 3}x^3 + \frac{x^2}{8} + x)\biggl|_0^4 \\
+    &= \frac{65}{3} + 2 + 4 = \frac{83}{3}
+  \end{aligned}$$
+
+  \subsection*{12. }
+
+  $$\begin{aligned}
+    \int_C (x^2 + y^2 + z^2) ds &= \int_0^{2\pi} (t^2 + \cos^2 2t + \sin^2 2t) \sqrt{1 + (-2\sin 2t)^2 + (2\cos 2t)^2} dt \\
+    &= \int_0^{2\pi} (t^2 + 1) \sqrt{1 + 4} dt \\
+    &= \sqrt 5 (\frac{t^3}{3} + t)\biggl|_0^{2\pi} \\
+    &= \frac{8\sqrt 5\pi^3}{3} + 2\sqrt 5\pi
+  \end{aligned}$$
+
+  \subsection*{24. }
+
+  $\overrightarrow{F} = (y\sin z, z \sin x, x \sin y), \overrightarrow{r}(t) = (\cos t, \sin t, \sin 5t), \overrightarrow r'(t) = (-\sin t, \cos t, 5\cos 5t)$
+
+  $$\overrightarrow{F}(\overrightarrow{r}(t)) = (\sin t \sin \sin 5t, \sin 5t \sin \cos t, \cos t \sin \sin t)$$
+
+  $$\begin{aligned}
+    \int_C \overrightarrow{F} \cdot d\overrightarrow{r} &= \int_0^{\pi} \overrightarrow{F}(\overrightarrow{r}(t)) \cdot \overrightarrow{r}'(t) dt \\
+    &= \int_0^\pi (-\sin^2 t \sin \sin 5t + \sin 5t \cos t \sin \cos t +  5\cos t \cos 5t \sin \sin t) dt \\
+    &\approx -0.1363
+  \end{aligned}$$
+
+  \subsection*{26. }
+
+  $$\begin{aligned}
+    \int_C ze^{-xy} ds &= \int_0^1 e^{-t-t^3}\sqrt{1 + 4t^2 + e^{-2t}} dt \\
+    &\approx 0.8208
+  \end{aligned}$$
+
+  \subsection*{28. }
+
+  $\overrightarrow{r}(t) = (t, 1 + t^2), \overrightarrow{r}'(t) = (1, 2t)$
+
+  $$\overrightarrow{F}(\overrightarrow{r}(t)) = (\frac{t}{\sqrt{t^4+3t^2+1}}, \frac{1 + t^2}{\sqrt{t^4 + 3t^2 + 1}})$$
+
+  $$\begin{aligned}
+    \int_C \overrightarrow{F} \cdot d\overrightarrow{r} &= \int_{-1}^1 \frac{3t + 2t^3}{\sqrt{t^4 + 3t^2 + 1}} dt \\
+    &= 0
+  \end{aligned}$$
+
+  \subsection*{32(a). }
+
+  $\overrightarrow{r}(t) = (2\cos t, 2 \sin t), \overrightarrow{r}'(t) = (-2\sin t, 2\cos t)$
+
+  $$\overrightarrow{F}(\overrightarrow{r}(t)) = (4\cos^2 t, 4\sin t \cos t)$$
+
+  $$\begin{aligned}
+    \int_C \overrightarrow{F} \cdot d\overrightarrow{r} &= \int_0^{2\pi} -8\sin t \cos^2 t + 8 \sin t \cos^2 t dt = 0
+  \end{aligned}$$
+
+  \subsection*{49. }
+
+  \begin{proof}
+    $$\begin{aligned}
+      \int_C \overrightarrow{v} \cdot d\overrightarrow{r} &= \int_a^b \overrightarrow{v} \cdot \overrightarrow{r}'(t) dt \\
+      &= \overrightarrow{v} \cdot \int_a^b \overrightarrow{r}'(t) dt \\
+      &= \overrightarrow{v} \cdot (\overrightarrow{b} - \overrightarrow{a})
+    \end{aligned}$$
+  \end{proof}
+
+  \subsection*{50. }
+
+  \begin{proof}
+    $$\begin{aligned}
+      \int_C \overrightarrow{r} \cdot d\overrightarrow{r} &= \int_a^b \overrightarrow{r} \cdot \overrightarrow{r}' dt \\
+      &= (\frac{\overrightarrow{r^2}}{2})\biggl|_a^b \\
+      &= \frac 1 2 (|\overrightarrow{r}(b)|^2 - |\overrightarrow{r}(a)|^2)
+    \end{aligned}$$
+  \end{proof}
+  
+\end{document}

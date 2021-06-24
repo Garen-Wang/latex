@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 17.1}
+  \author{Wang Yue from CS Elite Class}
+  \maketitle
+
+  \subsection*{4. }
+
+  Solving the auxiliary equation $\lambda^2 - 8\lambda + 12 = (\lambda - 6)(\lambda - 2) = 0$, $\lambda = 6$ or $\lambda = 2$
+
+  $\therefore$ the general solution is
+
+  $$ y = C_1 e^{6x} + C_2 e^{2x}$$
+
+  where $C_1$ and $C_2$ are arbitrary constants.
+
+  \subsection*{5. }
+
+  Solving the auxiliary equation $9\lambda^2 - 12\lambda + 4 = (3\lambda - 2)^2 = 0, \lambda = \frac 2 3$
+
+  $\therefore$ the general solution is
+
+  $$y = C_1 e^{\frac 2 3 x} + C_2 x e^{\frac 2 3 x}$$
+
+  where $C_1$ and $C_2$ are arbitrary constants.
+
+  \subsection*{9. }
+
+  Solving the auxiliary equation $\lambda^2 - 4\lambda + 13 = 0$,
+
+  $\because \Delta = 16 - 4 \times 13 = 16 - 52 = -36$
+
+  $\therefore$ the solution to the equation is $$\lambda = \frac{4 + 6i}{2} = 2 + 3i \textrm{ or } \lambda = \frac{4 - 6i}{2} = 2 - 3i$$
+
+  $\therefore$ the general solution is
+
+  $$y = e^{2x} (C_1 \cos 3x + C_2 \sin 3x)$$
+
+  where $C_1$ and $C_2$ are arbitrary constants.
+
+  \subsection*{21. }
+
+  Solving the auxiliary equation $\lambda^2 - 6\lambda + 10 = 0$,
+
+  $\because \Delta = 36 - 4 \times 10 = -4$
+
+  $\therefore$ the solution to the equation is
+
+  $$\lambda = \frac{6 + 2i}{2} = 3 + i \textrm{ or } \lambda = \frac{6 - 2i}{2} = 3 - i$$
+
+  $\therefore$ the general solution is
+
+  $$y = e^{3x} (C_1 \cos x + C_2 \sin x)$$
+
+  $\because y' = e^{3x} (C_2 \cos x - C_1 \sin x), y'(0) = 3$
+
+  $\therefore y'(0) = 1 \times (C_2 - 0) = C_2  = 3$
+
+  $\because y(0) = 2$
+
+  $\therefore y = 1 \times (C_1 - 0) = C_1 = 2$
+
+  $\therefore$ the general solution is
+
+  $$y = e^{3x} (2\cos x + 3\sin x)$$
+
+  \subsection*{34. }
+
+  \begin{proof}
+    The auxiliary equation is $a\lambda^2 + b\lambda + c = 0$, with $a, b, c$ positive.
+
+    \begin{enumerate}
+
+      \item If $\Delta = \sqrt{b^2 - 4ac} > 0$, the auxiliary equation has two real solution.
+
+        Let the solutions be $\lambda_1$ and $\lambda_2$, then by the Vieta's Theorem,
+
+        $$\lambda_1 \lambda_2 = \frac{c}{a} > 0, \lambda_1 + \lambda_2 = -\frac{b}{a} < 0 \implies \lambda_1 < 0, \lambda_2 < 0$$
+
+        $$y(x) = c_1 e^{\lambda_1 x} + c_2e^{\lambda_2 x}$$
+
+        $$\therefore \lim_{x \to \infty} y(x) = c_1 \lim_{x \to \infty} e^{\lambda_1 x} + c_2 \lim_{x \to \infty} e^{\lambda_2 x} = 0 + 0 = 0$$
+
+      \item If $\Delta = \sqrt{b^2 - 4ac} = 0$, the auxiliary equation has a real double root.
+
+        Let the solution be $\lambda_0 = -\frac{b}{2a}$, then
+
+        $$y(x) = c_1 e^{\lambda_0 x} + c_2 x e^{\lambda_0 x}$$
+
+        $$\therefore \lim_{x \to \infty} y(x) = c_1 \lim_{x \to \infty} e^{\lambda_0 x} + c_2 \lim_{x \to \infty} x e^{\lambda_0 x} = 0 + 0 = 0$$
+      
+      \item If $\Delta = \sqrt{b^2 - 4ac} < 0$, the auxiliary equation has two complex roots.
+
+        Let $\lambda_1 = \alpha + \beta i, \lambda_2 = \alpha  - \beta i$, where $\alpha = -\frac{b}{2a} < 0$
+
+        $$y(x) = e^{\alpha x} (c_{1} \cos \beta x + c_2 \sin \beta x)$$
+
+        $$\therefore \lim_{x \to \infty} y(x) = \lim_{x \to \infty} e^{\alpha x} (c_1 \cos \beta x  + c_2 \sin \beta x) \leq (c_1 + c_2) \lim_{x \to \infty} e^{\alpha x} = 0$$
+
+    \end{enumerate}
+
+
+    $$
+  \end{proof}
+
+\end{document}

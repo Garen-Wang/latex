@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 15.10}
+  \author{Wang Yue from CS Elite Class}
+  \maketitle
+
+  \subsection*{18. }
+
+  Substitude $\left\{ \begin{array}{ll} x = \sqrt 2 u - \sqrt{\frac 2 3} v \\ y = \sqrt{2} u + \sqrt{\frac 2 3} v \end{array}\right.$ into $x^2 - xy + y^2 = 2$, we have
+
+  $$2(2u^2 + \frac 2 3 v^2) - (2u^2 - \frac 2 3 v^2) = 2u^2 + 2v^2 = 2 \iff u^2 + v^2 = 1$$
+
+  Let $S = \{ (u, v) | u^2 + v^2 \leq 1 \}$, then
+
+  $$\begin{aligned}
+    \iint_R (x^2-xy+y^2) dA &= \iint_S (\sqrt 2 u - \sqrt{\frac 2 3} v)^2 - (2u^2 - \frac 2 3 v^2) + (\sqrt 2 u + \sqrt{\frac 2 3} v)^2 |\frac{\partial (x, y)}{\partial (u, v)}| du dv \\
+    &= \iint_S (2u^2 + 2v^2) \biggl|\begin{matrix}
+      \sqrt 2 & -\sqrt{\frac 2 3} \\
+      \sqrt 2 & \sqrt{\frac 2 3}
+    \end{matrix}\biggl| du dv \\
+    &= \frac{8\sqrt 3}{3} \int_0^{2\pi} \int_0^1 r^2 r dr d\theta \\
+    &= \frac{8\sqrt 3}{3} \int_0^{2\pi} (\frac{r^4}{4})\biggl|_0^1 d\theta \\
+    &= \frac{8\sqrt 3}{3} \times \frac{\pi}{2} = \frac{4\sqrt 3 \pi}{3}
+  \end{aligned}$$
+
+  \subsection*{19. }
+
+  Substitue $\left\{ \begin{array}{ll} x = \frac u v \\ y = v \end{array}\right.$ into boundary of $R$, we get
+
+  $y = x, y = 3x \implies v^2 = u, v^2 = 3u, xy = 1, xy = 3 \implies u = 1, u = 3$
+
+  Let $S = \{ (u, v) | 1 \leq u \leq 3, u \leq v^2 \leq 3u \}$
+
+  $$\begin{aligned}
+    \iint_R xy dA &= \iint_S u \biggl| \frac{\partial (x, y)}{\partial (u, v)} \biggl| du dv \\
+    &= \iint_S \frac{u}{v} du dv \\
+    &= \int_1^3 \int_{\sqrt u}^{3\sqrt u} \frac u v dv du \\
+    &= \int_1^3 u (-\frac{1}{v^2})\biggl|_{\sqrt u}^{3\sqrt u} du \\
+    &= \int_1^3 u (\frac{1}{u} - \frac{1}{9u}) du \\
+    &= \frac{16}{9}
+  \end{aligned}$$
+
+  \subsection*{24. }
+
+  Let $\left\{ \begin{array}{ll} x = \frac{u + v}{2} \\ y = \frac{v - u}{2} \end{array}\right.$, then the boundary of $R$ becomes $u = 0, u = 2, v = 0, v = 3$
+
+  Let $S = \{ (u, v) | 0 \leq u \leq 2, 0 \leq v \leq 3 \}$
+
+  $$\begin{aligned}
+    \iint_R (x+y)e^{x^2-y^2} dA &= \iint_S v e^{uv} \biggl| \begin{matrix}
+      \frac 1 2 & \frac 1 2 \\
+      -\frac 1 2 & \frac 1 2
+    \end{matrix} \biggl| du dv \\
+    &= \frac 1 2 \iint_S ve^{uv} du dv \\
+    &= \frac 1 2 \int_0^3 \int_0^2 ve^{uv} du dv \\
+    &= \frac 1 2 \int_0^3 (e^{uv})\biggl|_{u=0}^{u=2} dv \\
+    &= \frac 1 2 \int_0^3 (e^{2v} - 1) dv \\
+    &= \frac 1 2 (\frac 1 2 e^{2v} - v)\biggl|_0^3 \\
+    &= \frac 1 2 (\frac{e^6 - 1}{2} - 3) \\
+    &= \frac{e^6 - 7}{4}
+  \end{aligned}$$
+
+  \subsection*{26. }
+
+  Let $x = \frac{r\cos \theta}{3}, y = \frac{r \sin \theta}{2}$, then
+
+  $$\begin{aligned}
+    \iint_R \sin (9x^2+4y^2) dA  &= \int_0^{2\pi} \int_0^1 \sin (r^2) \frac{r}{6} dr d\theta \\
+    &= \frac 1 6 \int_0^{2\pi} \int_0^1 \frac 1 2 \sin(r^2) dr^2 d\theta \\
+    &= \frac{1}{12} \int_0^{2\pi} (-\cos r^2)\biggl|_{r=0}^{r=1} d\theta \\ 
+    &= \frac{1}{12} \times 2\pi \times (1 - \cos 1) = \frac{(1-\cos 1)\pi}{6}
+  \end{aligned}$$
+
+  \subsection*{28. }
+
+  \begin{proof}
+    Let $x = \frac{u + v}{2}, y = \frac{u - v}{2}$
+
+    $\because 0 \leq x + y \leq 1 \quad \therefore 0 \leq u \leq 1$
+
+    $$\begin{aligned}
+      \iint_R f(x, y) dA &= \iint_R f(u) \biggl| \begin{matrix}
+        \frac 1 2 & \frac 1 2 \\ \frac 1 2 & -\frac 1 2
+      \end{matrix} \biggl| du dv \\
+      &= \frac 1 2 \iint_R f(u) du dv \\
+      &= \int_0^1 \int_{-u}^{u} \frac 1 2  f(u) dv du \\
+      &= \int_0^1 \frac 1 2 \times (2u) f(u) du \\
+      &= \int_0^1 f(u) du \\
+    \end{aligned}$$
+  \end{proof}
+
+
+\end{document}

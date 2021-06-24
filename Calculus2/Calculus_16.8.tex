@@ -1,0 +1,173 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 16.8}
+  \author{Wang Yue from CS Elite Class}
+  \maketitle
+
+  \subsection*{11(a)}
+
+  $$\textrm{curl} \overrightarrow{F} = \biggl|\begin{matrix}
+    \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\
+    \frac{\partial }{\partial x} & \frac{\partial }{\partial y} & \frac{\partial }{\partial z} \\
+    x^2z & xy^2 & z^2
+  \end{matrix}\biggl| = \langle 0, x^2, y^2 \rangle
+  $$
+
+  $$z = 1 - x - y, \frac{\partial z}{\partial x} = \frac{\partial z}{\partial y} = -1$$
+
+  $$\begin{aligned}
+    \int_C \overrightarrow{F} \cdot d\overrightarrow{r} &= \iint_S \textrm{curl} \overrightarrow{F} \cdot d\overrightarrow{S} = \iint_D (x^2 + y^2) dA \\
+                                                        &= \int_0^{2\pi} \int_0^3 r^3 dr d\theta \\
+                                                        &= \int_0^{2\pi} \frac{81}{4} d\theta = \frac{81}{2} \pi
+  \end{aligned}
+  $$
+
+  \subsection*{12(a)}
+
+  $$\textrm{curl } \overrightarrow{F} = \biggl|\begin{matrix}
+    \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\
+    \frac{\partial }{\partial x} & \frac{\partial }{\partial y} & \frac{\partial }{\partial z} \\
+    x^2y & \frac{1}{3}x^3 & xy
+  \end{matrix}\biggl| = \langle x, -y, 0 \rangle
+
+  $$z = y^2 - x^2, \frac{\partial z}{\partial x} = -2x, \frac{\partial z}{\partial y} = 2y$$
+
+  $$\begin{aligned}
+    \int_C \overrightarrow{F} \cdot \overrightarrow{r} &= \iint_S \textrm{curl} \overrightarrow{F} \cdot d\overrightarrow{S} = \iint_D (2x^2 + 2y^2) dA \\
+                                                       &= \int_0^{2\pi} \int_0^{1} 2r^3 dr d\theta \\
+                                                       &= \int_0^{2\pi} 2 \frac{r^4}{4}\biggl|_0^1 d\theta = \pi
+  \end{aligned}
+  $$
+
+  \subsection*{14}
+
+  $$\textrm{curl} \overrightarrow{F} = \biggl| \begin{matrix}
+    \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\
+    \frac{\partial }{\partial x} & \frac{\partial }{\partial y} & \frac{\partial }{\partial z} \\
+    -2yz & y & 3x 
+  \end{matrix} \biggl| = \langle 0, -2y - 3, 2z \rangle
+  $$
+
+  $$z = 5 - x^2 - y^2, z \in [1, 5], \frac{\partial z}{\partial x} = -2x, \frac{\partial z}{\partial y} = -2y$$
+
+  $$\begin{aligned}
+    \int_C \overrightarrow{F} \cdot d\overrightarrow{r} &= \iint_D (-2y(2y + 3) + 2z) dA \\
+                                                        &= \iint_D (-6y^2 - 2x^2 - 6y + 10) dA \\
+                                                        &= \int_0^{2\pi} \int_0^2 (-6r^3 \sin^2 \theta - 2r^3 \cos^2 \theta - 6r^2 \sin \theta + 10r) dr d\theta \\
+                                                        &= \int_0^{2\pi} (-24 \sin^2 \theta - 8 \cos^2 \theta - 16 \sin \theta + 20) d\theta \\
+                                                        &= \int_0^{2\pi} (12 - 16 \sin^2 \theta - 16 \sin \theta) d \theta \\
+                                                        &= \int_0^{2\pi} (12 - 8 + 8 \cos 2\theta - 16 \sin \theta) d\theta \\
+                                                        &= [4 + 4 \sin 2\theta + 16 \cos \theta]\biggl|_0^{2\pi} \\
+                                                        &= 8\pi
+  \end{aligned}
+  $$
+
+  Let $\overrightarrow {r}(t) = \langle 2 \cos t, 2 \sin t, 1 \rangle$, then $\overrightarrow{r}'(t) = \langle -2 \sin t, 2 \cos t, 0 \rangle$
+
+  $$\overrightarrow{F}(\overrightarrow{r}(t)) = \langle -4 \sin t, 2 \sin t, 6 \cos t \rangle$$
+
+  $$\begin{aligned}
+    \int_C \overrightarrow{F} \cdot d \overrightarrow{r} &= \int_0^{2\pi} \overrightarrow{F}(\overrightarrow{r}(t)) \cdot \overrightarrow{r}'(t) dt \\
+                                                         &= \int_0^{2\pi} 8 \sin^2 t + 4 \sin t \cos t dt \\
+                                                         &= 8 \int_0^{2\pi} \frac{1 - \cos 2t}{2} dt + 4\int_0^{2\pi} \sin t d\sin t \\
+                                                         &=  8\pi
+  \end{aligned}
+  $$
+
+  $\therefore$ the Stoke's Theorem is true in this example.
+
+  \subsection*{16}
+
+  \begin{proof}
+
+    Use Stoke's Theorem.
+
+    $$\overrightarrow{F} = \langle z, -2x, 3y \rangle$$
+
+    $$\textrm{curl} \overrightarrow{F} = \langle 3, 1, -2 \rangle$$
+
+    $$z = 1 - x - y, \frac{\partial z}{\partial x} = \frac{\partial z}{\partial y} = -1$$
+
+    $$\int_D \overrightarrow{F} \cdot d \overrightarrow{t} = \iint_S \textrm{curl} \overrightarrow{F} \cdot d \overrightarrow{S} = \iint_S (3 + 1 - 2) dS = 2\iint_S dS$$
+
+    which means it only depends on the area of the region $C$.
+    
+  \end{proof}
+
+  \subsection*{18}
+
+  $$\textrm{curl} \overrightarrow F = \langle - 2z, - 3x^2, -1 \rangle$$
+
+  $\because \overrightarrow{r}(t) = \langle \sin t, \cos t, \sin 2t \rangle$
+
+  $\therefore z = 2xy$
+
+  $\therefore \frac{\partial z}{\partial x} = 2y, \frac{\partial z}{\partial y} = 2x$
+
+  $$\begin{aligned}
+    \int_C (y + \sin x) dx + (z^2 + \cos y) dy + x^3 dz &= \iint_S (8xy^2 + 6x^3 - 1) dA \\
+                                                        &= \int_0^{2\pi} \int_0^1 (8r^4 \cos \theta \sin^2 \theta + 6r^4 \cos^3 \theta - r) dr d\theta \\
+                                                        &= \int_0^{2\pi}  \frac{8}{5} \sin^2 \theta \cos \theta + \frac{6}{5} \cos^3 \theta - 1 d\theta \\
+                                                        &= \frac{8}{5} \int_0^{2\pi} \sin^2 \theta d\sin \theta + \frac{6}{5} \int_0^{2\pi} (1-\sin^2 \theta) d \sin \theta - 2\pi \\
+                                                        &= -2\pi
+  \end{aligned}
+  $$
+
+
+
+  \subsection*{19}
+
+  \begin{proof}
+    
+  By using the Divergence Theorem, we have
+
+  $$\iint_S \overrightarrow{F} \cdot d \overrightarrow{S} = \iiint_E \textrm{div} \overrightarrow{F} dV$$
+
+  $$\therefore \iint_S \textrm{curl} \overrightarrow{F} \cdot d \overrightarrow{S} = \iiint_E \textrm{div} (\textrm{curl} \overrightarrow{F}) dV = 0$$
+
+  \end{proof}
+
+
+  \subsection*{20}
+
+  $$\textrm{curl} (\overrightarrow F + \overrightarrow G) = \textrm{curl} \overrightarrow F + \textrm{curl} \overrightarrow G$$
+
+  $$\textrm{curl}{f \overrightarrow F} = f \textrm{curl} \overrightarrow F + (\nabla f) \times \overrightarrow F$$
+
+  \begin{enumerate}
+    \item 
+      $$\textrm{curl} (f \nabla g) = f \textrm{curl} \nabla g + (\nabla f) \times (\nabla g)$$
+
+      $\because \textrm{curl} \nabla g = 0$
+
+      $\therefore \textrm{curl} (f \nabla g) = (\nabla f) \times (\nabla g)$
+
+      $\therefore $ by the Stoke's Theorem, 
+
+      $$\int_C (f \nabla g) \cdot d \overrightarrow r = \iint_S (\nabla f \times \nabla g) \cdot d \overrightarrow S$$
+
+    \item
+
+      $$\textrm{curl} (f \nabla f) = f \textrm{curl} \nabla f + (\nabla f) \times (\nabla f) = 0 + 0 = 0$$
+
+      $\therefore$ by the Stoke's Theorem,
+
+      $$\int_C (f \nabla f) \cdot d \overrightarrowa r = \iint_S 0 \cdot d \overrightarrow S = 0$$
+
+    \item 
+      $$\begin{aligned}
+        \textrm{curl} (f \nabla g + g \nabla f) &= \textrm{curl} (f \nabla g) + \textrm{curl} ( g \nabla f) \\
+                                                &= (\nabla f) \times (\nabla g) + (\nabla g) \times (\nabla f) = 0
+      \end{aligned}
+      $$
+  \end{enumerate}
+
+
+\end{document}

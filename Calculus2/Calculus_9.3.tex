@@ -1,0 +1,160 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 9.3}
+  \author{Wang Yue from CS Elite Class}
+  \maketitle
+
+  \subsection*{12. $\frac{dy}{dx} = \frac{\ln x}{xy}, y(1) = 2$}
+
+  $$\frac{\ln x}{x} dx = \ln x d \ln x = y dy$$
+
+  $$\int \ln x d\ln x = \int y dy$$
+
+  $$\frac{(\ln x)^2}{2} = \frac{y^2}{2} + C$$
+
+  $\because \frac{(\ln 1)^2}{2} = 2 + C$
+
+  $\therefore C = -2$
+
+  $$\therefore y^2 = (\ln x)^2 + 4$$
+
+  \subsection*{14. $ y' = \frac{xy \sin x}{y + 1}, y(0) = 1 $}
+
+  $$\frac{dy}{dx} = \frac{xy \sin x}{y + 1}$$
+
+  If $y \not = 0$, then
+
+  $$\frac{y+1}{y}dy = x \sin x dx$$
+
+  $$\int \frac{y+1}{y}dy = \int x \sin x dx$$
+
+  $$y + \ln |y| = -\int x d\cos x = -x\cos x + \sin x + C$$
+
+  $\because 1 + \ln 1 = -0 + 0 + C$
+
+  $\therefore C = 1$
+
+  $$\therefore y + \ln |y| = -x\cos x + \sin x + 1$$
+
+  $\because y = 0$ satisfies $\frac{dy}{dx} = \frac{xy \sin x}{y + 1} = 0$
+
+  $\therefore \left\{ \begin{array}{ll} y + \ln |y| = -x\cos x + \sin x + 1, & y \not = 0 \\ y = 0, &y = 0 \end{array}\right.$
+
+  \subsection*{20. $ f'(x) = f(x)(1-f(x)), f(0) = \frac 1 2 $}
+
+  $$\frac{dy}{dx} = y(1-y)$$
+
+  If $y \not = 0$ and $y \not = 1$, then
+
+  $$\int \frac{1}{y(1-y)} dy = \int dx$$
+
+  $$\int (\frac{1}{y} + \frac{1}{1 - y}) dy = \ln |y| + \ln |1-y| = x + C$$
+
+  $$e^{\ln |y|} e^{\ln |1-y|} = |y||1-y| = e^C e^x$
+
+  $\because \frac 1 4 = e^C$
+
+  $\therefore |y| |1-y| = \frac 1 4 e^x$
+
+  If $y = 0$ or $y = 1$, then $\frac{dy}{dx} = 0$ is satisified
+
+  $\therefore \left\{ \begin{array}{ll}
+      |y| |1-y| = \frac 1 4 e^x, &y \not = 0 \textrm{ and } y \not = 1 \\
+      y = 0, &y = 0 \\
+      y = 1, &y = 1
+  \end{array}\right.$
+
+  \subsection*{22. $xy' = y + xe^{\frac y x}$}
+
+  Let $v = \frac y x$, then $y = vx$, then
+
+  $$y' = \frac{dy}{dx} = \frac{dv}{dx}x + v$$
+
+  $$\therefore x \frac{dv}{dx} = e^v$$
+
+  $$\int \frac{1}{e^v} dv = \int \frac 1 x dx$$
+
+  $$-e^{-v} = \ln |x| + C$$
+
+  where $C$ is an arbitrary constant
+
+  \subsection*{33. $ y(x) = 2 + \int_2^x [t - ty(t)]dt $}
+
+  Taking derivative on the both sides, we get
+
+  $$\frac{dy}{dx} = x - xy$$
+
+  and the initial condition is $y(2) = 2 + \int_2^2 [t-ty(t)] dt = 2$
+
+  If $y \not = 1$, then
+
+  $$\int \frac{1}{1-y} dy = \int x dx$$
+
+  $$-\ln|1-y| = \frac{x^2}{2} + C$$
+
+  $\because -\ln |1 - 2| = \frac{2^2}{2} + C$
+
+  $\therefore C = -2$
+
+  $$\therefore |\frac{1}{1-y}| = e^{-2} e^{\frac{x^2}{2}}$$
+
+  If $y = 1$, then $\frac{dy}{dx} = 0$
+
+  $\therefore \left\{ \begin{array}{ll} |\frac{1}{1-y}| = e^{-2} e^{\frac{x^2}{2}}, &y \not = 1 \\ y = 1, &y = 1 \end{array}\right.$
+
+  \subsection*{34. }
+
+  Taking derivative on the both sides, we get
+  
+  $$\frac{dy}{dx} = \frac{1}{xy}$$
+
+  and the initial condition $y(1) = 2$
+
+  $$\therefore \int y dy = \int \frac{1}{x} dx$$
+
+  Since $x > 0$, then
+
+  $$ \frac{y^2}{2} = \ln x + C_1 $$
+
+  $$\therefore y^2 = 2\ln x + C$$
+
+  where $C_1$ and $C$ is arbitrary constants
+
+  \subsection*{35. }
+
+  Taking derivative on the both sides, we get
+
+  $$\frac{dy}{dx} = 2x \sqrt{y}$$
+
+  and the initial condition $y(0) = 4$
+
+  If $y > 0$, then
+
+  $$\int \frac{1}{2\sqrt y} dy = \int x dx$$
+
+  $$\sqrt y = \frac{x^2}{2} + C_1$$
+
+  $$y = \frac{x^4}{4} + C$$
+
+  $\because 4 = 0 + C$
+
+  $\therefore C = 4$
+
+  $$\therefore y = \frac{x^4}{4} + 4$$
+
+  If $y = 0$, then $\frac{dy}{dx} = 0$
+
+  $\therefore \begin{array}{ll}
+    y = \frac{x^4}{4} + 4, &y \not = 0 \\
+    y = 0, &y = 0
+  \end{array}\right.$
+
+\end{document}
+

@@ -1,0 +1,154 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 16.9}
+  \author{Wang Yue from CS Elite Class}
+  \maketitle
+
+  \subsection*{7.}
+  
+  $$\textrm{div} \overrightarrow F = \langle 3y^2+ 0+ 3z^2 = 3y^2 + 3z^2$$
+
+  $$\begin{aligned}
+    \iint_S \overrightarrow F \cdot d \overrightarrow S &= \iiint_E (3y^2 + 3z^2) \rangle dV \\
+                                                        &= \int_0^{2\pi} \int_0^1 \int_{-1}^2 3r^2 dx r dr d\theta \\
+                                                        &= \int_0^{2\pi} \int_0^1 9r^3 dr d\theta \\
+                                                        &= \int_0^{2\pi} 9 \frac{r^4}{4}\biggl|_0^1 d\theta \\
+                                                        &= \frac{9}{4} \times 2\pi = \frac{9}{2}\pi
+  \end{aligned}
+  $$
+
+  \subsection*{8.}
+
+  $$\textrm{div} \overrightarrow F = 3x^2 + 3y^2 + 3z^2$$
+
+  $$\begin{aligned}
+    \iint_S \overrightarrow F \cdot d \overrightarrow S &= \iiint_E 3(x^2 + y^2 + z^2) dV \\
+                                                        &= 3 \int_0^{\pi} \int_0^{2\pi} \int_0^2 \rho^2 \rho^2 \sin \varphi d\rho  d\theta   d\varphi \\
+                                                        &= 3 \int_0^{\pi} \int_0^{2\pi} \sin \varphi (\frac{\rho^5}{5})\biggl|_0^2 d\theta d\varphi \\
+                                                        &= \frac{96}{5} \int_0^\pi 2\pi \sin \varphi d\varphi \\
+                                                        &= \frac{384\pi}{5}
+  \end{aligned}
+  $$
+
+  \subsection*{10.}
+
+  $$\textrm{div} \overrightarrow F = 0 + 1 + x = x + 1$$
+
+  $$\begin{aligned}
+    \iint_S \overrightarrow F \cdot d \overrightarrow S &= \iiint_E (x + 1) dV \\
+                                                        &= \int_0^b \int_0^c \int_0^a (x + 1) dx dz dy \\
+                                                        &= \int_0^b \int_0^c (\frac{x^2}{2} + x)\biggl|_0^a dz dy \\
+                                                        &= bc (\frac{a^2}{2} + a)
+  \end{aligned}
+  $$
+
+  \subsection*{13.}
+
+  $$\overrightarrow F = \langle x \sqrt{x^2 + y^2 + z^2}, y \sqrt{x^2 + y^2 + z^2}, z \sqrt{x^2 + y^2 + z^2} \rangle$$
+
+  $$\textrm{div} \overrightarrow F = \sqrt{x^2 + y^2 + z^2} (x \frac{x}{\sqrt{x^2 + y^2 + z^2}} + y \frac{y}{\sqrt{x^2 + y^2 + z^2}} + z \frac{z}{\sqrt{x^2 + y^2 + z^2}}) = x^2 + y^2 + z^2$$
+
+  $$\begin{aligned}
+    \iint_S \overrightarrow F \cdot d \overrightarrow S &= \iiint_E (x^2 + y^2 + z^2) dV \\
+                                                        &= \int_0^{2\pi} \int_0^\pi \int_0^R \rho^2 \rho^2 \sin \varphi d\rho d\varphi d\theta \\
+                                                        &= \int_0^{2\pi} \int_0^\pi \frac{R^5}{5} \sin \varphi d\varphi d\theta \\
+                                                        &= \int_0^{2\pi} \frac{R^5}{5} (-\cos \varphi)\biggl|_0^\pi d\theta \\
+                                                        &= \int_0^{2\pi} \frac{2}{5}R^5 d\theta = \frac{4}{5}R^5 \pi
+  \end{aligned}
+  $$
+
+  \subsection*{24.}
+
+  Let $\overrightarrow F = \langle P, Q, R \rangle$
+
+  $$\overrightarrow n = \frac{\langle x, y, z \rangle}{\sqrt{x^2 + y^2 + z^2}} = \langle x, y, z \rangle$$
+
+  $$\overrightarrow F \cdot \overrightarrow n = Px + Qy + Rz = 2x + 2y + z^2$$
+
+  $\therefore P = 2, Q = 2, R = z, \overrightarrow F = \langle 2, 2, z \rangle$
+
+  $$\textrm{div} \overrightarrow F = 1$$
+
+  $$\iint_S \overrightarrow F \cdot d \overrightarrow S = \iiint_E dV = \frac{4}{3}\pi$$
+
+  \subsection*{25.}
+
+  \begin{proof}
+    $\because \overrightarrow a$ is a constant vector
+
+    $\therefore \textrm{div} \overrightarrow a = 0$
+
+    $\therefore \iint_S \overrightarrow a \cdot \overrightarrow n dS = \iiint_E \textrm{div} \overrightarrow a dV = 0$
+  \end{proof}
+
+  \subsection*{26.}
+
+  \begin{proof}
+    $$\textrm{div} \overrightarrow F = 1 + 1 + 1 = 3$$
+
+    $$\frac{1}{3} \iint_S \overrightarrow F \cdot d \overrightarrow S = \frac{1}{3} \iiint_E \textrm{div} \overrightarrow F dV = \iiint_E dV = V(E)$$
+  \end{proof}
+
+  \subsection*{27.}
+
+
+  \begin{proof}
+    
+  By using the Divergence Theorem, we have
+
+  $$\iint_S \overrightarrow{F} \cdot d \overrightarrow{S} = \iiint_E \textrm{div} \overrightarrow{F} dV$$
+
+  $$\therefore \iint_S \textrm{curl} \overrightarrow{F} \cdot d \overrightarrow{S} = \iiint_E \textrm{div} (\textrm{curl} \overrightarrow{F}) dV = 0$$
+
+  \end{proof}
+
+  \subsection*{28.}
+
+  \begin{proof}
+
+    $$\textrm{div} (D_n f) = \nabla \cdot (\overrightarrow n \cdot \nabla f) = \nabla^2 f$$
+
+    $$\iint_D_n f dS = \iiint_E \textrm{div} (D_n f) dV = \iiint_E \nalba^2 f dV$$
+    
+  \end{proof}
+
+  \subsection*{29.}
+
+  \begin{proof}
+
+    $$\begin{aligned}
+      \textrm{div} (f \nabla g) &= \frac{\partial }{\partial x}(f\nabla g) + \frac{\partial }{\partial y}(f\nabla g)  + \cdots \\
+                                &= \frac{\partial f}{\partial x}(\nabla g) + \frac{\partial \nabla g}{\partial x}f + \frac{\partial f}{\partial y}(\nabla g) + \frac{\partial \nabla g}{\partial y}f  + \cdots \\
+                                &= f \nabla^2 g + \nabla f \codt \nabla g
+    \end{aligned}
+
+    $$\therefore \iint_S (f \nabla g) \cdot \overrightarrow n dS = \iiint_E \textrm{div}(f\nabla g) dV = \iiint_E ( f \nabla^2 g + \nabla f \codt \nabla g) dV$$
+    $$
+  \end{proof}
+
+  \subsection*{30.}
+
+  Linearity of diveregence:
+
+  $$ \textrm{div} (f + g) =  \textrm{div} f + \textrm{div} g$$
+
+  \begin{proof}
+    $$\begin{aligned}
+      \textrm{div} (f \nabla g - g \nabla f) &= \textrm{div} (f \nabla g) - \textrm{div} (g \nabla f) \\
+                                             &= (\nabla f \cdot \nabla g + f \nabla^2 g) - (\nabla g \cdot \nabla f + g \nabla^2 f) \\
+                                             &= f \nabla^2 g - g \nabla^2 f
+    \end{aligned}
+    $$
+
+    $$\iint_S (f \nalba g - g \nabla f) \cdot \overrightarrow n dS = \iiint_E \textrm{div}(f \nabla g - g \nabla f) dV = \iiint_E (f \nabla^2 g - g \nabla^2 f) dV$$
+
+  \end{proof}
+
+\end{document}

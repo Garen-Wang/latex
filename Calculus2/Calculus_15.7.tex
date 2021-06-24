@@ -1,0 +1,185 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 15.7}
+  \author{Wang Yue from CS Elite Class}
+  \maketitle
+  \date{}
+
+  \subsection*{10. }
+
+  $$\begin{aligned}
+    \iiint_E e^{\frac z y} dV &= \int_0^1 \int_y^1 \int_{0}^{xy} e^{\frac z y} dz dx dy \\
+    &= \int_0^1 \int_y^1 (ye^{\frac z y})\biggl|_{z=0}^{z=xy} dx dy \\
+    &= \int_0^1 \int_y^1 y(e^x - 1) dx dy \\
+    &= \int_0^1 \int_0^x y(e^x - 1) dy dx \\
+    &= \int_0^1 (e^x - 1) \frac{y^2}{2}\biggl|_0^x dx \\
+    &= \frac 1 2 \int_0^1 (e^x - 1) x^2 dx \\
+    &= \frac 1 2 \int_0^1 x^2 e^x dx - \frac 1 2 \int_0^1 x^2 dx \\
+    &= \frac 1 2 \int_0^1 x^2 de^x - \frac 1 6 \\
+    &= \frac 1 2 (x^2e^x\biggl|_0^1 - \int_0^1 e^x dx^2) - \frac 1 6 \\
+    &= \frac 1 2 (e - 2\int_0^1xde^x) - \frac 1 6 \\
+    &= \frac 1 2 (e - 2(xe^x\biggl|_0^1 - \int_0^1 e^x dx)) - \frac 1 6 \\
+    &= \frac 1 2 (e - 2) - \frac 1 6 \\
+    &= \frac{3e - 7}{6}
+  \end{aligned}$$
+
+  \subsection*{11. }
+  % quite strange!!! keep in mind the formula!
+  $$\begin{aligned}
+    \iiint_E \frac{z}{x^2+z^2} dV &= \int_1^4 \int_y^4 \int_0^z \frac{z}{x^2+z^2} dx dz dy \\
+    &= \int_0^1 \int_y^4 \int_0^z \frac{\frac 1 z}{(\frac x z)^2 + 1} dx dz dy \\
+    &= \int_0^1 \int_y^4 \int_0^z \frac{1}{(\frac x z)^2 + 1} d(\frac x z) dz dy \\
+    &= \int_0^1 \int_y^4 \arctan(\frac x z)\biggl|_{x=0}^{x=z} dz dy \\
+    &= \int_0^1 \int_y^4 \frac \pi 4 dz dy \\
+    &= \frac \pi 4 \times \frac{3 \times 3}{2} = \frac{9\pi}{8}
+  \end{aligned}$$
+
+  \subsection*{17. }
+
+  $$\begin{aligned}
+    \iiint_E x dV &= \int_0^4 \int_0^{2\pi} \int_0^{\frac{\sqrt x}{2}} x r dr d\theta dx \\
+    &= \int_0^4 \int_0^{2\pi} x(\frac{r^2}{2})\biggl|_{r=0}^{r=\frac{\sqrt x}{2}} d\theta dx \\
+    &= \int_0^4 2\pi x (\frac x 8) dx \\
+    &= \frac{\pi}{4} \int_0^4 x^2 dx \\
+    &= \frac \pi 4 (\frac{x^3}{3})\biggl|_0^4 \\
+    &= \frac{16\pi}{3}
+  \end{aligned}$$
+
+  \subsection*{20. }
+
+  $\because \left\{ \begin{array}{ll} y=x^2+z^2 \\ y = 8 - x^2 - z^2 \end{array}\right. \implies \left\{ \begin{array}{ll} y = 4 \\ x^2 + z^2 = 4 \end{array}\right.$
+
+  $V = 2V_1$
+
+  $$\begin{aligned}
+    V_1 &= \int_0^4 \int_0^{2\pi} \int_0^2 r dr d\theta dy \\
+    &= \int_0^4 \int_0^{2\pi} \frac{r^2}{2}\biggl|_{r=0}^{r=2} d\theta dy \\
+    &= 2\int_0^4 \int_0^{2\pi} d\theta dy \\
+    &= 4\pi \int_0^4 dy \\
+    &= 16\pi
+  \end{aligned}$$
+
+  $\therefore$ the volume of the solid is $V = 2V_1 = 32\pi$
+
+  \subsection*{22. }
+
+  $D = \{ (x, y, z) | x^2 + z^2 \leq 4 \}$
+
+  $$\begin{aligned}
+    V &= \iint_D \int_{-1}^{4-z} dy dx dz  \\
+    &= \int_0^{2\pi} \int_0^2 \int_{-1}^{4-2\sin \theta} dy r dr d\theta \\
+    &= \int_0^{2\pi} \int_0^2 (5-2\sin \theta) r dr d\theta \\
+    &= \int_0^{2\pi} (5-2\sin \theta) (\frac{r^2}{2})\biggl|_{r=0}^{r=2} d\theta \\
+    &= 2\int_0^{2\pi} (5-2\sin \theta) d\theta \\
+    &= 2(5\theta + 2\cos \theta)\biggl|_0^{2\pi} \\
+    &= 2(10\pi) = 20\pi
+  \end{aligned}$$
+
+  \subsection*{30. }
+
+  % $$\int_{-2}^2 \int_0^{2\pi} \int_0^3 r dr d\theta dx$$
+
+  % $$\int_0^{2\pi} \int_0^3 \int_{-2}^2 dx r dr d\theta$$
+
+  $$\int_0^3 \int_{-2}^2 \int_0^{\sqrt{9-z^2}} dy dx dz$$
+
+  $$\int_0^3 \int_{-2}^2 \int_0^{\sqrt{9-y^2}} dz dx dy$$
+
+  $$\int_{-2}^2 \int_0^3 \int_0^{\sqrt{9-z^2}} dy dz dx$$
+
+  $$\int_{-2}^2 \int_0^3 \int_0^{\sqrt{9-y^2}} dz dy dx$$
+
+  $$\int_0^3 \int_0^{\sqrt{9-z^2}} \int_{-2}^2 dx dy dz$$
+
+  $$\int_0^3 \int_0^{\sqrt{9-y^2}} \int_{-2}^2 dx dz dy$$
+
+  \subsection*{34. }
+
+  $$\int_0^1 \int_0^{1-x} \int_0^{1-x^2} f(x, y, z) dz dy dx$$
+
+  $$\int_0^1 \int_0^{1-y} \int_0^{1-x^2} f(x, y, z) dz dx dy$$
+
+  $$\int_0^1  \int_0^{-y^2+2y} \int_0^{1-y} f(x, y, z) dx dz dy + \int_0^1 \int_{-y^2+2y}^1 \int_0^{\sqrt{1-z}} f(x, y, z) dx dz dy$$
+
+  $$\int_0^1 \int_0^{1-x^2} \int_0^{1-x} f(x, y, z) dy dx dz$$
+
+  $$\int_0^1 \int_0^{\sqrt{1-z}} \int_0^1 \int_0^{\sqrt{1-z}} \int_0^{\sqrt{1-z}} f(x, y, z) dx dy dz + \int_0^1 \int_{\sqrt{1-z}}^1 \int_0^{1-y} f(x, y, z) dx dy dz$$
+
+  \subsection*{37. }
+
+  $$\iiint_C (4+5x^2yz^2) dV = 4\iiint_C dV + \iiint_C (5x^2yz^2) dV$$
+
+  $\because C$ is symmetric w.r.t. $xoz$ plane, $5x^2yz^2$ is odd function w.r.t. $y$
+
+  $\therefore \iiint_C (5x^2yz^2)dV = 0$
+
+  $$\therefore \iiint_C (4+5x^2yz^2) dV = 4\iiint_C dV = 4 (16\pi) = 64\pi$$
+
+  \subsection*{40. }
+
+  $D = \{ (x, y, z) | x \geq 0, -1 \leq y \leq 1, z \geq 0, z \leq \min(1-y^2, 1-x) \}$
+
+  $$\begin{aligned}
+    M &= \int_0^1 \int_0^{1-x} \int_{-\sqrt{1-z}}^{\sqrt{1-z}} \rho(x, y, z) dy dz dx  \\
+    &= 4 \int_0^1 \int_0^{1-x} 2\sqrt{1-z} dz dx \\
+    &= -8 \int_0^1 \int_0^{1-x} (1-z)^{\frac 1 2} d(1-z) dx \\
+    &= -8\int_0^1  \frac 2 3 (1-z)^{\frac 3 2}  \biggl|_0^{1-x} dx \\
+    &= -\frac{16}{3} \int_0^1 (x^{\frac 3 2} - 1) dx \\
+    &= \frac{16}{3} (\frac 2 5 x^{\frac 5 2} - x) \biggl|_1^0 \\
+    &= \frac{16}{3} \times \frac{3}{5} = \frac{16}{5}
+  \end{aligned}$$
+
+  $$\begin{aligned}
+    M_{yz} &= \int_0^1 \int_0^{1-x} \int_{-\sqrt{1-z}}^{\sqrt{1-z}} x \rho(x, y, z) dy dz dx \\
+    &= 4 \int_0^1 \int_0^{1-x} 2x\sqrt{1-z} dz dx \\
+    &= -8\int_0^1 \int_0^{1-x} x\sqrt{1-z} d(1-z) dx \\
+    &= -8\int_0^1 \frac 2 3 x (1-z)^{\frac 3 2} \biggl|_{z=0}^{z=1-x} dx \\
+    &= -\frac{16}{3} \int_0^1 (x^{\frac 5 2} - x) dx \\
+    &= \frac{16}{3} (\frac 2 7 x^{\frac 7 2} - \frac 1 2 x^2)\biggl|_1^0 \\
+    &= \frac{16}{3} \times \frac{3}{14} = \frac 8 7
+  \end{aligned}$$
+
+  $$\begin{aligned}
+    M_{xz} &= \int_0^1 \int_0^{1-x} \int_{-\sqrt{1-z}}^{\sqrt{1-z}} y \rho(x, y, z) dy dz dx \\
+    &= 4\int_0^1 \int_0^{1-x} \frac{y^2}{2}\biggl|_{-\sqrt{1-x}}^{\sqrt{1-x}} dz dx \\
+    &= 0
+  \end{aligned}$$
+
+  $$\begin{aligned}
+    M_{xy} &= \int_0^1 \int_0^{1-x} \int_{-\sqrt{1-z}}^{\sqrt{1-z}} z \rho(x, y, z) dy dz dx \\
+    &= 8\int_0^1 \int_0^{1-x} z\sqrt{1-z} dz dx \\
+    &= 8\int_0^1 \int_0^{1-x} (1-z-1)\sqrt{1-z} d(1-z) dx \\
+    &= 8\int_0^1 (\int_0^{1-x} (1-z)^{\frac 3 2} d(1-z) - \int_0^{1-x} (1-z)d(1-z)) dx \\
+    &= 8\int_0^1 (\frac 2 5 (1-z)^{\frac 5 2} \biggl|_0^{1-x} - \frac 2 3 (1-z)^{\frac 3 2}\biggl|_0^{1-x}) dx \\
+    &= 8\int_0^1 (\frac 2 5(x^{\frac 5 2} - 1) - \frac 2 3(x^{\frac 3 2} - 1)) dx \\
+    &= 8\int_0^1 (\frac{4}{15} + \frac 2 5 x^{\frac 5 2} - \frac 2 3 x^{\frac 3 2}) dx \\
+    &= 8(\frac{4}{15}x + \frac{4}{35}x^{\frac 7 2} - \frac{4}{15}x^{\frac 5 2})\biggl|_0^1 \\
+    &= \frac{32}{35}
+  \end{aligned}$$
+
+  $$\overline{x} = \frac{M_{yz}}{M} = \frac{8}{7} \times \frac{5}{16} = \frac{7}{10}$$
+  $$\overline{y} = \frac{M_{xz}}{M} = 0$$
+  $$\overline{z} = \frac{M_{xy}}{M} = \frac{32}{35} \times \frac{5}{16} = \frac{2}{7}$$
+
+  $\therefore$ the coordinate of center of mass is $(\frac{7}{10} , 0, \frac 2 7)$.
+
+  \subsection*{46. (Assume that the solid has constant density $k$)}
+
+  Let the radius of the cone be $t$, then the moment inertia about the $z$-axis is
+
+  $$\begin{aligned}
+    \iiint_E (x^2+y^2) \rho(x, y, z) dV &= k\int_0^{2\pi} \int_0^t \int_r^h dz r dr d\theta \\
+    &= k\int_0^{2\pi} \int_0^t (hr-r^2) dr d\theta \\
+    &= k\int_0^{2\pi} (\frac{hr^2}{2} - \frac{r^3}{3})\biggl|_{r=0}^{r=t} d\theta \\
+    &= k\int_0^{2\pi} (\frac{ht^2}{2} - \frac{t^3}{3}) d\theta \\
+    &= 2\pi k (\frac{ht^2}{2} - \frac{t^3}{3})
+  \end{aligned}$$
+
+\end{document}

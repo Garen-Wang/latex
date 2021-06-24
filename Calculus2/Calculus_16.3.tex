@@ -1,0 +1,210 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+  \title{Exercise 16.3}
+  \author{Wang Yue from CS Elite Class}
+  \maketitle
+
+  \subsection*{7. }
+
+  Let $P(x, y) = ye^x + \sin y, Q(x, y) = e^x + x\cos y$, then
+
+  $$\frac{\partial P}{\partial y} = e^x + \cos y, \frac{\partial Q}{\partial x} = e^x + \cos y$$
+
+  $\therefore \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$
+
+  $\because$ the domain of $\overrightarrow{F}$ is in $\mathbb{R}^2$
+
+  $\therefore \overrightarrow{F}$ is conservative
+
+  Let $\overrightarrow{F} = \nabla f$, then
+
+  $$f(x, y) = \int P(x, y) dx + \varphi(y) = ye^x + x\sin y + \varphi(y)$$
+
+  $$Q(x, y) = \frac{\partial f}{\partial y} = \frac{\partial }{\partial y}(\int P(x, y) dx) + \varphi'(y)$$
+
+  $$\frac{\partial}{\partial y}(ye^x + x\sin y) + \varphi'(y) = e^x + x\cos y + \varphi'(y) = e^x + x\cos y$$
+
+  $\therefore \varphi'(y) = 0, \varphi(y) = C$
+
+  $$\therefore f(x, y) = ye^x + x\sin y + C$$
+
+  \subsection*{8. }
+
+  Let $P(x, y) = 2xy + y^{-2}, Q(x, y) = x^2 - 2xy^{-3}$, where $y > 0$, then
+
+  $$\frac{\partial P}{\partial y} = 2x -2y^{-3}, \frac{\partial Q}{\partial x} = 2x - 2y^{-3}$$
+
+  $\therefore \frac{\partial P}{\partial y} =\frac{\partial Q}{\partial x}$
+
+  $\because \frac{\partial P}{\partial y}$ and $\frac{\partial Q}{\partial x}$ are continuous throughout the domain of $\overrightarrow{F}$
+
+  $\therefore \overrightarrow{F}$ is conservative
+
+  $$f(x, y) = \int P(x, y) dx + \varphi(y) = x^2y + xy^{-2} + \varphi(y)$$
+
+  $$Q(x, y) = \frac{\partial f}{\partial y} = x^2 -2xy^{-3} + \varphi'(y) = x^2 - 2xy^{-3}$$
+
+  $\therefore \varphi'(y) = 0, \varphi(y) = C$
+  
+  $$\therefore f(x, y) = x^2y + xy^{-2} + C$$
+
+  \subsection*{9. }
+
+  Let $P(x, y) = \ln y + 2xy^3, Q(x, y) = 3x^2y^2 + \frac x y$ where $y > 0$, then
+
+  $$\frac{\partial P}{\partial y} = \frac 1 y + 6xy^2 =  \frac{\partial Q}{\partial x} = 6xy^2 + \frac 1 y$$
+
+  $\because \frac{\partial P}{\partial y}$ and $\frac{\partial Q}{\partial x}$ are continuous throughout the domain of $\overrightarrow{F}$
+
+  $\therefore \overrightarrow{F}$ is conservative
+
+  $$f(x, y) = \int P(x, y) dx + \varphi(y) = x\ln y + x^2y^3 + \varphi(y)$$
+
+  $$Q(x, y) = \frac{\partial f}{\partial y} = \frac x y + 3x^2y^2 + \varphi'(y) = 3x^2y^2 + \frac x y$$
+
+  $\therefore \varphi'(y) = 0, \varphi(y) = C$
+
+  $$\therefore f(x, y) = x\ln y + x^2y^3 + C$$
+
+  \subsection*{13. }
+
+  Let $P(x, y) = xy^2, Q(x, y) = x^2y$
+
+  $$\frac{\partial P}{\partial y} = 2xy = \frac{\partial Q}{\partial x} = 2xy$$
+
+  $\therefore \overrightarrow{F}$ is conservative, i.e., $\exists f, s.t. \overrightarrow{F} = \nabla f$
+
+  $$f(x, y) = \int P(x, y) dx + \varphi(y) = \frac 1 2 x^2y^2 + \varphi(y)$$
+
+  $$Q(x, y) = \frac{\partial f}{\partial y} = x^2y + \varphi'(y) = x^2y$$
+
+  $\therefore \varphi'(y) = 0, \varphi(y) = C$
+
+  $$\therefore f(x, y) = \frac 1 2 x^2y^2$$
+
+
+  $$\therefore \int_C \nabla f \cdot d\overrightarrow{r} = f(\overrightarrow{r}(b)) -f(\overrightarrow{r}(a)) = f(2, 1) - f(0, 1) = 2$$
+
+  \subsection*{17. }
+
+  Obviously, $\overrightarrow{F}$ is conservative.
+
+  Let $P(x, y, z) = yze^{xz}, Q(x, y, z) = e^{xz}, R(x, y, z) = xye^{xz}$
+
+  $$f(x, y, z) = \int P(x, y) dx + \varphi(y, z) = ye^{xz} + \varphi(y, z)$$
+
+  $$Q(x, y, z) = \frac{\partial f}{\partial y} = e^{xz} + \frac{\partial \varphi}{\partial y} = e^{xz}$$
+ 
+  $$R(x, y, z) = \frac{\partial f}{\partial z} = xye^{xz} + \frac{\partial \varphi}{\partial z} = xye^{xz}$$
+
+  $\therefore \frac{\partial \varphi}{\partial y} = \frac{\partial \varphi}{\partial z} = 0, \therefore \varphi(y, z) = C$
+
+  $$\therefore f(x, y, z) = ye^{xz}$$
+
+  $$\therefore \int_C \nabla f \cdot d\overrightarrow{r} = f(\overrightarrow{r}(2)) - f(\overrightarrow{r}(0)) = f(5, 3, 0) - f(1, -1, 0) = 3 - (-1) = 4$$
+
+  \subsection*{19. }
+
+  Let $P(x, y) = 2xe^{-y}, Q(x, y) = 2y - x^2e^{-y}$, then
+
+  $$\frac{\partial P}{\partial y} = -2xe^{-y} = \frac{\partial Q}{\partial x} = -2xe^{-y}$$
+
+  $\therefore \overrightarrow{F}$ is conservative
+
+  Let $\overrightarrow{F} = \nabla f$, then
+
+  $$f(x, y) = \int P(x, y) dx + \varphi(y) = x^2e^{-y} + \varphi(y)$$
+
+  $$Q(x, y) = \frac{\partial f}{\partial y} = -x^2e^{-y} + \varphi'(y) = -x^2e^{-y} + 2y$$
+
+  $\therefore \varphi'(y) = 2y, \varphi(y) = y^2 + C$
+
+  $$\therefore f(x, y) = x^2e^{-y} + y^2 + C$$
+
+  $$\therefore \int_C \nabla f \cdot d\overrightarrow{r} = f(2, 1) - f(1, 0) = 4e^{-1}$$
+
+  \subsection*{20. }
+
+  Let $P(x, y) = \sin y, Q(x, y) = x \cos y - \sin y$, then
+
+  $$\frac{\partial P}{\partial y} = \cos y = \frac{\partial Q}{\partial x} = \cos y$$
+
+  $\therefore \overrightarrow{F}$ is conservative
+
+  Let $\overrightarrow{F} = \nabla F$, then
+
+  $$f(x, y) = \int P(x, y) dx + \varphi(y) = x\sin y + \varphi(y)$$
+
+  $$Q(x, y) = \frac{\partial f}{\partial y} = x\cos y + \varphi'(y) = x\cos y - \sin y$$
+
+  $\therefore \varphi'(y) = -\sin y, \varphi(y) = \cos y + C$
+
+  $$\therefore f(x, y) = x\sin y + \cos y + C$$
+
+  $$\therefore \int_C \nabla f \cdot d\overrightarrow{r} = f(1, \pi) - f(2, 0) = -1 - 1 = -2$$
+  
+  \subsection*{29. }
+
+  $$\because P = \frac{\partial f}{\partial x} , Q = \frac{\partial f}{\partial y}, R = \frac{\partial f}{\partial z}$$
+
+  $\because P, Q, R$ all have continuous first-order partial derivatives
+
+  $$\therefore \left \{ \begin{array}{ll}
+    \frac{\partial^2 f}{\partial x \partial y} = \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \\
+    \frac{\partial^2 f}{\partial x \partial z} = \frac{\partial P}{\partial z} = \frac{\partial R}{\partial x} \\
+    \frac{\partial^2 f}{\partial y \partial z} = \frac{\partial Q}{\partial z} = \frac{\partial R}{\partial y}
+  \end{array}\right.$$
+
+  $$
+  \therefore 
+  \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}, 
+  \frac{\partial P}{\partial z} = \frac{\partial R}{\partial x}, 
+  \frac{\partial Q}{\partial z} = \frac{\partial R}{\partial y},
+  $$
+  \subsection*{30. }
+
+  Let $P(x, y, z) = y, Q(x, y, z) = x, R(x, y, z) = xyz$, then
+
+  $$\because \frac{\partial P}{\partial z} = 0 \not =  \frac{\partial R}{\partial x} = yz$$
+
+  $\therefore \overrightarrow{F} = P(x, y, z)\overrightarrow{i} + Q(x, y, z)\overrightarrow{j} + R(x, y, z)\overrightarrow{k}$ is not conservative
+
+  $\therefore \int_C ydx + xdy + xyzdz$ is not independent of path
+
+  \subsection*{35. }
+
+  \begin{enumerate}[(a)]
+    \item 
+    Let $P(x, y) = -\frac{y}{x^2+y^2}, Q(x, y) = \frac{x}{x^2+y^2}$
+
+    $$\frac{\partial P}{\partial y} = -\frac{(x^2+y^2) - y(2y)}{(x^2+y^2)^2} = \frac{y^2-x^2}{(x^2+y^2)^2} = \frac{\partial Q}{\partial x} = \frac{(x^2+y^2) - x(2x)}{(x^2+y^2)^2}$$
+
+    $$\therefore \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$$
+
+    \item
+
+    In region $D = \{ (x, y) | x^2 + y^2 \leq 1\}$, the parametric equation is $\left\{ \begin{array}{ll}
+      x = \cos t \\ y = \sin t
+    \end{array}\right.$
+
+    $$\begin{aligned}
+      \int_{C_1} \overrightarrow{F} \cdot d\overrightarrow{r} &= \int_0^{\pi} (-\sin t)^2 + (\cos t)^2 dt = \pi
+    \end{aligned}$$
+
+    $$\begin{aligned}
+      \int_{C_2} \overrightarrow{F} \cdot d\overrightarrow{r} &= \int_{2\pi}^{\pi} (-\sin t)^2 + (\cos t)^2 dt = -\pi
+    \end{aligned}$$
+
+    This does not contradict with Theorem 6, because $P$ and $Q$ are both undefined in $(0,0)$, which is a point inside the region $D$. Since $P$ and $Q$ do not have continuous first-order derivatives, we cannot get the conclusion of Theorem 6.
+
+  \end{enumerate}
+  
+
+\end{document}
